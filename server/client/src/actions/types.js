@@ -1,1 +1,1 @@
-export const FETCH_MUTATIONS = 'fetch_mutations';
+export const FETCH_BYGENESYMBOL = 'fetchBygeneSymbol';

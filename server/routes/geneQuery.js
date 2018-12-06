@@ -2,18 +2,72 @@ const pool = require('../db');
 
 module.exports = app => {
   app.get('/persons', (request, response, next) => {
-    pool.query('SELECT * FROM "nonCodingMutations"', (err, res) => {
+    pool.query('SELECT * FROM "noncodingmutations"', (err, res) => {
       if (err) return next(err);
 
       response.json(res);
     });
   });
 
-  app.get('/geneName/:geneName', (request, response, next) => {
+  app.get('/geneName/:genename', (request, response, next) => {
     const { genename } = request.params;
     pool.query(
-      'SELECT * FROM "nonCodingMutations" WHERE "geneName" = $1',
+      'SELECT * FROM "noncodingmutations" WHERE "geneName" = $1',
       [genename],
+      (err, res) => {
+        if (err) return next(err);
+
+        response.json(res);
+      }
+    );
+  });
+
+  app.get('/api/geneSymbol', (request, response, next) => {
+    //res.json({ geneSymbol: req.query.query });
+
+    //const { genename } = request.query.hgncID;
+    //response.json({ name: request.query.hgncID });
+    //
+    pool.query(
+      'SELECT * FROM "noncodingmutations" WHERE "geneName" = $1',
+      [request.query.hgncID],
+      (err, res) => {
+        if (err) return next(err);
+
+        response.json(res);
+      }
+    );
+  });
+
+//########
+
+ app.get('/api/v1.0/tumorType', (request, response, next) => {
+    //res.json({ geneSymbol: req.query.query });
+
+    //const { genename } = request.query.hgncID;
+    //response.json({ name: request.query.hgncID });
+    //
+    pool.query(
+      'SELECT * FROM "codingmutations" WHERE "tumorType" = $1',
+      [request.query.tumorType],
+      (err, res) => {
+        if (err) return next(err);
+
+        response.json(res.rows);
+      }
+    );
+  });
+
+
+
+//#########
+
+
+  app.get('/chr/:chr', (request, response, next) => {
+    const { chr } = request.params;
+    pool.query(
+      'SELECT * FROM "noncodingmutations" WHERE chr = $1',
+      [chr],
       (err, res) => {
         if (err) return next(err);
 

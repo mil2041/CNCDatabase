@@ -1,8 +1,24 @@
 import axios from 'axios';
-import { FETCH_MUTATIONS } from './types';
+import { FETCH_BYGENESYMBOL } from './types';
 
-export const fetchMutations = () => async dispatch => {
-  const res = await axios.get('/api/mutations');
+export const fetchBygeneSymbol = hgncID => async dispatch => {
+  const request = await axios.get('/api/geneSymbol', {
+    params: {
+      hgncID: hgncID
+    }
+  });
 
-  dispatch({ type: FETCH_MUTATIONS, payload: res.data });
+  const exampleData = [
+    { geneName: 'Jane' },
+    { geneName: 'Alex' },
+    { geneName: 'Jim' }
+  ];
+
+  //console.log('Received request', hgncID, exampleData);
+  //dispatch({ type: FETCH_BYGENESYMBOL, payload: exampleData });
+  console.log('Received request', hgncID, request);
+
+    dispatch({ type: FETCH_BYGENESYMBOL, 
+               payload: request.data.rows 
+    });
 };

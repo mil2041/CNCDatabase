@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-//import { fetchWeather } from "../actions/index";
+import { fetchBygeneSymbol } from '../../actions/index';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -15,14 +15,15 @@ class SearchBar extends Component {
 
   onInputChange(event) {
     this.setState({ term: event.target.value });
+    console.log(event.target.value);
   }
 
   onFormSubmit(event) {
     event.preventDefault();
 
-    // We need to go and fetch weather data
-    //this.props.fetchWeather(this.state.term);
-    //this.setState({ term: "" });
+    // We need to go and fetch data
+    this.props.fetchBygeneSymbol(this.state.term);
+    this.setState({ term: '' });
   }
 
   render() {
@@ -35,7 +36,7 @@ class SearchBar extends Component {
           onChange={this.onInputChange}
         />
         <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary">
+          <button type="submit" className="btn btn-primary">
             Submit
           </button>
         </span>
@@ -44,10 +45,10 @@ class SearchBar extends Component {
   }
 }
 
-//function mapDispatchToProps(dispatch) {
-//  return bindActionCreators({ fetchWeather }, dispatch);
-//}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchBygeneSymbol }, dispatch);
+}
 
-//export default connect(null, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);
 
-export default SearchBar;
+//export default SearchBar;

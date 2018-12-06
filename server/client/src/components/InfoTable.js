@@ -11,13 +11,7 @@ class InfoTable extends Component {
       ['Jaden Collins', 'Attorney', 'Santa Ana', 27, '$500,000'],
       ['Franky Rees', 'Business Analyst', 'St. Petersburg', 22, '$50,000'],
       ['Aaren Rose', 'Business Consultant', 'Toledo', 28, '$75,000'],
-      [
-        'Blake Duncan',
-        'Business Management Analyst',
-        'San Diego',
-        65,
-        '$94,000'
-      ],
+      ['Blake Duncan','Business Management Analyst','San Diego',65,'$94,000'],
       ['Frankie Parry', 'Agency Legal Counsel', 'Jacksonville', 71, '$210,000'],
       ['Lane Wilson', 'Commercial Specialist', 'Omaha', 19, '$65,000'],
       ['Robin Duncan', 'Business Analyst', 'Los Angeles', 20, '$77,000'],
@@ -27,13 +21,7 @@ class InfoTable extends Component {
       ['Frankie Long', 'Industrial Analyst', 'Austin', 31, '$170,000'],
       ['Brynn Robbins', 'Business Analyst', 'Norfolk', 22, '$90,000'],
       ['Justice Mann', 'Business Consultant', 'Chicago', 24, '$133,000'],
-      [
-        'Addison Navarro',
-        'Business Management Analyst',
-        'New York',
-        50,
-        '$295,000'
-      ],
+      ['Addison Navarro','Business Management Analyst','New York',50,'$295,000'],
       ['Jesse Welch', 'Agency Legal Counsel', 'Seattle', 28, '$200,000'],
       ['Eli Mejia', 'Commercial Specialist', 'Long Beach', 65, '$400,000'],
       ['Gene Leblanc', 'Industrial Analyst', 'Hartford', 34, '$110,000'],
@@ -46,13 +34,7 @@ class InfoTable extends Component {
       ['Silver Carey', 'Computer Scientist', 'Memphis', 47, '$250,000'],
       ['Franky Miles', 'Industrial Analyst', 'Buffalo', 49, '$190,000'],
       ['Glen Nixon', 'Corporate Counselor', 'Arlington', 44, '$80,000'],
-      [
-        'Gabby Strickland',
-        'Business Process Consultant',
-        'Scottsdale',
-        26,
-        '$45,000'
-      ],
+      ['Gabby Strickland','Business Process Consultant','Scottsdale',26,'$45,000'],
       ['Mason Ray', 'Computer Scientist', 'San Francisco', 39, '$142,000']
     ];
 

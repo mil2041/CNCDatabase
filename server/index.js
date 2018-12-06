@@ -5,6 +5,7 @@ const routes = require('./routes/geneQuery');
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 routes(app);
@@ -23,6 +24,6 @@ app.get('/', (req, res) => {
 });
 */
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5200;
 //PORT = 5000;
 app.listen(PORT);
