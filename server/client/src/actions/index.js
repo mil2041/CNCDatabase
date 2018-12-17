@@ -2,7 +2,7 @@ import axios from 'axios';
 import { FETCH_BYGENESYMBOL } from './types';
 
 export const fetchBygeneSymbol = hgncID => async dispatch => {
-  const request = await axios.get('/api/geneSymbol', {
+  const response = await axios.get('/api/geneSymbol', {
     params: {
       hgncID: hgncID
     }
@@ -16,9 +16,10 @@ export const fetchBygeneSymbol = hgncID => async dispatch => {
 
   //console.log('Received request', hgncID, exampleData);
   //dispatch({ type: FETCH_BYGENESYMBOL, payload: exampleData });
-  console.log('Received request', hgncID, request);
+  console.log('Received request', hgncID, response);
 
+    // only dispatch the content we have interest into the payload
     dispatch({ type: FETCH_BYGENESYMBOL, 
-               payload: request.data.rows 
+               payload: response.data.rows 
     });
 };

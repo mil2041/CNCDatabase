@@ -1,5 +1,7 @@
 //import 'materialize-css/dist/css/materialize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'antd/dist/antd.css'
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -17,13 +19,14 @@ import App from './components/App';
 import reducers from './reducers';
 
 //const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
-//const store = createStore(reducers, applyMiddleware(reduxThunk));
+const store = createStore(reducers, applyMiddleware(reduxThunk));
 
-const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
+//const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 
 ReactDOM.render(
   //<Provider store={store}>
-  <Provider store={createStoreWithMiddleware(reducers)}>
+  //<Provider store={createStoreWithMiddleware(reducers)}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.querySelector('#root')

@@ -24,24 +24,20 @@ class Header extends Component {
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
-          <div className="navbar-nav">
-            <a className="nav-item nav-link active" href="#">
-              Home <span className="sr-only">(current)</span>
-            </a>
-            <a className="nav-item nav-link" href="/search">
-              Search
-            </a>
-            <a className="nav-item nav-link" href="#">
-              Download
-            </a>
-            <a className="nav-item nav-link" href="#">
-              Help
-            </a>
-            <a className="nav-item nav-link" href="#">
-              Contact
-            </a>
-          </div>
-        </div>
+          <ul className="navbar-nav">
+            <li class="nav-item"><a className="nav-link active" href="#">Home <span className="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a className="nav-link" href="/search">Search</a></li>
+            <li class="nav-item"><a className="nav-link" href="#">Download</a></li>
+            <li class="nav-item"><a className="nav-link" href="#">Help</a></li>
+            <li class="nav-item"><a className="nav-link" href="#">Contact</a></li>
+          </ul>
+          
+         
+         </div>
+         <form class="form-inline">
+         <button class="btn btn-sm btn-outline-primary" type="button">Login</button>
+         </form>
+
       </nav>
     );
   }

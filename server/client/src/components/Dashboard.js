@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import SearchBar from './searches/Search_bar';
 //import TestTable from './tables/TestTable';
 import TestTable2 from './tables/TestTable2';
+import AndTableContainer2 from './tables/AntdTableContainer2';
 
 import InfoTable from './InfoTable';
 
@@ -21,19 +22,16 @@ class Dashboard extends Component {
             <SearchBar />
           </div>
         </div>
+        <br /> 
 
         <div className="card mt-3">
+          <h5 className="card-header">Search Results</h5>
           <div className="card-body">
-            <TestTable2 />
+            <AndTableContainer2 />
           </div>
         </div>
-
-        <div className="card mt-3">
-          <h5 className="card-header">Summary</h5>
-          <div className="card-body">
-            <InfoTable />
-          </div>
-        </div>
+       
+        
         <br />
       </div>
     );
