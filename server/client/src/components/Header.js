@@ -1,13 +1,43 @@
 import React, { Component } from 'react';
-//import { connect } from 'react-redux';
-//import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Button } from 'reactstrap';
 
 //# Home, Search, Download, Help, Contact
 
 class Header extends Component {
+
+
+   
+
+
+
+
+
+  renderContent(){
+     switch (this.props.auth){
+         case null:
+           // user not login yet
+           return;
+         case false:
+           // user already logged out
+           return <li><a href="/auth/google">Login</a></li>;
+           //return 'already logedout';
+         default:
+           // user already login
+           return <li><a href="/api/logout">Logout</a></li>;
+           //return 
+     }
+  }
+
+
+
   render() {
+    
+    //console.log(this.props);
+
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark py-md-3">
         <a className="navbar-brand" href="#">
           CNCDatabase
         </a>
@@ -25,22 +55,34 @@ class Header extends Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li class="nav-item"><a className="nav-link active" href="#">Home <span className="sr-only">(current)</span></a></li>
-            <li class="nav-item"><a className="nav-link" href="/search">Search</a></li>
-            <li class="nav-item"><a className="nav-link" href="#">Download</a></li>
-            <li class="nav-item"><a className="nav-link" href="#">Help</a></li>
-            <li class="nav-item"><a className="nav-link" href="#">Contact</a></li>
+            <li className="nav-item"><a className="nav-link active" href="#">Home <span className="sr-only">(current)</span></a></li>
+            <li className="nav-item"><a className="nav-link" href="/search">Search</a></li>
+            <li className="nav-item"><a className="nav-link" href="#">Download</a></li>
+            <li className="nav-item"><a className="nav-link" href="#">Help</a></li>
+            <li className="nav-item"><a className="nav-link" href="#">Contact</a></li>
           </ul>
           
          
-         </div>
-         <form class="form-inline">
-         <button class="btn btn-sm btn-outline-primary" type="button">Login</button>
-         </form>
+        </div>
+
+         {this.renderContent()}
+
+        <div>
+          <Button color="primary">Login</Button>{' '}
+        </div> 
 
       </nav>
     );
   }
 }
 
-export default Header;
+function mapStateToProps( state){
+   return { auth: state.auth };
+}
+
+//export default Header;
+export default connect(mapStateToProps)(Header);
+
+//<form className="form-inline">
+//         <button className="btn btn-sm btn-outline-primary" type="button">Login</button>
+//         </form>

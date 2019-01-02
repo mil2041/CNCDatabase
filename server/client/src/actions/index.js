@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_BYGENESYMBOL } from './types';
+import { FETCH_BYGENESYMBOL, FETCH_USER } from './types';
 
 export const fetchBygeneSymbol = hgncID => async dispatch => {
   const response = await axios.get('/api/geneSymbol', {
@@ -23,3 +23,12 @@ export const fetchBygeneSymbol = hgncID => async dispatch => {
                payload: response.data.rows 
     });
 };
+
+export const fetchUser = () => async dispatch => {
+     const res = await axios.get('/api/current_user');
+     
+     dispatch({
+             type: FETCH_USER,
+             payload: res.data
+          });
+};  

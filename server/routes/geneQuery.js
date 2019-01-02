@@ -29,7 +29,9 @@ module.exports = app => {
     //response.json({ name: request.query.hgncID });
     //
     pool.query(
-      'SELECT * FROM "noncodingmutations" WHERE "geneName" = $1',
+      'SELECT * FROM "noncodingdrivers" WHERE "gene" = $1',
+      //["TERT"],
+      //'SELECT * FROM "noncodingmutations" WHERE "geneName" = $1',
       [request.query.hgncID],
       (err, res) => {
         if (err) return next(err);
@@ -48,7 +50,8 @@ module.exports = app => {
     //response.json({ name: request.query.hgncID });
     //
     pool.query(
-      'SELECT * FROM "codingmutations" WHERE "tumorType" = $1',
+      //'SELECT * FROM "codingmutations" WHERE "tumorType" = $1',
+      'SELECT * FROM "noncodingdrivers" WHERE "cancerType" = $1',
       [request.query.tumorType],
       (err, res) => {
         if (err) return next(err);

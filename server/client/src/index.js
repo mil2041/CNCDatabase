@@ -1,6 +1,8 @@
 //import 'materialize-css/dist/css/materialize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'antd/dist/antd.css'
+import 'react-bootstrap-table-next/dist/react-bootstrap-table2.min.css';
+//import 'antd/dist/antd.css'
+import './index.css'
 
 import React from 'react';
 import ReactDOM from 'react-dom';
