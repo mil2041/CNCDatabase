@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
+import '../FontAwesome'
 import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
+
 import Header from './Header';
 import Landing from './Landing';
-import Studies from './Studies';
+import Studies from './studies/Studies';
 import Dashboard from './Dashboard';
 import SearchNew from './searches/SearchNew';
+
+import DataSetDownload from './dataset/DataSetDownload';
+import Documentation from './help/Documentation';
+import About from './about/About';
+
 import Footer from './Footer';
 
 import Login from './Login';
@@ -33,6 +40,9 @@ class App extends Component {
             <Route exact path="/studies" component={Studies} />
             <Route exact path="/search" component={Dashboard} />
             <Route exact path="/search/new" component={SearchNew} />
+            <Route exact path="/dataset" component={DataSetDownload} />
+            <Route exact path="/help" component={Documentation} />
+            <Route exact path="/about" component={About} />
             <Route exact path="/dataupdatefromuser" component={DataUpdateFromUser} />
           </div>
         </BrowserRouter>

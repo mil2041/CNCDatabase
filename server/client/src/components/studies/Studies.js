@@ -1,32 +1,38 @@
 import React, { Component } from 'react';
 //import { connect } from 'react-redux';
 //import { Link } from 'react-router-dom';
-import SearchBar from './searches/Search_bar';
+import SearchBar from '../searches/Search_bar';
 //import TestTable from './tables/TestTable';
 //import TestTable2 from './tables/TestTable2';
 //import AndTableContainer3 from './tables/AntdTableContainer3';
 
 //import InfoTable from './InfoTable';
-import ReactBootstrapTable from './tables/ReactBootstrapTable';
+import ReactBootstrapTable from '../tables/ReactBootstrapTable';
+import TestPlot from './TestPlot';
 
-class Dashboard extends Component {
+class Studies extends Component {
   render() {
     return (
       <div className="container col-10">
-        <div style={{ textAlign: 'center' }}>
-          <h1>CNCDatabase</h1>
+        <div className="pt-4">
+          <h1>Overview</h1>
+          <hr/>
           Cornell Non-coding database
         </div>
         <br />
-        <div className="card">
-          <div className="card-body">
-            <SearchBar />
-          </div>
-        </div>
+        <div>
+          <TestPlot/>
+        </div>  
+        <br/>
+        
         <br /> 
-        <div className="card mt-3">
-          <h5 className="card-header">Search Results</h5>
-          <div className="card-body">
+        <div className="mt-3">
+          <h5 >References</h5>
+          <hr/>
+          <div>
+            
+          </div>  
+          <div >
             <ReactBootstrapTable />
           </div>
         </div>
@@ -40,4 +46,4 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+export default Studies;
