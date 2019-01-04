@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
-//import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 //import { Link } from 'react-router-dom';
-import SearchBar from '../searches/Search_bar';
+//import SearchBar from '../searches/Search_bar';
 //import TestTable from './tables/TestTable';
 //import TestTable2 from './tables/TestTable2';
 //import AndTableContainer3 from './tables/AntdTableContainer3';
 
 //import InfoTable from './InfoTable';
-import ReactBootstrapTable from '../tables/ReactBootstrapTable';
+import ReactBootstrapTableForStudies from './ReactBootstrapTableForStudies';
 import TestPlot from './TestPlot';
 
+import { fetchAllStudies } from '../../actions';
+
 class Studies extends Component {
+
+  componentDidMount() {
+    // action
+    this.props.fetchAllStudies();
+  }
+
+
+
   render() {
     return (
       <div className="container col-10">
@@ -33,7 +43,7 @@ class Studies extends Component {
             
           </div>  
           <div >
-            <ReactBootstrapTable />
+          <ReactBootstrapTableForStudies />
           </div>
         </div>
         <br />
@@ -46,4 +56,10 @@ class Studies extends Component {
   }
 }
 
-export default Studies;
+//export default Studies;
+
+const mapStateToProps = ( state ) => {
+  return { dataByStudies: state.dataByStudies };
+}
+
+export default connect(mapStateToProps, { fetchAllStudies })(Studies);

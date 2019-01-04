@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ModalExample from './LoginModal';
 //# Home, Search, Download, Help, Contact
 
 class Header extends Component {
@@ -69,7 +70,7 @@ class Header extends Component {
          {this.renderContent()}
 
         <div>
-          <Button color="primary">Login</Button>{' '}
+          <ModalExample/>
         </div> 
 
       </nav>

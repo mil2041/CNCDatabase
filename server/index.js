@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 
 //const pool = require('./db');
 const routes = require('./routes/geneQuery');
+
 //const authRoutes = require('./routes/authRoutes');
 
 
@@ -33,6 +34,8 @@ app.use(bodyParser.json());
 routes(app);
 
 require('./routes/authRoutes')(app);
+require('./routes/studyQuery')(app);
+
 
 //app.get('/', (req, res) => res.sendFile('auth.html', { root : __dirname}));
 /*
