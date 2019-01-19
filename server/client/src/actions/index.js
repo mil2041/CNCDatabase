@@ -1,5 +1,25 @@
 import axios from 'axios';
-import { FETCH_BYGENESYMBOL, FETCH_USER, FETCH_ALL_STUDIES } from './types';
+import { FETCH_BYGENESYMBOL, FETCH_USER, FETCH_ALL_STUDIES, FETCH_GENE_SUMMARY, FETCH_WEATHER } from './types';
+
+const API_KEY = '2ad2c95c897fdc10fc483bd4107eec90';
+const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?APPID=${API_KEY}`;
+
+
+
+export const fetchWeather = city => async dispatch => {
+   const url = `${ROOT_URL}&q=${city},us`;
+   const response = await axios.get(url);
+
+   console.log("fetch weather",response)
+
+   dispatch({ type: FETCH_WEATHER,
+              payload: response  
+   }); 
+
+};
+
+
+
 
 export const fetchBygeneSymbol = hgncID => async dispatch => {
   const response = await axios.get('/api/geneSymbol', {
@@ -40,5 +60,20 @@ export const fetchAllStudies = () => async dispatch => {
   dispatch({
           type: FETCH_ALL_STUDIES,
           payload: res.data.rows
+       });
+};  
+
+export const fetchGeneSummary = hgncID => async dispatch => {
+  const response = await axios.get('/api/gene_summary', {
+    params: {
+      hgncID: hgncID
+    }
+  });
+  
+  console.log('Received gene summary action', hgncID, response);
+
+  dispatch({
+          type: FETCH_GENE_SUMMARY,
+          payload: response.data.rows
        });
 };  

@@ -8,7 +8,7 @@ import * as actions from '../actions';
 import Header from './header/Header';
 import Landing from './Landing';
 import Studies from './studies/Studies';
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard/Dashboard';
 import SearchNew from './searches/SearchNew';
 
 import DataSetDownload from './dataset/DataSetDownload';

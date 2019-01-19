@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchBygeneSymbol } from '../../actions/index';
+import { fetchBygeneSymbol, fetchGeneSummary, fetchWeather } from '../../actions/index';
+
 
 class SearchBar extends Component {
   constructor(props) {
@@ -23,6 +24,8 @@ class SearchBar extends Component {
 
     // We need to go and fetch data
     this.props.fetchBygeneSymbol(this.state.term);
+    this.props.fetchGeneSummary(this.state.term);
+    this.props.fetchWeather(this.state.term);
     this.setState({ term: '' });
   }
 
@@ -46,7 +49,7 @@ class SearchBar extends Component {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchBygeneSymbol }, dispatch);
+  return bindActionCreators({ fetchBygeneSymbol, fetchGeneSummary, fetchWeather }, dispatch);
 }
 
 export default connect(null, mapDispatchToProps)(SearchBar);

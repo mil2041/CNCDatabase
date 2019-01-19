@@ -41,6 +41,28 @@ module.exports = app => {
     );
   });
 
+  app.get('/api/gene_summary', (request, response, next) => {
+    //res.json({ geneSymbol: req.query.query });
+
+    //const { genename } = request.query.hgncID;
+    //response.json({ name: request.query.hgncID });
+    //
+    pool.query(
+      'SELECT symbol, name, locus_group, locus_type,status, ensembl_gene_id, hgnc_id, entrez_id, alias_symbol, gene_family,refseq_accession,omim_id FROM "gene_summary_test" WHERE "symbol" = $1',
+      //["TERT"],
+      //'SELECT * FROM "noncodingmutations" WHERE "geneName" = $1',
+      [request.query.hgncID],
+      (err, res) => {
+        if (err) return next(err);
+
+        response.json(res);
+      }
+    );
+  });
+
+
+
+
 //########
 
  app.get('/api/v1.0/tumorType', (request, response, next) => {
