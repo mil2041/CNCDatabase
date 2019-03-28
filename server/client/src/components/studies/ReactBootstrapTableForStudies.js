@@ -38,7 +38,7 @@ class ReactBootstrapTableForStudies extends React.Component {
             }
           }, 
           {
-            dataField: 'firstAuthorLastName',
+            dataField: 'first_author_last_name',
             text: 'Last Name',
             sort: true,
             filter: textFilter(),
@@ -47,7 +47,7 @@ class ReactBootstrapTableForStudies extends React.Component {
           }
           },
           {
-            dataField: 'journal',
+            dataField: 'journal_name',
             text: 'Journal',
             sort: true,
             filter: textFilter(),
@@ -83,7 +83,7 @@ class ReactBootstrapTableForStudies extends React.Component {
           );
           
           const options = {
-            paginationSize: 5,
+            paginationSize: 20,
             pageStartIndex: 0,
             // alwaysShowAllBtns: true, // Always show next and previous button
             // withFirstAndLast: false, // Hide the going to First and Last page button

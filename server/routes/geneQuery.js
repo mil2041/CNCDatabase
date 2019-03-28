@@ -29,10 +29,10 @@ module.exports = app => {
     //response.json({ name: request.query.hgncID });
     //
     pool.query(
-      'SELECT * FROM "noncodingdrivers" WHERE "gene" = $1',
+      'SELECT * FROM "noncoding_cancer_driver" WHERE "gene" = $1',
       //["TERT"],
       //'SELECT * FROM "noncodingmutations" WHERE "geneName" = $1',
-      [request.query.hgncID],
+      [request.query.geneSymbol],
       (err, res) => {
         if (err) return next(err);
 
@@ -48,10 +48,11 @@ module.exports = app => {
     //response.json({ name: request.query.hgncID });
     //
     pool.query(
-      'SELECT symbol, name, locus_group, locus_type,status, ensembl_gene_id, hgnc_id, entrez_id, alias_symbol, gene_family,refseq_accession,omim_id FROM "gene_summary_test" WHERE "symbol" = $1',
+      //'SELECT symbol, name, locus_group, locus_type,status, ensembl_gene_id, hgnc_id, entrez_id, alias_symbol, gene_family,refseq_accession,omim_id FROM "gene_summary_test" WHERE "symbol" = $1',
+      'SELECT external_gene_name, hgnc_symbol, hgncid, ensemblid, entrezgene, gene_type, description FROM "gene_summary" WHERE "external_gene_name" = $1',
       //["TERT"],
       //'SELECT * FROM "noncodingmutations" WHERE "geneName" = $1',
-      [request.query.hgncID],
+      [request.query.geneSymbol],
       (err, res) => {
         if (err) return next(err);
 

@@ -26,8 +26,16 @@ class GeneSummary extends React.Component {
         //console.log("gene summary datagene symbol", )
 
         return(
+             
+
              <tr>
-                 <td>{ cityData.map(a => a.symbol) } </td> 
+                 <li><b>Symbol:</b> { cityData.map(a => a.external_gene_name) } </li>
+                 <li><b>Approved name:</b> { cityData.map(a => a.hgnc_symbol) } </li>
+                 <li><b>HGNC ID:</b>{ cityData.map(a => a.hgncid) } </li>
+                 <li><b>Ensembl ID:</b> { cityData.map(a => a.ensemblid) } </li>
+                 <li><b>NCBI Gene ID:</b> { cityData.map(a => a.entrezgene) } </li>
+                 <li><b>Locus type:</b> { cityData.map(a => a.gene_type) } </li>
+                 <li><b>Description:</b> { cityData.map(a => a.description) } </li>
              </tr>
         );
     }    

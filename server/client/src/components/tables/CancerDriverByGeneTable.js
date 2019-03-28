@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { fetchBygeneSymbol } from '../../actions';
 
 
-class ReactTabulatorTable extends React.Component {
+class CancerDriverByGeneTable extends React.Component {
      
     componentDidMount() {
         // action
@@ -136,6 +136,6 @@ const mapStateToProps = ( state ) => {
     return { dataBygeneSymbol: state.dataBygeneSymbol };
 }
   
-export default connect(mapStateToProps, { fetchBygeneSymbol })(ReactTabulatorTable);
+export default connect(mapStateToProps, { fetchBygeneSymbol })(CancerDriverByGeneTable);
 
 //export default ReactTabulatorTable;

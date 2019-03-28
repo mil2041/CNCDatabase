@@ -8,7 +8,7 @@ import SearchBar from '../searches/Search_bar';
 
 //import InfoTable from './InfoTable';
 //import ReactBootstrapTable from './tables/ReactBootstrapTable';
-import ReactTabulatorTable from '../tables/ReactTabulatorTable';
+import CancerDriverByGeneTable from '../tables/CancerDriverByGeneTable';
 import GeneSummary from './GeneSummary';
 
 class Dashboard extends Component {
@@ -41,7 +41,7 @@ class Dashboard extends Component {
         <div className="card mt-3">
           <h5 className="card-header">Search Results</h5>
           <div className="card-body">
-            <ReactTabulatorTable />
+            <CancerDriverByGeneTable />
           </div>
         </div>
         <br />

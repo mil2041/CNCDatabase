@@ -21,10 +21,10 @@ export const fetchWeather = city => async dispatch => {
 
 
 
-export const fetchBygeneSymbol = hgncID => async dispatch => {
+export const fetchBygeneSymbol = geneSymbol => async dispatch => {
   const response = await axios.get('/api/geneSymbol', {
     params: {
-      hgncID: hgncID
+      geneSymbol: geneSymbol
     }
   });
 
@@ -36,7 +36,7 @@ export const fetchBygeneSymbol = hgncID => async dispatch => {
 
   //console.log('Received request', hgncID, exampleData);
   //dispatch({ type: FETCH_BYGENESYMBOL, payload: exampleData });
-  console.log('Received request', hgncID, response);
+  console.log('Received request', geneSymbol, response);
 
     // only dispatch the content we have interest into the payload
     dispatch({ type: FETCH_BYGENESYMBOL, 
@@ -63,14 +63,14 @@ export const fetchAllStudies = () => async dispatch => {
        });
 };  
 
-export const fetchGeneSummary = hgncID => async dispatch => {
+export const fetchGeneSummary = geneSymbol => async dispatch => {
   const response = await axios.get('/api/gene_summary', {
     params: {
-      hgncID: hgncID
+      geneSymbol: geneSymbol
     }
   });
   
-  console.log('Received gene summary action', hgncID, response);
+  console.log('Received gene summary action', geneSymbol, response);
 
   dispatch({
           type: FETCH_GENE_SUMMARY,
