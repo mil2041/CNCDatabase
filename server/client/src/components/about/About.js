@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 class About extends Component {
   render() {
     return (
-      <div className="container col-10">
+      <div className="container col-lg-10 py-3">
         <div className="pt-3 pb-5">
-        <h1>About</h1>
+        <h3>About</h3>
         <hr/>
         Cornell Non-coding database (CNCDatabase) is developed by <a href="http://khuranalab.med.cornell.edu/">Khurana lab</a> at <a href="https://weill.cornell.edu/">Weill Cornell Medicine</a>. 
         </div>

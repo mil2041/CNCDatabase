@@ -12,7 +12,7 @@ import QueryBarByGene from '../searches/Query_bar_by_gene';
 import CancerDriverByGeneTable from '../tables/CancerDriverByGeneTable';
 import GeneSummary from './GeneSummary';
 //import TabContent from './TabContent';
-import { Tabs, Tab } from 'react-bootstrap-tabs';
+//import { Tabs, Tab } from 'react-bootstrap-tabs';
 import TestPlot from '../studies/TestPlot';
 
 
@@ -25,8 +25,7 @@ class Dashboard_test extends Component {
         <br/>
         {/* <!-- Nav tabs --> */}
 
-        <Tabs onSelect={(index, label) => console.log(label + ' selected')}>
-           <Tab label="By Gene">
+        
                     <br />
                     <div className="card">
                     <div className="card-body">
@@ -59,24 +58,7 @@ class Dashboard_test extends Component {
                     </div>
                     </div>
                     <br />
-           </Tab>
-
-           <Tab label="By Cancer Type">
-                    <br />
-                    <div className="card">
-                    <div className="card-body">
-                        <SearchBarA />
-                    </div>
-                    </div>
-                    <br /> 
-           </Tab>
            
-           <Tab label="By Element Type">
-                    Tab 2 content
-           </Tab>
-        
-        
-        </Tabs>
         
         
       </div>
@@ -84,4 +66,4 @@ class Dashboard_test extends Component {
   }
 }
 
-//export default Dashboard_test;
+export default Dashboard_test;

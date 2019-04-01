@@ -3,10 +3,24 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
+import Showcase from './Showcase';
+
 
 class Landing extends Component {
   render() {
     return (
+      <div>
+
+
+        <Showcase/>
+
+
+
+      </div>
+
+
+
+
       <div className="container col-md-10">
 
        <div>  
@@ -62,4 +76,4 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+//export default Landing;

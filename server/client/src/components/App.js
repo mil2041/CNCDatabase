@@ -6,17 +6,17 @@ import * as actions from '../actions';
 
 
 import Header from './header/Header';
-import Landing from './Landing';
+import Landing from './landing/Landing';
 import Studies from './studies/Studies';
 import Dashboard from './dashboard/Dashboard';
-import Dashboard_test from './dashboard/Dashboard_test';
+import Dashboard_test from './dashboard/Dashboard_test_v2';
 import SearchNew from './searches/SearchNew';
 
 import DataSetDownload from './dataset/DataSetDownload';
-import Documentation from './help/Documentation';
+import Documentation from './faq/Documentation';
 import About from './about/About';
 
-import Footer from './Footer';
+import Footer from './footer/Footer';
 
 import Login from './Login';
 const DataUpdateFromUser = () => <h2>DataUpdateFromUser</h2>;
@@ -43,7 +43,7 @@ class App extends Component {
             <Route exact path="/search_test" component={Dashboard_test} />
             <Route exact path="/search/new" component={SearchNew} />
             <Route exact path="/dataset" component={DataSetDownload} />
-            <Route exact path="/help" component={Documentation} />
+            <Route exact path="/faq" component={Documentation} />
             <Route exact path="/about" component={About} />
             <Route exact path="/dataupdatefromuser" component={DataUpdateFromUser} />
           </div>
