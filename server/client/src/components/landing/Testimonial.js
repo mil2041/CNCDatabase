@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 //import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { Link } from 'react-router-dom';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 
 class Testimonial extends Component {

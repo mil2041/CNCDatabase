@@ -19,8 +19,8 @@ import About from './about/About';
 import Footer from './footer/Footer';
 
 import Login from './Login';
-const DataUpdateFromUser = () => <h2>DataUpdateFromUser</h2>;
-
+//const DataUpdateFromUser = () => <h2>DataUpdateFromUser</h2>;
+import FileUpload from './fileupload/FileUpload';
 
 class App extends Component {
 
@@ -45,7 +45,7 @@ class App extends Component {
             <Route exact path="/dataset" component={DataSetDownload} />
             <Route exact path="/faq" component={Documentation} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/dataupdatefromuser" component={DataUpdateFromUser} />
+            <Route exact path="/dataupdatefromuser" component={FileUpload} />
           </div>
         </BrowserRouter>
 

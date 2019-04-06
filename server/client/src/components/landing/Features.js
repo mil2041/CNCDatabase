@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 //import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { Link } from 'react-router-dom';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
+import { UndrawChoose, UndrawChecklist, UndrawWorkChat } from 'react-undraw-illustrations';
+
 
 class Features extends Component {
   render() {
@@ -27,7 +29,10 @@ class Features extends Component {
 
                 <div className="row">
                     <div className="col-lg-6">
-                        figure
+                            <UndrawChoose
+                                primaryColor='#6c68fb'
+                                height= '250px'
+                            />
                     </div> 
                     <div className="col-lg-6 text-left">
                         <h5> TERT promoter </h5>
@@ -46,7 +51,7 @@ class Features extends Component {
 
                 
 
-                <div className="row pt-5 pb-5">
+                <div className="row pt-5 pb-5 bg-light">
                     <div className="col-lg-6 text-left">
                         <h5> ESR1 enhancer </h5>
                         <hr/>
@@ -61,14 +66,20 @@ class Features extends Component {
                     </div>
                     
                     <div className="col-lg-6">
-                       figure
+                            <UndrawChecklist
+                                primaryColor='#6c68fb'
+                                height= '250px'
+                            />
                     </div>    
 
                 </div>
 
                 <div className="row pb-5">
                     <div className="col-lg-6">
-                        figure
+                        <UndrawWorkChat
+                          primaryColor='#6c68fb'
+                          height= '250px'
+                        />
                     </div> 
                     <div className="col-lg-6 text-left">
                         <h5> FOXA1 promoter </h5>

@@ -3,6 +3,11 @@ const mongoose = require('mongoose');
 const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys');
+
+
+const upload = require('./upload');
+const cors = require('cors');
+
 require('./models/User');
 require('./services/passport');
 
@@ -18,6 +23,17 @@ mongoose.connect(keys.mongoURI);
 
 
 const app = express();
+
+// file upload section
+const corsOptions ={
+    origin: '*',
+    optionsSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions))
+app.post('/upload',upload)
+
+// user login section
 
 app.use(
   cookieSession({

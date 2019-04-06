@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { FETCH_BYGENESYMBOL, FETCH_USER, FETCH_ALL_STUDIES, FETCH_GENE_SUMMARY, FETCH_WEATHER } from './types';
+import { FETCH_BYGENESYMBOL, FETCH_USER, 
+         FETCH_ALL_STUDIES, FETCH_GENE_SUMMARY, 
+         FETCH_WEATHER, FETCH_CANCER_DRIVER_LIST } from './types';
 
 const API_KEY = '2ad2c95c897fdc10fc483bd4107eec90';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?APPID=${API_KEY}`;
@@ -74,6 +76,24 @@ export const fetchGeneSummary = geneSymbol => async dispatch => {
 
   dispatch({
           type: FETCH_GENE_SUMMARY,
+          payload: response.data.rows
+       });
+};  
+
+export const fetchCancerDriverList = formValues => async dispatch => {
+  const response = await axios.get('/api/cancer_driver_list', {
+    params: {
+      geneSymbol: formValues.geneSymbol,
+      cancerType: formValues.cancerType,
+      evidenceType: formValues.evidenceType
+
+    }
+  });
+  
+  console.log('Received fetchCancerDriverList action', formValues, response);
+
+  dispatch({
+          type: FETCH_CANCER_DRIVER_LIST,
           payload: response.data.rows
        });
 };  

@@ -28,8 +28,11 @@ module.exports = app => {
     //const { genename } = request.query.hgncID;
     //response.json({ name: request.query.hgncID });
     //
+
+    console.log("geneSymbol server side ",request.query)
+
     pool.query(
-      'SELECT * FROM "noncoding_cancer_driver" WHERE "gene" = $1',
+      'SELECT pmid, cancertype, gene, element, mutatedsamplesize, cohortsize, evidencetype, evidencemethod FROM "noncoding_cancer_driver" WHERE "gene" = $1',
       //["TERT"],
       //'SELECT * FROM "noncodingmutations" WHERE "geneName" = $1',
       [request.query.geneSymbol],

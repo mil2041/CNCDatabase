@@ -81,6 +81,9 @@ function getSuggestions(value) {
     );
   }
   
+
+  
+
   class QueryBarByGene extends Component {
     constructor() {
       super();

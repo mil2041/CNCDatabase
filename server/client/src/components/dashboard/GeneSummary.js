@@ -5,7 +5,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchGeneSummary } from '../../actions';
 import { fetchWeather } from '../../actions';
-import _ from 'lodash';
+//import _ from 'lodash';
 
 class GeneSummary extends React.Component {
      

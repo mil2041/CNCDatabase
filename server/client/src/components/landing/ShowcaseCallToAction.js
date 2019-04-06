@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 //import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { Link } from 'react-router-dom';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
+import { UndrawBrowserStats } from 'react-undraw-illustrations';
 
 class ShowcaseCallToAction extends Component {
   render() {
@@ -12,7 +13,10 @@ class ShowcaseCallToAction extends Component {
             <div className="row">
                
                <div className="col-lg-6">
-                    figure
+                  <UndrawBrowserStats
+                    primaryColor='#4285f4'
+                    height= '150px'
+                  />
                </div>  
 
 

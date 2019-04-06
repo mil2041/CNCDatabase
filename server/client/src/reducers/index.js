@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { reducer as reduxForm } from 'redux-form';
+import { reducer as formReducer } from 'redux-form';
 import authReducer from './authReducer';
 import fetchBygeneSymbolReducer from './fetchBygeneSymbolReducer';
 import fetchStudies from './fetchStudies';
@@ -10,7 +10,7 @@ export default combineReducers({
    // key used in mapStateToProps function 
 
   auth: authReducer,
-  form: reduxForm,
+  form: formReducer,
   dataBygeneSymbol: fetchBygeneSymbolReducer,
   dataByStudies: fetchStudies,
   geneSummaryData: fetchGeneSummary,

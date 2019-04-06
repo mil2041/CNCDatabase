@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 //import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { Link } from 'react-router-dom';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
+import { UndrawAnalytics, UndrawData } from 'react-undraw-illustrations';
+
 
 class Showcase extends Component {
   render() {
@@ -24,6 +26,14 @@ class Showcase extends Component {
                    </button>
 
                </div>
+
+               <div className="col-lg-6">
+                    <UndrawData
+                        primaryColor='#6c68fb'
+                        height= '250px'
+                    />
+               </div>   
+
             </div>
          </div>
       </div>

@@ -31,68 +31,63 @@ class CancerDriverByGeneTable extends React.Component {
     }
 
 
-
+    //pmid, cancertype, gene, element, mutatedsamplesize, cohortsize, evidencetype, evidencemethod
 
         const columns = [
             {
               field: 'pmid',
               title: 'PMID',
-              formatter: pmidFormatter
+              formatter: pmidFormatter,
+              headerFilter: true,
+              align: 'center'
             }, 
             {
               field: 'cancertype',
-              title: 'Cancer Type'
+              title: 'Cancer Type',
+              headerFilter: true,
+              align: 'center'
               
             }, 
-            {
-              field: 'cancertype2',
-              title: 'Type'
-              
-            },
             {
               field: 'gene',
-              title: 'Gene Name'
+              title: 'Gene Name',
+              headerFilter: true,
+              align: 'center'
               
             }, 
-            {
-              field: 'ensemblID',
-              title: 'Ensembl ID'
-              
-            }, 
-            {
-              field: 'mutationType',
-              title: 'Mutation Type'
-              
-            },
             {
               field: 'element',
-              title: 'Element'
+              title: 'Element',
+              headerFilter: true,
+              align: 'center'
               
             }, 
             {
               field: 'mutatedsamplesize',
-              title: 'Mutated Sample Size'
+              title: 'Mutated Sample Size',
+              headerFilter: true,
+              align: 'center'
               
             }, 
             {
               field: 'cohortsize',
-              title: 'Cohort Size'
+              title: 'Cohort Size',
+              headerFilter: true,
+              align: 'center'
               
             },
             {
-              field: 'mutationrate',
-              title: 'Mutation Rate'
-              
-            }, 
-            {
               field: 'evidencetype',
-              title: 'Evidence Type'
+              title: 'Evidence Type',
+              headerFilter: true,
+              align: 'center'
               
             }, 
             {
               field: 'evidencemethod',
-              title: 'Evidence Method'
-              
+              title: 'Evidence Method',
+              headerFilter: true,
+              align: 'center'
             }
           ];
 
@@ -109,7 +104,8 @@ class CancerDriverByGeneTable extends React.Component {
                       data={data}
                       columns={columns}
                       tooltips={true}
-                      layout={"fitData"}
+                      layout={"fitColumns"}
+                      autoColumns={true}
                       options={options}
                   />
             </div>

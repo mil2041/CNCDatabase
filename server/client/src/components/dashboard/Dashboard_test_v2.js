@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 //import { connect } from 'react-redux';
 //import { Link } from 'react-router-dom';
 //import SearchBar from '../searches/Search_bar';
-import QueryBarByGene from '../searches/Query_bar_by_gene';
+//import QueryBarByGene from '../searches/Query_bar_by_gene';
+//import QueryForm2 from '../searches/QueryForm_v3';
+import QueryForm from '../searches/QueryForm';
+
 //import TestTable from './tables/TestTable';
 //import TestTable2 from './tables/TestTable2';
 //import AndTableContainer3 from './tables/AntdTableContainer3';
@@ -14,7 +17,7 @@ import GeneSummary from './GeneSummary';
 //import TabContent from './TabContent';
 //import { Tabs, Tab } from 'react-bootstrap-tabs';
 import TestPlot from '../studies/TestPlot';
-
+import ExamplePlot from '../plot/barPlot';
 
 class Dashboard_test extends Component {
   render() {
@@ -29,7 +32,9 @@ class Dashboard_test extends Component {
                     <br />
                     <div className="card">
                     <div className="card-body">
-                        <QueryBarByGene />
+                       <div className="col-lg-6">
+                        <QueryForm />
+                        </div>
                     </div>
                     </div>
                     <br /> 
@@ -45,7 +50,8 @@ class Dashboard_test extends Component {
                     <div className="card mt-3">
                     <h5 className="card-header">Graphical Summary</h5>
                     <div className="card-body">
-                        <TestPlot />
+                        
+                        <ExamplePlot />
                     </div>
                     </div>
                     <br />

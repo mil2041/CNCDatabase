@@ -1,8 +1,10 @@
 import React from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input, FormGroup } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, Input, FormGroup, Label } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import "./modal.css";
 
-class ModalExample extends React.Component {
+
+class ModalExample2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,6 +24,8 @@ class ModalExample extends React.Component {
     return (
       <div>
         <Button color="primary" onClick={this.toggle}>Login</Button>
+
+
         <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
           <ModalHeader toggle={this.toggle}>Login to Your Account</ModalHeader>
           <ModalBody>
@@ -29,21 +33,36 @@ class ModalExample extends React.Component {
                   <FontAwesomeIcon icon={["fab","google"]} color="white" size="1x" className="mr-2"/>
                   Sign in with Google
                </Button>{' '}
+
                <hr/>
+
+               
+
                <Form>
-					<Input type="text" name="user" placeholder="Username"/>
-					<Input type="password" name="pass" placeholder="Password"/>
-              {/*<FontAwesomeIcon icon={["fab","facebook"]} color="black" size="3x"/>*/}
-                    forget password
+                   <FormGroup>
+                        <Label for="email">Email</Label> 
+                        <Input type="text" name="email" id="email" placeholder=""/>
+
+                        <Label for="password">Password</Label> 
+                        <Input type="password" name="pass" id="password" placeholder=""/>
+                        {/*<FontAwesomeIcon icon={["fab","facebook"]} color="black" size="3x"/>*/}
+                        forget password
+                    </FormGroup>
 			   </Form>
+               <Button className="btn btn-lg btn-block" color="primary" onClick={this.toggle}>Login</Button>{' '}
           </ModalBody>
+
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>Login</Button>{' '}
+            
+            
           </ModalFooter>
+
         </Modal>
+
+
       </div>
     );
   }
 }
 
-export default ModalExample;
+export default ModalExample2;
