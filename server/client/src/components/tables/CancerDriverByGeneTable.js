@@ -1,5 +1,7 @@
 import React from 'react';
 //import 'react-tabulator/lib/styles.css';
+//import 'react-tabulator/lib/css/bootstrap/tabulator_bootstrap4.min.css';
+//import 'react-tabulator/lib/css/tabulator.min.css';
 import { ReactTabulator} from 'react-tabulator';
 //import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -39,7 +41,8 @@ class CancerDriverByGeneTable extends React.Component {
               title: 'PMID',
               formatter: pmidFormatter,
               headerFilter: true,
-              align: 'center'
+              align: 'center',
+              headerTooltip:true
             }, 
             {
               field: 'cancertype',
@@ -93,8 +96,9 @@ class CancerDriverByGeneTable extends React.Component {
 
         const options = {
             pagination: "local",
-            paginationSize: 50,
+            paginationSize: 20,
             paginationButtonCount:3,
+            paginationSizeSelector:[5,10,20,50,100],
             footerElement: "<button>Custom Button</button>",
           };
 
@@ -104,6 +108,7 @@ class CancerDriverByGeneTable extends React.Component {
                       data={data}
                       columns={columns}
                       tooltips={true}
+                      headerTooltip={true}
                       layout={"fitColumns"}
                       autoColumns={true}
                       options={options}

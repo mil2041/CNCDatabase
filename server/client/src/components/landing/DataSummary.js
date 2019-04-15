@@ -13,27 +13,27 @@ class DataSummary extends Component {
             <br/>
             <div className="container d-flex justify-content-center px-5">
                <div className="col-lg-3 box-auto text-center">
-                   <h1 className="text-dark"> 1200+ </h1>
+                   <h1 className="text-dark"> 928 </h1>
                    <hr/>
-                   <p>  non-coding driver genes from computational predictions   
+                   <p>  non-coding drivers from computational predictions   
                         
                    </p>
                    
                </div>
 
                <div className="col-lg-3 box-auto text-center">
-                   <h1> 8 </h1>
+                   <h1> 9 </h1>
                    <hr/>
-                   <p>  non-coding driver genes with gene expression supports  
+                   <p>  non-coding drivers with gene expression supports  
                         
                    </p>
                    
                </div>
 
                <div className="col-lg-3 box-auto text-center">
-                   <h1> 10 </h1>
+                   <h1> 18 </h1>
                    <hr/>
-                   <p>  non-coding driver genes with experimental validations   
+                   <p>  non-coding drivers with experimental validations   
                         
                    </p>
                    
@@ -49,7 +49,7 @@ class DataSummary extends Component {
                </div>
 
                <div className="col-lg-3 box-auto text-center">
-                   <h1> 20 </h1>
+                   <h1> 18 </h1>
                    <hr/>
                    <p>  publications   
                         
