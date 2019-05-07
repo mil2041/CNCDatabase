@@ -40,7 +40,7 @@ class DataSummary extends Component {
                </div>
 
                <div className="col-lg-3 box-auto text-center">
-                   <h1> 20 </h1>
+                   <h1> 27 </h1>
                    <hr/>
                    <p>  cancer types   
                         
