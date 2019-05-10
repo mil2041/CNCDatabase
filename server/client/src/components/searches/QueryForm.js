@@ -3,15 +3,15 @@ import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 //import queryString from 'query-string';
 //import { bindActionCreators } from 'redux';
-import { fetchBygeneSymbol, fetchGeneSummary, fetchWeather } from '../../actions/index';
-import { fetchCancerDriverList } from '../../actions/index'
+import { fetchBygeneSymbol, fetchGeneSummary } from '../../actions/index';
+//import { fetchCancerDriverList } from '../../actions/index'
 //import Autosuggest from 'react-autosuggest';
 //import AutosuggestHighlightMatch from 'autosuggest-highlight/match';
 //import AutosuggestHighlightParse from 'autosuggest-highlight/parse';
 //import EvidenceTypeInput from './evidenceTypeSelect';
-import QueryBarByGene from './Query_bar_by_gene';
-import EvidenceTypeInput from './evidenceTypeSelect';
-import EvidenceTypeInput2 from './evidenceTypeSelect2';
+//import QueryBarByGene from './Query_bar_by_gene';
+//import EvidenceTypeInput from './evidenceTypeSelect';
+//import EvidenceTypeInput2 from './evidenceTypeSelect2';
 import RFReactSelect from './RFReactSelect';
 
 class QueryForm extends Component {
@@ -39,9 +39,9 @@ class QueryForm extends Component {
    render(){
 
        const myOptions = [
-        { value: 'chocolate', label: 'Computational prediction' },
-        { value: 'strawberry', label: 'Gene expression change' },
-        { value: 'vanilla', label: 'Expreriment' }
+        { value: 'computational prediction', label: 'Computational prediction' },
+        { value: 'gene expression association', label: 'Gene expression change' },
+        { value: 'experimental validation', label: 'Expreriment' }
       ]
 
 

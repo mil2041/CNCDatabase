@@ -1,15 +1,15 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
-const passport = require('passport');
+//const mongoose = require('mongoose');
+//const cookieSession = require('cookie-session');
+//const passport = require('passport');
 const keys = require('./config/keys');
 
 
-const upload = require('./upload');
-const cors = require('cors');
+//const upload = require('./upload');
+//const cors = require('cors');
 
-require('./models/User');
-require('./services/passport');
+//require('./models/User');
+//require('./services/passport');
 
 const bodyParser = require('body-parser');
 
@@ -19,30 +19,31 @@ const routes = require('./routes/geneQuery');
 //const authRoutes = require('./routes/authRoutes');
 
 
-mongoose.connect(keys.mongoURI);
+//mongoose.connect(keys.mongoURI);
 
 
 const app = express();
 
 // file upload section
-const corsOptions ={
-    origin: '*',
-    optionsSuccessStatus: 200,
-}
+//const corsOptions ={
+//    origin: '*',
+//    optionsSuccessStatus: 200,
+//}
 
-app.use(cors(corsOptions))
-app.post('/upload',upload)
+//app.use(cors(corsOptions))
+//app.post('/upload',upload)
 
 // user login section
 
-app.use(
-  cookieSession({
-     maxAge: 30 * 24 * 60 * 60 * 1000,
-     keys: [keys.cookieKey]
-  })
-);
-app.use(passport.initialize());
-app.use(passport.session());
+//app.use(
+//  cookieSession({
+//     maxAge: 30 * 24 * 60 * 60 * 1000,
+//     keys: [keys.cookieKey]
+//  })
+//);
+
+//app.use(passport.initialize());
+//app.use(passport.session());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -73,16 +74,20 @@ app.get('/', (req, res) => {
 
 //
 
-if (process.env.NODE_ENV === 'production'){
-
+//if (process.env.NODE_ENV === 'production'){
+    
+    // Express will serve up production assets
+    // like main.js and main.css
     app.use(express.static('client/build'));    
 
+    // Express will serve up the index.html file
+    // if it doesn't recognize the route    
     const path = require('path');
     app.get('*', (req,res) => {
          res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     }); 
 
-}
+//}
 
 
 

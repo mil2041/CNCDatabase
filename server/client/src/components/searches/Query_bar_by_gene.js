@@ -9,23 +9,23 @@ import AutosuggestHighlightParse from 'autosuggest-highlight/parse';
 // Imagine you have a list of languages that you'd like to autosuggest.
 const people = [
     {
-      first: 'GBM - Charlie',
-      last: 'Brown',
+      first: '(GBM) - ',
+      last: 'Glioblastoma Multiforme',
       twitter: 'dancounsell'
     },
     {
-      first: 'BRCA - Charlotte',
-      last: 'White',
+      first: '(BRCA) - ',
+      last: 'Breast Invasive Carcinoma',
       twitter: 'mtnmissy'
     },
     {
-      first: 'Chloe',
-      last: 'Jones',
+      first: '(BLCA) - ',
+      last: 'Bladder Urothelial Carcinoma',
       twitter: 'ladylexy'
     },
     {
-      first: 'Cooper',
-      last: 'King',
+      first: '(ESAD) - ',
+      last: 'Esophageal Carcinoma',
       twitter: 'steveodom'
     }
 ];
@@ -125,7 +125,7 @@ function getSuggestions(value) {
   
       // Autosuggest will pass through all these props to the input.
       const inputProps = {
-        placeholder: 'Type a gene name: TERT',
+        placeholder: 'cancer type: GBM',
         value,
         onChange: this.onChange
       };

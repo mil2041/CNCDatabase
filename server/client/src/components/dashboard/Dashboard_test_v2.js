@@ -4,7 +4,8 @@ import React, { Component } from 'react';
 //import SearchBar from '../searches/Search_bar';
 //import QueryBarByGene from '../searches/Query_bar_by_gene';
 //import QueryForm2 from '../searches/QueryForm_v3';
-import QueryForm from '../searches/QueryForm';
+//import QueryForm from '../searches/QueryForm';
+import QueryFormV5 from '../searches/QueryFormV5';
 
 //import TestTable from './tables/TestTable';
 //import TestTable2 from './tables/TestTable2';
@@ -16,8 +17,9 @@ import CancerDriverByGeneTable from '../tables/CancerDriverByGeneTable';
 import GeneSummary from './GeneSummary';
 //import TabContent from './TabContent';
 //import { Tabs, Tab } from 'react-bootstrap-tabs';
-import TestPlot from '../studies/TestPlot';
+//import TestPlot from '../studies/TestPlot';
 import ExamplePlot from '../plot/barPlot';
+import QueryBarByGene from '../searches/Query_bar_by_gene';
 
 class Dashboard_test extends Component {
   render() {
@@ -31,9 +33,12 @@ class Dashboard_test extends Component {
         
                     <br />
                     <div className="card">
+                    <h5 className="card-header">Search cancer driver list</h5>
                     <div className="card-body">
                        <div className="col-lg-6">
-                        <QueryForm />
+                        TEST
+                        <QueryBarByGene />
+                        <QueryFormV5 />
                         </div>
                     </div>
                     </div>

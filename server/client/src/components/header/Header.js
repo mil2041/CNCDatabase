@@ -67,10 +67,10 @@ class Header extends Component {
          
         </div>
 
-         {this.renderContent()}
+         {/* {this.renderContent()} */}
 
         <div>
-          <ModalExample2/>
+         {/* <ModalExample2/> */}
         </div> 
 
       </nav>

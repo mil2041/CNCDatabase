@@ -20,7 +20,7 @@ class GeneSummary extends React.Component {
         //const data = geneSummaryData
 
         //const c1 = Object.values(data)
-        const data2 = [{ name: 'Hot', name2: 'Hot2'}]
+        //const data2 = [{ name: 'Hot', name2: 'Hot2'}]
         //console.log("cityData", data2[0].name2)
         console.log("cityData", cityData.map(a => a.symbol))
         //console.log("gene summary datagene symbol", )

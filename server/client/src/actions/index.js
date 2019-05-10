@@ -30,11 +30,11 @@ export const fetchBygeneSymbol = geneSymbol => async dispatch => {
     }
   });
 
-  const exampleData = [
-    { geneName: 'Jane' },
-    { geneName: 'Alex' },
-    { geneName: 'Jim' }
-  ];
+  //const exampleData = [
+  //  { geneName: 'Jane' },
+  //  { geneName: 'Alex' },
+  //  { geneName: 'Jim' }
+  // ];
 
   //console.log('Received request', hgncID, exampleData);
   //dispatch({ type: FETCH_BYGENESYMBOL, payload: exampleData });
