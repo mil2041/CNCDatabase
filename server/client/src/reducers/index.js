@@ -4,6 +4,7 @@ import authReducer from './authReducer';
 import fetchBygeneSymbolReducer from './fetchBygeneSymbolReducer';
 import fetchStudies from './fetchStudies';
 import fetchGeneSummary from './fetchGeneSummaryReducer';
+import fetchCancerDriverList from './fetchCancerDriverListReducer';
 import fetchWeather from './weatherReducer';
 
 export default combineReducers({
@@ -14,6 +15,7 @@ export default combineReducers({
   dataBygeneSymbol: fetchBygeneSymbolReducer,
   dataByStudies: fetchStudies,
   geneSummaryData: fetchGeneSummary,
+  dataCancerDriverList: fetchCancerDriverList,
   weather: fetchWeather
 
 });

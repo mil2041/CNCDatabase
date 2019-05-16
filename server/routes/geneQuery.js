@@ -44,6 +44,71 @@ module.exports = app => {
     );
   });
 
+//######
+
+app.get('/api/cancer_driver_list', (request, response, next) => {
+  //res.json({ geneSymbol: req.query.query });
+
+  //const { genename } = request.query.hgncID;
+  //response.json({ name: request.query.hgncID });
+  //
+
+  console.log("cancer driver server side ",request.query)
+
+  const params = [];
+  //let sql = 'SELECT pmid, cancertype, gene, element, mutatedsamplesize, cohortsize, evidencetype, evidencemethod FROM "noncoding_cancer_driver" WHERE "gene" = $1 AND "cancertype" = $2';
+  let sql = 'SELECT pmid, cancertype, gene, element, mutatedsamplesize, cohortsize, evidencetype, evidencemethod FROM "noncoding_cancer_driver2" where 1 = 1';
+
+  if( request.query.geneSymbol !== ""){
+       sql += ' and gene = ?';
+       params.push(request.query.geneSymbol);
+  }
+
+  if( request.query.cancerType !== ""){
+    sql += ' and cancertype = ?';
+    params.push(request.query.cancerType);
+  }
+
+  if( request.query.evidenceType !== ""){
+    sql += ' and evidencetype = ?';
+    params.push(request.query.evidenceType);
+  }
+
+
+  // replace ? to oridnal parameter by toOrdinal from pg-parameterzie
+  // https://github.com/bergur/pg-parameterize 
+  let index = 1;
+  ordinalString = sql;
+  while(ordinalString.indexOf('?') !== -1 ){
+    ordinalString = ordinalString.replace('?','$' + index)
+    index++
+  }
+
+
+  console.log("sql", sql)
+  console.log("params", params)
+  console.log("ordinalString",ordinalString)
+
+  pool.query(
+    //'SELECT pmid, cancertype, gene, element, mutatedsamplesize, cohortsize, evidencetype, evidencemethod FROM "noncoding_cancer_driver" WHERE "gene" = $1 AND "cancertype" = $2',
+    //["TERT"],
+    //'SELECT * FROM "noncodingmutations" WHERE "geneName" = $1',
+    ordinalString,
+    params,
+    (err, res) => {
+      if (err) return next(err);
+
+      response.json(res);
+    }
+  );
+});
+
+
+
+
+
+//######
+
   app.get('/api/gene_summary', (request, response, next) => {
     //res.json({ geneSymbol: req.query.query });
 

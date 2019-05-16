@@ -14,6 +14,8 @@ import QueryFormV5 from '../searches/QueryFormV5';
 //import InfoTable from './InfoTable';
 //import ReactBootstrapTable from './tables/ReactBootstrapTable';
 import CancerDriverByGeneTable from '../tables/CancerDriverByGeneTable';
+import CancerDriverListTable from '../tables/CancerDriverListTable';
+
 import GeneSummary from './GeneSummary';
 //import TabContent from './TabContent';
 //import { Tabs, Tab } from 'react-bootstrap-tabs';
@@ -36,8 +38,7 @@ class Dashboard_test extends Component {
                     <h5 className="card-header">Search cancer driver list</h5>
                     <div className="card-body">
                        <div className="col-lg-6">
-                        TEST
-                        <QueryBarByGene />
+                        
                         <QueryFormV5 />
                         </div>
                     </div>
@@ -65,7 +66,7 @@ class Dashboard_test extends Component {
                     <div className="card mt-3">
                     <h5 className="card-header">Search Results</h5>
                     <div className="card-body">
-                        <CancerDriverByGeneTable />
+                        <CancerDriverListTable />
                     </div>
                     </div>
                     <br />

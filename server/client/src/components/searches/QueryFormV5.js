@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchBygeneSymbol, fetchGeneSummary } from '../../actions/index';
 //import QueryBarByGene from './Query_bar_by_gene';
-//import { fetchCancerDriverList } from '../../actions/index'
+import { fetchCancerDriverList } from '../../actions/index'
 //import Autosuggest from 'react-autosuggest';
 //import AutosuggestHighlightMatch from 'autosuggest-highlight/match';
 //import AutosuggestHighlightParse from 'autosuggest-highlight/parse';
@@ -30,9 +30,13 @@ class QueryFormV5 extends Component {
             onSubmit={(values, { setSubmitting }) => {
                 setTimeout(() => {
                 //alert(JSON.stringify(values, null, 2));
-                console.log("submit values", values)
-                this.props.fetchBygeneSymbol(values.geneSymbol);
+                console.log("form submit values", values)
+                //this.props.fetchBygeneSymbol(values.geneSymbol);
+
                 this.props.fetchGeneSummary(values.geneSymbol);
+
+                this.props.fetchCancerDriverList(values);
+
                 setSubmitting(false);
                 }, 5);
             }}
@@ -137,7 +141,7 @@ class QueryFormV5 extends Component {
 //export default QueryFormV5;
 
 function mapDispatchToProps(dispatch) {
-    return bindActionCreators({ fetchBygeneSymbol, fetchGeneSummary }, dispatch);
-  }
+    return bindActionCreators({ fetchBygeneSymbol, fetchGeneSummary, fetchCancerDriverList }, dispatch);
+}
   
 export default connect(null, mapDispatchToProps)(QueryFormV5);
