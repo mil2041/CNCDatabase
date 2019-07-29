@@ -8,9 +8,9 @@ import * as actions from '../actions';
 import Header from './header/Header';
 import Landing from './landing/Landing';
 import Studies from './studies/Studies';
+//import Dashboard from './dashboard/Dashboard';
 import Dashboard from './dashboard/Dashboard';
-import Dashboard_test from './dashboard/Dashboard_test_v2';
-import SearchNew from './searches/SearchNew';
+//import SearchNew from './searches/SearchNew';
 
 import DataSetDownload from './dataset/DataSetDownload';
 import Documentation from './faq/Documentation';
@@ -40,8 +40,6 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Route exact path="/studies" component={Studies} />
             <Route exact path="/search" component={Dashboard} />
-            <Route exact path="/search_test" component={Dashboard_test} />
-            <Route exact path="/search/new" component={SearchNew} />
             <Route exact path="/dataset" component={DataSetDownload} />
             <Route exact path="/faq" component={Documentation} />
             <Route exact path="/about" component={About} />
