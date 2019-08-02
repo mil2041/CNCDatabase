@@ -8,12 +8,12 @@ import { TwitterTimelineEmbed } from 'react-twitter-embed';
 class ReleaseNote extends Component {
   render() {
     return (
-      <div className="pt-3 pb-3 ">
+      <div className="py-3 bg-light">
          <div className="container col-lg-10">
             <div className="row">
                <div className="col-lg-6 text-left">
                    
-                   <h1> News </h1>
+                   <h5> Release notes </h5>
                    <hr/>
                    <span className="text-info">March 10, 2019 <br/> </span>
                    <ul> 
@@ -29,6 +29,20 @@ class ReleaseNote extends Component {
                    </ul>
                    
 
+               </div>
+
+               <div className="col-lg-6 text-left">
+                   <h5> News @cncdatabase</h5>
+                   <hr/>
+
+                   <TwitterTimelineEmbed
+                      sourceType="profile"
+                      screenName="ekta_khurana"
+                      noHeader
+                      options={{height: 400}}
+                   />
+                   
+                   
                </div>
 
             </div>

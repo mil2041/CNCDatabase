@@ -10,10 +10,12 @@ CNCDatabase aims to collect non-coding cancer driver lists
 from public publications and to complement the understanding beyond
 protein coding region in the genome.
 
+---
 
 ##### How do I cite the CNCDatabase?
 Please cite Liu et al, CNCDatabase: Cornall non-coding database. Database (2019)
 
+---
 
 ##### How do I get update on new non-coding cancer driver list
 Please subscribe our mailing list or follow @abc on **Twitter**. 

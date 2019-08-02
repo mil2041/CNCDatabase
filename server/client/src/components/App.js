@@ -13,7 +13,7 @@ import Dashboard from './dashboard/Dashboard';
 //import SearchNew from './searches/SearchNew';
 
 import DataSetDownload from './dataset/DataSetDownload';
-import Documentation from './faq/Documentation';
+import Documentation from './documentation/Documentation_v2';
 import About from './about/About';
 
 import Footer from './footer/Footer';
@@ -41,9 +41,9 @@ class App extends Component {
             <Route exact path="/studies" component={Studies} />
             <Route exact path="/search" component={Dashboard} />
             <Route exact path="/dataset" component={DataSetDownload} />
-            <Route exact path="/faq" component={Documentation} />
+            <Route exact path="/documentation" component={Documentation} />
             <Route exact path="/about" component={About} />
-            <Route exact path="/dataupdatefromuser" component={FileUpload} />
+            <Route exact path="/submission" component={FileUpload} />
           </div>
         </BrowserRouter>
 

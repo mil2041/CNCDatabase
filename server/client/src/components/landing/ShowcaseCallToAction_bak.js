@@ -12,7 +12,15 @@ class ShowcaseCallToAction extends Component {
          <div className="container col-lg-10">
             <div className="row">
                
-               <div className="col-lg-10 text-center">
+               <div className="col-lg-6">
+                  <UndrawBrowserStats
+                    primaryColor='#4285f4'
+                    height= '150px'
+                  />
+               </div>  
+
+
+               <div className="col-lg-6 text-left">
                    <h5> Cornell Non-Coding cancer driver Database </h5>
                    <hr/>
                    <p>  Try query by gene name or by cancer type  .   

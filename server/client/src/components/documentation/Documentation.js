@@ -50,7 +50,7 @@ class Documentation extends Component {
 
     return (
       <div className="container col-lg-10 py-3">
-        <h3>FAQs</h3>
+        <h3>Documentation</h3>
         <hr/>
         <ReactMarkdown 
            skipHtml={false}

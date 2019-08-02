@@ -5,7 +5,9 @@ import React, { Component } from 'react';
 //import QueryBarByGene from '../searches/Query_bar_by_gene';
 //import QueryForm2 from '../searches/QueryForm_v3';
 //import QueryForm from '../searches/QueryForm';
-import QueryForm from '../searches/QueryFormV6';
+import QueryForm from '../searches/QueryFormV7';
+
+import MyForm from '../searches/QueryFormTest';
 
 //import TestTable from './tables/TestTable';
 //import TestTable2 from './tables/TestTable2';
@@ -39,7 +41,7 @@ class Dashboard extends Component {
                     <div className="card-body">
                        <div className="col-lg-6">
                         
-                        <QueryForm />
+                        <MyForm />
                         </div>
                     </div>
                     </div>

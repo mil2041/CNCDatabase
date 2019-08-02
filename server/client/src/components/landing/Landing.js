@@ -4,9 +4,12 @@ import React, { Component } from 'react';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 import Showcase from './Showcase';
-//import DataSummary from './DataSummary';
+import DataSummary from './DataSummary';
 import ReleaseNote from './ReleaseNote';
 import Features from './Features';
+import Introduction from './Introduction';
+import Citation from './Citation';
+
 //import EmailSubscribe from './EmailSubscribe';
 //import Testimonial from './Testimonial';
 import ShowcaseCallToAction from './ShowcaseCallToAction';
@@ -18,12 +21,16 @@ class Landing extends Component {
 
 
         <Showcase/>
+        <Introduction/>
+        <DataSummary/>
         <Features/>
+        
         <ReleaseNote/>
+        <Citation/>
 
         {/*<Testimonial/> */}
         
-        <ShowcaseCallToAction/>  
+        {/*<ShowcaseCallToAction/> */} 
         {/*<EmailSubscribe/> */}
 
       </div>

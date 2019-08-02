@@ -12,22 +12,18 @@ class Showcase extends Component {
       <div className="py-5 bg-light">
          <div className="container col-lg-10">
             <div className="row">
-               <div className="col-lg-6 text-left">
-                   <h1> CNCDatabase </h1>
-                   <h5> Cornell Non-Coding cancer driver Database </h5>
+               <div className="col-lg-8 text-left">
+                   <h1> CNCDatabase: </h1>
+                   <h2> Cornell Non-Coding cancer driver Database </h2>
                    <hr/>
-                   <p>  CNCDatabase aims to collect non-coding cancer driver lists
-                        from public publications and to complement the understanding beyond
-                        protein coding region in the genome.   
-                        
-                   </p>
+                   
                    <button type="submit" className="btn btn-primary btn-lg">
                         Get Started
                    </button>
 
                </div>
 
-               <div className="col-lg-6">
+               <div className="col-lg-4">
                     <UndrawData
                         primaryColor='#6c68fb'
                         height= '250px'
