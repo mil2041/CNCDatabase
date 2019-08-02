@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 import { UndrawData } from 'react-undraw-illustrations';
@@ -18,14 +18,19 @@ class Showcase extends Component {
                    <hr/>
                    
                    <button type="submit" className="px-2 btn btn-primary btn-lg">
-                        <Link to="/search"> Get Started </Link>
+                        Get Started
                    </button>
                
                
 
                </div>
 
-               
+               <div className="col-lg-4">
+                    <UndrawData
+                        primaryColor='#6c68fb'
+                        height= '250px'
+                    />
+               </div>   
 
             </div>
          </div>

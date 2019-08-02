@@ -17,7 +17,7 @@ class DataSummary extends Component {
                
                 
 
-                <img src={summary_figure} alt="summary" width="750" height="500"/>
+                <img src={summary_figure} alt="summary" width="85%" height="85%"/>
 
 
             </div>
