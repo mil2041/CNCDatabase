@@ -15,7 +15,7 @@ class Intorduction extends Component {
                 
 
 
-                <div className="row py-4 col-lg-10">
+                <div className="row pt-3 pb-1 col-lg-10">
                     <h1 className="text-left"> Intorduction </h1>
                     <p>   Most mutations from whole genome sequencing data occur in the non-coding region 
                           with unknown impact to the tumor development. Although the advances in the study 
