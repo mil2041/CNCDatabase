@@ -19,15 +19,15 @@ class Features extends Component {
                     <h1 className="text-left"> Features of CNCDatabase </h1>
                     <ul>
                       <li>
-                         <p>Mutated non-coding regions also have ability to regulate gene expression and promoter cancer progression.</p>
+                         <p> Query non-coding cancer drivers evidences by gene name, element type, cancer type or evidence type.</p>
                       </li>
 
                       <li>
-                         <p>Mutated non-coding regions also have ability to regulate gene expression and promoter cancer progression.</p>
+                         <p> Illustrate the query results in summary plots.</p>
                       </li>
 
                       <li>
-                         <p>Mutated non-coding regions also have ability to regulate gene expression and promoter cancer progression.</p>
+                         <p> Prioritize non-coding cancer driver candidates for follow-up experiments. </p>
                       </li>
 
 
