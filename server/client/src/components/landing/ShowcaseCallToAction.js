@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 //import { Link } from 'react-router-dom';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
-import { UndrawBrowserStats } from 'react-undraw-illustrations';
+//import { UndrawBrowserStats } from 'react-undraw-illustrations';
 
 class ShowcaseCallToAction extends Component {
   render() {
