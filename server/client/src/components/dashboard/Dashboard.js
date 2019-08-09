@@ -30,7 +30,7 @@ class Dashboard extends Component {
     return (
       <div className="container col-10">
         <br/> 
-        <h2>Search cancer driver</h2>
+        <h1>Search cancer driver</h1>
         <br/>
         {/* <!-- Nav tabs --> */}
 
@@ -41,11 +41,19 @@ class Dashboard extends Component {
                     <div className="card-body">
                        <div className="col-lg-6">
                         
-                        <MyForm />
+                        <QueryForm />
                         </div>
                     </div>
                     </div>
                     <br /> 
+                    
+                    <div className="card mt-3">
+                    <h5 className="card-header">Query form test</h5>
+                    <div className="card-body">
+                        <MyForm />
+                    </div>
+                    </div>
+                    <br />
 
                     <div className="card mt-3">
                     <h5 className="card-header">Gene overview (provided by HGNC)</h5>
