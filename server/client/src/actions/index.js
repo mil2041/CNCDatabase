@@ -84,6 +84,7 @@ export const fetchCancerDriverList = formValues => async dispatch => {
   const response = await axios.get('/api/cancer_driver_list', {
     params: {
       geneSymbol: formValues.geneSymbol,
+      elementType: formValues.elementType,
       cancerType: formValues.cancerType,
       evidenceType: formValues.evidenceType
 

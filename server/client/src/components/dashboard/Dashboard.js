@@ -5,9 +5,13 @@ import React, { Component } from 'react';
 //import QueryBarByGene from '../searches/Query_bar_by_gene';
 //import QueryForm2 from '../searches/QueryForm_v3';
 //import QueryForm from '../searches/QueryForm';
-import QueryForm from '../searches/QueryFormV7';
 
-import MyForm from '../searches/QueryFormTest';
+//import QueryForm from '../searches/QueryFormV7';
+
+import MyForm from '../searches/QueryFormTest_v2';
+//import MyForm from '../searches/QueryHookFormTest_v2';
+
+//import QueryHookForm from '../searches/QueryHookFormTest';
 
 //import TestTable from './tables/TestTable';
 //import TestTable2 from './tables/TestTable2';
@@ -41,20 +45,12 @@ class Dashboard extends Component {
                     <div className="card-body">
                        <div className="col-lg-6">
                         
-                        <QueryForm />
+                        <MyForm />
                         </div>
                     </div>
                     </div>
                     <br /> 
                     
-                    <div className="card mt-3">
-                    <h5 className="card-header">Query form test</h5>
-                    <div className="card-body">
-                        <MyForm />
-                    </div>
-                    </div>
-                    <br />
-
                     <div className="card mt-3">
                     <h5 className="card-header">Gene overview (provided by HGNC)</h5>
                     <div className="card-body">

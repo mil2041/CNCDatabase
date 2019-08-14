@@ -63,25 +63,14 @@ app.get('/api/cancer_driver_list', (request, response, next) => {
        sql += ' and gene = ?';
        params.push(request.query.geneSymbol);
   }
- 
-  console.log("check elementType array1",request.query.elementType)
-  if( typeof request.query.elementType !== "undefined"){
-    console.log("check elementType array2",request.query.elementType)
-    sql += ' and element = ANY (?)';
-    params.push(request.query.elementType);
-  } 
 
-
-  // check whether it is empty array 
-  if( typeof request.query.cancerType !== "undefined" ){
-    console.log("check array",request.query.cancerType)
-
-    sql += ' and cancertype = ANY (?)';
+  if( request.query.cancerType !== ""){
+    sql += ' and cancertype = ?';
     params.push(request.query.cancerType);
   }
 
-  if( typeof request.query.evidenceType !== "undefined"){
-    sql += ' and evidencetype = ANY (?)';
+  if( request.query.evidenceType !== ""){
+    sql += ' and evidencetype = ?';
     params.push(request.query.evidenceType);
   }
 
