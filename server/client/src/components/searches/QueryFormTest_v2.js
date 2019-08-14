@@ -31,7 +31,7 @@ const formikEnhancer = withFormik({
         evidenceType: values.evidenceType.map(t => t.value)
       };
       setTimeout(() => {
-        alert(JSON.stringify(payload, null, 2));
+        //alert(JSON.stringify(payload, null, 2));
         console.log("payload", payload);
         props.fetchGeneSummary(payload.geneSymbol);
         props.fetchCancerDriverList(payload);
