@@ -16,11 +16,12 @@ class Showcase extends Component {
                    <h1> CNCDatabase: </h1>
                    <h2> Cornell Non-Coding cancer driver Database </h2>
                    <hr/>
-                   
-                   <button type="submit" className="px-2 btn btn-primary btn-lg">
-                        <Link to="/search"> Get Started </Link>
-                   </button>
-               
+
+                   <Link to="/search">
+                      <button type="submit" className="px-2 btn btn-primary btn-lg">
+                         Get Started 
+                      </button>
+                  </Link>
                
 
                </div>

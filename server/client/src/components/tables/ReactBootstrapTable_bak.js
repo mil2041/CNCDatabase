@@ -3,7 +3,7 @@ import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import { connect } from 'react-redux';
-import { fetchCancerDriverList } from '../../actions';
+import { fetchBygeneSymbo } from '../../actions';
 
 
 class ReactBootstrapTable extends React.Component {
@@ -31,11 +31,29 @@ class ReactBootstrapTable extends React.Component {
             filter: textFilter()
           }, 
           {
+            dataField: 'cancertype2',
+            text: 'Type',
+            sort: true,
+            filter: textFilter()
+          },
+          {
             dataField: 'gene',
             text: 'Gene Name',
             sort: true,
             filter: textFilter()
           }, 
+          {
+            dataField: 'ensemblID',
+            text: 'Ensembl ID',
+            sort: true,
+            filter: textFilter()
+          }, 
+          {
+            dataField: 'mutationType',
+            text: 'Mutation Type',
+            sort: true,
+            filter: textFilter()
+          },
           {
             dataField: 'element',
             text: 'Element',
@@ -54,6 +72,12 @@ class ReactBootstrapTable extends React.Component {
             sort: true,
             filter: textFilter()
           },
+          {
+            dataField: 'mutationrate',
+            text: 'Mutation Rate',
+            sort: true,
+            filter: textFilter()
+          }, 
           {
             dataField: 'evidencetype',
             text: 'Evidence Type',
@@ -227,7 +251,7 @@ class ReactBootstrapTable extends React.Component {
 //export default ReactBootstrapTable;
 
 const mapStateToProps = ( state ) => {
-    return { dataBygeneSymbol: state.dataCancerDriverList };
+    return { dataBygeneSymbol: state.dataBygeneSymbol };
 }
   
-export default connect(mapStateToProps, { fetchCancerDriverList })(ReactBootstrapTable);
+export default connect(mapStateToProps, { fetchBygeneSymbol })(ReactBootstrapTable);

@@ -3,10 +3,12 @@ import React from 'react';
 //import 'react-tabulator/lib/css/bootstrap/tabulator_bootstrap4.min.css';
 //import 'react-tabulator/lib/css/tabulator.min.css';
 import { ReactTabulator} from 'react-tabulator';
+import '../css/tabulator_setup.css';
+
 //import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchCancerDriverList, fetchBygeneSymbol } from '../../actions';
-
+import { CSVLink } from 'react-csv';
 
 class CancerDriverListTable extends React.Component {
      
@@ -19,7 +21,10 @@ class CancerDriverListTable extends React.Component {
 
         const data = dataBygeneSymbol
 
-        console.log("table data", data); 
+        console.log("table data", data);
+        console.log("table data", data.length) 
+        
+        const totalDataLength = data.length
 
         const pmidFormatter = function(cell, formatterParams){
             //cell - the cell component
@@ -96,23 +101,43 @@ class CancerDriverListTable extends React.Component {
 
         const options = {
             pagination: "local",
-            paginationSize: 20,
+            paginationSize: 10,
             paginationButtonCount:3,
             paginationSizeSelector:[5,10,20,50,100],
-            footerElement: "<button>Custom Button</button>",
+            //footerElement: "<button>Custom Button</button>",
           };
 
         return (
             <div className="container-fluid" style={{ marginTop: 20 }}>
+
+              
+
+              <div className="my-2 d-flex flex-row justify-content-between"> 
+               
+               Returned {totalDataLength} entries
+               
+               <CSVLink
+                 data={data} 
+                 filename={"SearchResults.csv"}
+                 className="btn btn-outline-primary btn-sm"
+                 target="_blank"
+               >
+                 Download CSV 
+
+               </CSVLink>
+              </div>
+
+              <div className="d-flex flex-row">
                <ReactTabulator
                       data={data}
                       columns={columns}
                       tooltips={true}
                       headerTooltip={true}
-                      layout={"fitColumns"}
+                      layout={"fitData"}
                       autoColumns={true}
                       options={options}
-                  />
+               />
+              </div>
             </div>
 
         );

@@ -81,33 +81,33 @@ const QueryForm = props => {
         <div className="form-group">
           <ElementTypeSelect
             className="form-control"
-            value={values.topics}
+            value={values.elementType}
             onChange={setFieldValue}
             onBlur={setFieldTouched}
-            error={errors.topics}
-            touched={touched.topics}
+            error={errors.elementType}
+            touched={touched.elementType}
           />
         </div>
         
         <div className="form-group">
           <CancerTypeSelect
             className="form-control"
-            value={values.topics}
+            value={values.cancerType}
             onChange={setFieldValue}
             onBlur={setFieldTouched}
-            error={errors.topics}
-            touched={touched.topics}
+            error={errors.cancerType}
+            touched={touched.cancerType}
           />
         </div>
 
         <div className="form-group">
           <EvidenceTypeSelect
             className="form-control"
-            value={values.topics}
+            value={values.evidenceType}
             onChange={setFieldValue}
             onBlur={setFieldTouched}
-            error={errors.topics}
-            touched={touched.topics}
+            error={errors.evidenceType}
+            touched={touched.evidenceType}
           />
         </div>
 
@@ -148,13 +148,13 @@ const QueryForm = props => {
   const evidenceTypeOptions = [
     { value: 'experimental validation', label: 'experimental validation' },
     { value: 'computational prediction', label: 'computational prediction' },
-    { value: 'gene expression association', label: 'gene expression association' },
+    { value: 'gene expression association', label: 'RNA-seq gene expression association' },
     
   ];
 
 
-  const options2 = [
-    { value: 'BRCA', label: 'BRCA2' },
+  const cancerTypeOptions = [
+    { value: 'BRCA', label: 'BRCA, Breast Invasive Carcinoma' },
     { value: 'GBM', label: 'GBM' },
     { value: 'AML', label: 'AML' },
     { value: 'LUAD', label: 'LUAD' },
@@ -212,7 +212,7 @@ class CancerTypeSelect extends React.Component {
           <label for="cancerType">Cancer type </label>
           <Select
             id="cancerType"
-            options={options2}
+            options={cancerTypeOptions}
             isMulti
             onChange={this.handleChange}
             onBlur={this.handleBlur}

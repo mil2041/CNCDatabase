@@ -15,12 +15,16 @@ import MyForm from '../searches/QueryFormTest_v2';
 
 //import TestTable from './tables/TestTable';
 //import TestTable2 from './tables/TestTable2';
-//import AndTableContainer3 from './tables/AntdTableContainer3';
+//import CancerDriverListTable from '../tables/AntdTableContainer3';
 
 //import InfoTable from './InfoTable';
-//import ReactBootstrapTable from './tables/ReactBootstrapTable';
-import CancerDriverByGeneTable from '../tables/CancerDriverByGeneTable';
+//import CancerDriverListTable from '../tables/ReactBootstrapTable';
+
+//import CancerDriverByGeneTable from '../tables/CancerDriverByGeneTable';
+
 import CancerDriverListTable from '../tables/CancerDriverListTable';
+
+//import CancerDriverListTable from '../tables/CancerDriverListTableMUI';
 
 import GeneSummary from './GeneSummary';
 //import TabContent from './TabContent';

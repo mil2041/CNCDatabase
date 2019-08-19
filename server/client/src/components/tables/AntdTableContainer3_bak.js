@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchCancerDriverList } from '../../actions';
+import { fetchBygeneSymbol } from '../../actions';
 import { Table, Divider, Tag } from 'antd';
 
 
@@ -12,7 +12,7 @@ class AntdTableContainer2 extends React.Component {
      
     componentDidMount() {
         // action
-        //this.props.fetchBygeneSymbol();
+        this.props.fetchBygeneSymbol();
     }
 
     renderDataBygeneSmbol2(dataBygeneSymbol) {
@@ -25,27 +25,45 @@ class AntdTableContainer2 extends React.Component {
             title: 'PMID',
             dataIndex: 'pmid',
             key: 'pmid',
-            //width: 120,
+            width: 120,
             fixed: 'left',
           }, 
           {
             title: 'Cancer Type',
             dataIndex: 'cancertype',
             key: 'cancertype',
-            //width: 250,
-            //sorter: (a, b) => a.ensemblId - b.ensemblId,
+            width: 250,
+            sorter: (a, b) => a.ensemblId - b.ensemblId,
+          },
+          {
+            title: 'Type',
+            dataIndex: 'cancertype2',
+            key: 'cancertype2',
+            width: 120,
           },
           {
             title: 'GeneName',
             dataIndex: 'gene',
             key: 'gene',
-            //width: 120,
+            width: 120,
+          },
+          {
+            title: 'Ensembl ID',
+            dataIndex: 'ensemblID',
+            key: 'ensemblID',
+            width: 120,
+          },
+          {
+            title: 'Mutation Type',
+            dataIndex: 'mutationtype',
+            key: 'mutationtype',
+            width: 120,
           },
           {
             title: 'Element',
             dataIndex: 'element',
             key: 'element',
-            //width: 120,
+            width: 120,
           },
           {
             title: 'Mutated Sample Size',
@@ -57,19 +75,25 @@ class AntdTableContainer2 extends React.Component {
             title: 'Cohort Size',
             dataIndex: 'cohortsize',
             key: 'cohortsize',
-            //width: 200,
+            width: 200,
+          },
+          {
+            title: 'Mutation Rate',
+            dataIndex: 'mutationrate',
+            key: 'mutationrate',
+            width: 120,
           },
           {
             title: 'Evidence Type',
             dataIndex: 'evidencetype',
             key: 'evidencetype',
-            //width: 200,
+            width: 200,
           },
           {
             title: 'Evidence Method',
             dataIndex: 'evidencemethod',
             key: 'evidencemethod',
-            //width: 120,
+            width: 120,
           }
         ];
 
@@ -150,10 +174,10 @@ class AntdTableContainer2 extends React.Component {
 }
 
 const mapStateToProps = ( state ) => {
-    return { dataBygeneSymbol: state.dataCancerDriverList };
+    return { dataBygeneSymbol: state.dataBygeneSymbol };
 }
   
-export default connect(mapStateToProps, { fetchCancerDriverList })(AntdTableContainer2);
+export default connect(mapStateToProps, { fetchBygeneSymbol })(AntdTableContainer2);
   
 
 //export default AntdTableContainer2;
