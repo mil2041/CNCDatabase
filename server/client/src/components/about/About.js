@@ -7,7 +7,7 @@ class About extends Component {
     return (
       <div className="container col-lg-10 py-3">
         <div className="pt-3 pb-5">
-        <h3>About</h3>
+        <h1>About</h1>
         <hr/>
         Cornell Non-coding database (CNCDatabase) is developed by <a href="http://khuranalab.med.cornell.edu/">Khurana lab</a> at <a href="https://weill.cornell.edu/">Weill Cornell Medicine</a>. 
         </div>

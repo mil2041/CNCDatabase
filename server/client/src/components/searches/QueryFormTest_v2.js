@@ -154,10 +154,42 @@ const QueryForm = props => {
 
 
   const cancerTypeOptions = [
+    { value: 'PanCancer', label: 'PanCancer' },
+    { value: 'B-ALL', label: 'B-ALL, B-Cell Acute Lymphoblastic Leukemia' },
+    { value: 'BLCA', label: 'BLCA, Bladder Urothelial Carcinoma' },
     { value: 'BRCA', label: 'BRCA, Breast Invasive Carcinoma' },
-    { value: 'GBM', label: 'GBM' },
-    { value: 'AML', label: 'AML' },
-    { value: 'LUAD', label: 'LUAD' },
+    { value: 'CLL', label: 'CLL, Chronic Lymphoctytic Leukemia' },
+    { value: 'COAD', label: 'COAD, Colon Adenocarcinoma' },
+    { value: 'COADREAD', label: 'COADREAD, Colorectal Cancer' },
+    { value: 'DLBC', label: 'DLBC, Lymphoid Neoplasm Diffuse Large B-cell Lymphoma' },
+    { value: 'ESAD', label: 'ESAD, Esophageal Carcinoma' },
+    { value: 'ESCA', label: 'ESCA, Esophageal Carcinoma' },
+    { value: 'ETMR', label: 'ETMR, Embryonal Tumor with Multilayered Rosettes' },
+    { value: 'GBM', label: 'GBM, Glioblastoma Multiforme' },
+    { value: 'HGG', label: 'HGG, High-grade Glioma' },
+    { value: 'HNSC', label: 'HNSC, Head and Neck Squamous Cell Carcinoma' },
+    { value: 'KICH', label: 'KICH, Kidney Chromophobe' },
+    { value: 'KIRC', label: 'KIRC, Kidney Renal Clear Cell Carcinoma' },
+    { value: 'LAML', label: 'LAML, Acute Myeloid Leukemia' },
+    { value: 'LGG', label: 'LGG, Lower Grade Glioma' },
+    { value: 'LIHC', label: 'LIHC, Liver Hepatocellular Carcinoma' },
+    { value: 'LIRI', label: 'LIRI, Liver Hepatocellular Carcinoma' },
+    { value: 'LUAD', label: 'LUAD, Lung Adenocarcinoma' },
+    { value: 'LUSC', label: 'LUSC, Lung Squamous Cell Carcinoma' },
+    { value: 'MALY', label: 'MALY, Malignant Lymphoma' },
+    { value: 'MB', label: 'MB, Medullablastoma' },
+    { value: 'OV', label: 'OV, Ovarian Serous Cystadenocarcinoma' },
+    { value: 'PA', label: 'PA, Pilocytic Astrocytoma' },
+    { value: 'PACA', label: 'PACA, Pancreatic Ductal Adenocarcinoma' },
+    { value: 'PRAD', label: 'PRAD, Prostate Adenocarcinoma' },
+    { value: 'RECA', label: 'RECA, Kidney Renal Papillary Cell Carcinoma' },
+    { value: 'PHAB', label: 'PHAB, Rhabdoid Tumor' },
+    { value: 'SKCM', label: 'SKCM, Skin Cutaneous Melanoma' },
+    { value: 'STAD', label: 'STAD, Stomach Adenocarcinoma' },
+    { value: 'THCA', label: 'THCA, Papillary Thyroid Carcinoma' },
+    { value: 'UCEC', label: 'UCEC, Uterine Corpus Endometrial Carcinoma' },
+    
+
   ];
 
   class ElementTypeSelect extends React.Component {
