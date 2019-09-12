@@ -1,3 +1,3 @@
-# cncdatabase
+# CNCDatabase
 
-Manuscript in preparion
+Manuscript in preparation
