@@ -37,7 +37,7 @@ import QueryBarByGene from '../searches/Query_bar_by_gene';
 class Dashboard extends Component {
   render() {
     return (
-      <div className="container col-10">
+      <div className="container col-12">
         <br/> 
         <h1>Search cancer driver</h1>
         <br/>
@@ -56,24 +56,6 @@ class Dashboard extends Component {
                     </div>
                     <br /> 
                     
-                    <div className="card mt-3">
-                    <h5 className="card-header">Gene overview (provided by HGNC)</h5>
-                    <div className="card-body">
-                        <GeneSummary />
-                    </div>
-                    </div>
-                    <br />
-
-                    <div className="card mt-3">
-                    <h5 className="card-header">Graphical Summary</h5>
-                    <div className="card-body">
-                        
-                        <ExamplePlot />
-                    </div>
-                    </div>
-                    <br />
-
-
                     <div className="card mt-3">
                     <h5 className="card-header">Search Results</h5>
                     <div className="card-body">

@@ -15,6 +15,10 @@ class ReleaseNote extends Component {
                    
                    <h1> News </h1>
                    <hr/>
+                   <span className="text-info">October 20, 2019 <br/> </span>
+                   <ul> 
+                     <li>Update search interface </li>       
+                   </ul>
                    <span className="text-info">March 10, 2019 <br/> </span>
                    <ul> 
                      <li>Update non-coding cancer driver data. (version 0.2) </li>       

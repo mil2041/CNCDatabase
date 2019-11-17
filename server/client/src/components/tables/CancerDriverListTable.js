@@ -1,14 +1,19 @@
 import React from 'react';
 //import 'react-tabulator/lib/styles.css';
 //import 'react-tabulator/lib/css/bootstrap/tabulator_bootstrap4.min.css';
+//import 'react-tabulator/lib/css/bulma/tabulator_bulma.min.css';
+//import 'react-tabulator/lib/css/tabulator_modern.min.css';
 //import 'react-tabulator/lib/css/tabulator.min.css';
-import { ReactTabulator} from 'react-tabulator';
+import { ReactTabulator, reactFormatter } from 'react-tabulator';
+//import '../css/tabulator.css';
 import '../css/tabulator_setup.css';
 
 //import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchCancerDriverList, fetchBygeneSymbol } from '../../actions';
 import { CSVLink } from 'react-csv';
+import ReactTooltip from 'react-tooltip';
+
 
 class CancerDriverListTable extends React.Component {
      
@@ -35,7 +40,104 @@ class CancerDriverListTable extends React.Component {
             
             return "<a target='_blank' href='https://www.ncbi.nlm.nih.gov/pubmed/" + data.pmid + "'>" + cell.getValue() + "</a>";
             //return "<Link to='https://mapquest.com/latlng/" + data.col + "'>" + cell.getValue() + "</Link>";
-    }
+        }
+
+        const elementTypeFormatter = function(cell, formatterParams){
+          //cell - the cell component
+          //formatterParams - parameters set for the column
+  
+          const data = cell.getData();
+          console.log("check",data);
+          
+          return "<button type=\"button\" class=\"btn btn-outline-primary btn-sm\">" + cell.getValue() + "</button>";
+          //return "<Link to='https://mapquest.com/latlng/" + data.col + "'>" + cell.getValue() + "</Link>";
+         }
+
+         const evidenceMethodFormatter = function(cell, formatterParams){
+          //cell - the cell component
+          //formatterParams - parameters set for the column
+  
+          const data = cell.getData();
+          console.log("check evidence method",data);
+          
+          return "<p> test1 </p>";
+              
+          
+          
+          
+          //"<button type=\"button\" class=\"btn btn-outline-primary btn-sm\">" + cell.getValue() + "</button>";
+          //return "<Link to='https://mapquest.com/latlng/" + data.col + "'>" + cell.getValue() + "</Link>";
+         }
+
+        const TestFormatter = function(props: any) {
+          console.log("react cell",props)
+          const cellData = props.cell._cell.row.data;
+          console.log("cellData",cellData)
+
+          
+
+          const name = cellData.evidencemethod
+          const description = "description"
+
+          return (
+              <div>
+                <a data-tip={`${name}|${description}`} data-for='evidencemethod'> {name} </a>
+                
+                
+                
+                
+                <ReactTooltip 
+                   id='evidencemethod' 
+                   place="left" 
+                   type="light" 
+                   effect="solid"
+                   border={true}
+                   getContent={(dataTip) => (
+                          <div>
+                            This is {dataTip}
+                            <p>You can put every thing here</p>
+                            <ul>
+                              <li>Word</li>
+                              <li>Chart</li>
+                              <li>Else</li>
+                            </ul>
+                          </div>
+                   )}
+                />
+                   
+              </div>
+          );          
+        }
+
+        const HeaderFormatter1 = function(props: any) {
+          console.log("react header cell",props)
+          //const cellData = props.cell._cell.row.data;
+          //console.log("header cellData",cellData)
+
+          
+
+          //const name = cellData.evidencemethod
+          const name = "test"
+          const description = "description"
+
+          return (
+              <div>
+                
+                   
+              </div>
+          );          
+        }
+
+        const tooltipsFormatter = function(column, formatterParams){
+            const data = column.getDefinition();
+            console.log("tooltips check",data)
+
+            return (
+              <div>
+                test header
+              </div> 
+            )
+        } 
 
 
     //pmid, cancertype, gene, element, mutatedsamplesize, cohortsize, evidencetype, evidencemethod
@@ -45,65 +147,81 @@ class CancerDriverListTable extends React.Component {
               field: 'pmid',
               title: 'PMID',
               formatter: pmidFormatter,
-              headerFilter: true,
+              //headerFilter: true,
               align: 'center',
+              width: 140,
               headerTooltip:true
             }, 
             {
               field: 'cancertype',
               title: 'Cancer Type',
-              headerFilter: true,
+              //headerFilter: true,
+              width: 160,
               align: 'center'
               
             }, 
             {
               field: 'gene',
               title: 'Gene Name',
-              headerFilter: true,
+              //headerFilter: true,
+              width: 140,
               align: 'center'
               
             }, 
             {
               field: 'element',
               title: 'Element',
-              headerFilter: true,
+              //headerFilter: true,
+              width: 180,
               align: 'center'
               
             }, 
             {
               field: 'mutatedsamplesize',
-              title: 'Mutated Sample Size',
-              headerFilter: true,
-              align: 'center'
-              
+              title: 'Mutated Samples',
+              //headerFilter: true,
+              align: 'center',
+              width: 180,
+              headerTooltip: tooltipsFormatter
             }, 
             {
               field: 'cohortsize',
-              title: 'Cohort Size',
-              headerFilter: true,
+              title: 'Cohort Samples',
+              //headerFilter: true,
+              width: 180,
               align: 'center'
               
             },
             {
               field: 'evidencetype',
               title: 'Evidence Type',
-              headerFilter: true,
+              //headerFilter: true,
+              width: 220,
               align: 'center'
               
             }, 
             {
               field: 'evidencemethod',
               title: 'Evidence Method',
-              headerFilter: true,
-              align: 'center'
+              //headerFilter: true,
+              width: 180,
+              tooltips: true,
+              align: 'center',
+
+              formatter: reactFormatter(
+
+                <TestFormatter/>
+                
+              )
             }
           ];
 
         const options = {
             pagination: "local",
-            paginationSize: 10,
+            paginationSize: 20,
             paginationButtonCount:3,
-            paginationSizeSelector:[5,10,20,50,100],
+            paginationSizeSelector:[5,10,20,30,50,100],
+            selectable:false,
             //footerElement: "<button>Custom Button</button>",
           };
 
@@ -130,10 +248,11 @@ class CancerDriverListTable extends React.Component {
               <div className="d-flex flex-row">
                <ReactTabulator
                       data={data}
+                      initialSort={[{column:"element",dir:"asc"}]}
                       columns={columns}
                       tooltips={true}
                       headerTooltip={true}
-                      layout={"fitData"}
+                      layout= {"fitDataFill"}
                       autoColumns={true}
                       options={options}
                />

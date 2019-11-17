@@ -14,7 +14,7 @@ const keys = require('./config/keys');
 const bodyParser = require('body-parser');
 
 //const pool = require('./db');
-const routes = require('./routes/geneQuery');
+const routes = require('./routes/geneQuery_v2');
 
 //const authRoutes = require('./routes/authRoutes');
 

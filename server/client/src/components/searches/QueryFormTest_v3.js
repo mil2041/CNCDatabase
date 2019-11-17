@@ -3,44 +3,19 @@ import React from "react";
 import { withFormik } from "formik";
 import * as Yup from "yup";
 import Select from "react-select";
-
+import Papa from "papaparse";
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchCancerDriverList } from '../../actions/index'
+import { fetchCancerDriverList } from '../../actions/index';
 import { fetchBygeneSymbol, fetchGeneSummary } from '../../actions/index';
 
 import geneNameData from './data/functional_element_with_snv_by_cancer_merged_May_15_2019_unique_geneName.csv';
+//import geneNameData from './data/test.csv';
 
 
-// http://techslides.com/convert-csv-to-json-in-javascript
-function csvJSON(csv){
 
-  var lines=csv.split("\n");
 
-  var result = [];
-
-  var headers=lines[0].split(",");
-
-  for(var i=1;i<lines.length;i++){
-
-	  var obj = {};
-	  var currentline=lines[i].split(",");
-
-	  for(var j=0;j<headers.length;j++){
-		  obj[headers[j]] = currentline[j];
-	  }
-
-	  result.push(obj);
-
-  }
-  
-  //return result; //JavaScript object
-  return JSON.stringify(result); //JSON
-}
-
-//const geneName = csvJSON(geneNameData)
-//console.log("test geneName", geneName)
 
 
 
@@ -50,7 +25,7 @@ const formikEnhancer = withFormik({
 
 
     mapPropsToValues: props => ({
-      geneSymbol: "",
+      geneSymbol: [],
       elementType: [],
       cancerType: [],
       evidenceType: []
@@ -59,14 +34,14 @@ const formikEnhancer = withFormik({
     handleSubmit: (values, { props, setSubmitting }) => {
       const payload = {
         ...values,
-        //geneSymbol: values.geneSymbol.map(t => t.value),
+        geneSymbol: values.geneSymbol.map(t => t.value),
         elementType: values.elementType.map(t => t.value),
         cancerType: values.cancerType.map(t => t.value),
         evidenceType: values.evidenceType.map(t => t.value)
       };
       setTimeout(() => {
         //alert(JSON.stringify(payload, null, 2));
-        console.log("payload", payload);
+        console.log("query payload", payload);
         props.fetchGeneSummary(payload.geneSymbol);
         props.fetchCancerDriverList(payload);
 
@@ -96,20 +71,14 @@ const QueryForm = props => {
     return (
       <form onSubmit={handleSubmit}>
         <div className="form-group">
-          <label for="geneSymbol">Gene name</label>
-          <input
-            id="geneSymbol"
+          <GeneSymbolSelect
             className="form-control"
-            placeholder="Enter a gene name"
-            type="text"
             value={values.geneSymbol}
-            onChange={handleChange}
-            onBlur={handleBlur}
+            onChange={setFieldValue}
+            onBlur={setFieldTouched}
+            error={errors.geneSymbol}
+            touched={touched.geneSymbol}
           />
-
-          {errors.geneSymbol && touched.geneSymbol && (
-            <div style={{ color: "red", marginTop: ".5rem" }}>{errors.geneSymbol}</div>
-          )}
         </div>
 
         <div className="form-group">
@@ -163,17 +132,34 @@ const QueryForm = props => {
     );
 };
   
-  //const geneSymbolOptions = csvJSON(geneNameData)
-  //console.log("test geneName", geneSymbolOptions)
+  const testData="aa,bb";
+  console.log("testData string",testData)
 
+  const testString = Papa.parse(testData)
+   
+  console.log("papa parsed string",testString)                   
+
+  let geneSymbolOptions3;
+  Papa.parse(geneNameData, {
+                                header: true,
+                                delimiter: ",",
+                                download: true,
+                                dynamicTyping: true,
+                                complete: function(results) {
+                                console.log("Parsing complete", results);
+                                geneSymbolOptions3 = results.data
+                                }
+                            });
+  console.log("papa parsed file", geneSymbolOptions3)
+   
 
   
-  //const geneSymbolOptions = [
-  //  { value: 'FOXA1', label: 'FOXA1' },
-  //  { value: 'TERT', label: 'TERT' },
-  //  { value: 'lncRNA', label: 'lncRNA' },
-  //  { value: 'CTCF-cohesin insulator', label: 'CTCF-cohesin insulator' },
-  //];
+  const geneSymbolOptions = [
+    { value: 'FOXA1', label: 'FOXA1' },
+    { value: 'TERT', label: 'TERT' },
+    { value: 'lncRNA', label: 'lncRNA' },
+    { value: 'CTCF-cohesin insulator', label: 'CTCF-cohesin insulator' },
+  ];
 
 
 
@@ -230,6 +216,42 @@ const QueryForm = props => {
     
 
   ];
+
+  class GeneSymbolSelect extends React.Component {
+
+    handleChange = value => {
+      // this is going to call setFieldValue and manually update values.topcis
+      this.props.onChange("geneSymbol", value);
+    };
+  
+    handleBlur = () => {
+      // this is going to call setFieldTouched and manually update touched.topcis
+      this.props.onBlur("geneSymbol", true);
+    };
+  
+    render() {
+      return (
+        <div style={{ margin: "1rem 0" }}>
+          <label for="geneSymbol">Gene name </label>
+          <Select
+            id="geneSymbol"
+            options={geneSymbolOptions3}
+            isMulti
+            onChange={this.handleChange}
+            onBlur={this.handleBlur}
+            value={this.props.value}
+          />
+          {!!this.props.error && this.props.touched && (
+            <div style={{ color: "red", marginTop: ".5rem" }}>
+              {this.props.error}
+            </div>
+          )}
+        </div>
+      );
+    }
+}
+
+
 
   class ElementTypeSelect extends React.Component {
 
