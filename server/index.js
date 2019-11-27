@@ -1,12 +1,20 @@
 const express = require('express');
-//const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 //const cookieSession = require('cookie-session');
 //const passport = require('passport');
-const keys = require('./config/keys');
+//const keys = require('./config/keys');
+
+
+const multer = require('multer');
+const cors = require('cors');
 
 
 //const upload = require('./upload');
-//const cors = require('cors');
+
+
+
+// cross-origin requests
+
 
 //require('./models/User');
 //require('./services/passport');
@@ -18,9 +26,11 @@ const routes = require('./routes/geneQuery_v2');
 
 //const authRoutes = require('./routes/authRoutes');
 
+//mongoose.Promose = global.Promise;
 
-//mongoose.connect(keys.mongoURI);
-
+//if (process.env.NODE_ENV !== 'test') {
+//  mongoose.connect(keys.mongoURI);
+//}
 
 const app = express();
 
@@ -31,7 +41,39 @@ const app = express();
 //}
 
 //app.use(cors(corsOptions))
-//app.post('/upload',upload)
+
+app.use(cors())
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, 'public')
+    },
+      filename: function (req, file, cb) {
+        cb(null, Date.now() + '-' +file.originalname )
+    }
+})
+
+const upload = multer({ storage: storage }).single('file')
+
+app.post('/api/submissions',function(req, res){
+   
+  upload(req, res, function (err) {
+    console.log("Request ---", req.body);
+    console.log("Request file ---", req.file);//Here you get file.
+
+    if (err instanceof multer.MulterError) {
+        return res.status(500).json(err)
+    } else if (err) {
+        return res.status(500).json(err)
+    }
+    
+    return res.status(200).send(req.file)
+
+  })
+
+
+
+});
 
 // user login section
 
@@ -52,6 +94,16 @@ routes(app);
 
 require('./routes/authRoutes')(app);
 require('./routes/studyQuery')(app);
+//require('./routes/submissionRoutes')(app);
+
+
+
+//app.use((err, req, res, next) => {
+//  res.status(422).send({ error: err.message });
+//});
+
+
+
 
 
 //app.get('/', (req, res) => res.sendFile('auth.html', { root : __dirname}));

@@ -1,7 +1,9 @@
 import axios from 'axios';
+import { toast } from 'react-toastify';
+
 import { FETCH_BYGENESYMBOL, FETCH_USER, 
          FETCH_ALL_STUDIES, FETCH_GENE_SUMMARY, 
-         FETCH_WEATHER, FETCH_CANCER_DRIVER_LIST } from './types';
+         FETCH_WEATHER, FETCH_CANCER_DRIVER_LIST, CREATE_SUBMISSION } from './types';
 
 const API_KEY = '2ad2c95c897fdc10fc483bd4107eec90';
 const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?APPID=${API_KEY}`;
@@ -96,5 +98,27 @@ export const fetchCancerDriverList = formValues => async dispatch => {
   dispatch({
           type: FETCH_CANCER_DRIVER_LIST,
           payload: response.data.rows
+       });
+};  
+
+
+export const createSubmission = formData => async dispatch => {
+
+
+
+
+
+  const response = await axios.post('/api/submissions', formData)
+                       
+  
+  
+  toast.success('upload success')
+  
+
+  console.log('Received createSubmission action', formData, response);
+
+  dispatch({
+          type: CREATE_SUBMISSION,
+          payload: response
        });
 };  
