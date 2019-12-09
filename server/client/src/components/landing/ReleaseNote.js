@@ -13,7 +13,7 @@ class ReleaseNote extends Component {
             <div className="row">
                <div className="col-lg-6 text-left">
                    
-                   <h1> News </h1>
+                   <h1><strong> News </strong></h1>
                    <hr/>
                    <span className="text-info">October 20, 2019 <br/> </span>
                    <ul> 

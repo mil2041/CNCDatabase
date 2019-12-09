@@ -16,7 +16,7 @@ class Features extends Component {
 
 
                 <div className="row pt-4 pb-4 col-lg-10">
-                    <h1 className="text-left"> Features of CNCDatabase </h1>
+                    <h1 className="text-left"><strong> Features </strong></h1>
                     <ul>
                       <li>
                          <p> Query non-coding cancer drivers evidences by gene name, element type, cancer type or evidence type.</p>
