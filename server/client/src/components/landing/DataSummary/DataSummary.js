@@ -6,7 +6,7 @@ import React, { Component } from 'react';
 //import { UndrawBrowserStats } from 'react-undraw-illustrations';
 import summary_figure from '../img/figure2_v6.png';
 //import HybridChart from './HybridChart';
-import ChartApp from './ChartApp2';
+import ChartApp from './ChartApp5';
 
 class DataSummary extends Component {
 
