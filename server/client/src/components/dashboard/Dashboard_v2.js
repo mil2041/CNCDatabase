@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 
 //import QueryForm from '../searches/QueryFormV7';
 
-import MyForm from '../searches/QueryFormTest_v3';
+import QueryForm from '../searches/QueryFormTest_v3';
 //import MyForm from '../searches/QueryHookFormTest_v2';
 
 //import QueryHookForm from '../searches/QueryHookFormTest';
@@ -31,10 +31,16 @@ import GeneSummary from './GeneSummary';
 //import { Tabs, Tab } from 'react-bootstrap-tabs';
 //import TestPlot from '../studies/TestPlot';
 //import ExamplePlot from '../plot/barPlot';
-import ExamplePlot from '../plot/CancerDriverListPlot';
+import CancerDriverListPlot from '../plot/CancerDriverListPlot';
 import QueryBarByGene from '../searches/Query_bar_by_gene';
 
 class Dashboard extends Component {
+
+  
+
+
+
+
   render() {
     return (
       <div className="container col-12">
@@ -46,22 +52,35 @@ class Dashboard extends Component {
         
                     <br />
                     <div className="card">
-                    <h5 className="card-header">Search cancer driver list</h5>
-                    <div className="card-body">
-                       <div className="col-lg-6">
-                        
-                        <MyForm />
+                        <h5 className="card-header">Search cancer driver list</h5>
+                        <div className="card-body">
+                          <div className="col-lg-6">
+                            
+                            <QueryForm />
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <br /> 
                     
                     <div className="card mt-3">
-                    <h5 className="card-header">Search Results</h5>
-                    <div className="card-body">
-                        <CancerDriverListTable />
+                        <h5 className="card-header">Results Summary</h5>
+                        <div className="card-body">
+                            <CancerDriverListPlot />
+                        </div>
                     </div>
+
+
+
+
+
+                    <div className="card mt-3">
+                        <h5 className="card-header">Search Results</h5>
+                        <div className="card-body">
+                            <CancerDriverListTable />
+                        </div>
                     </div>
+
+
                     <br />
            
         

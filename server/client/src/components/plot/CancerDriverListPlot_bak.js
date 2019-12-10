@@ -62,39 +62,125 @@ class CancerDriverListPlot extends React.Component {
         
         //console.log("element counts key", c1);
         //console.log("element counts value", c2); 
+        let test1 = [19, 31, 50];
+
+
+        let data1 = [{
+          x: ['publications'],
+          y: [numOfpublications],
+          width: [0.1],
+          type: 'bar'
+        }];
         
-            //const elementTypePie = [16, 15, 12, 6, 5, 4, 50];
-            //const elementTypePieLabel = ['US', 'China', 'European Union', 'Russian Federation', 'Brazil', 'India', 'Rest of World' ];
+        console.log("data1:", data1);
 
-            //const elementTypePie = countsElementValues;
-            //const elementTypePieLabel = countsElementKeys;
+        //const data1 = [trace1, trace2];
+          
+        const layout1 = {
+            title: 'Publications',
+            xaxis: {
+                tickangle: -45,
+                showgrid: true
+                
+            },
+            yaxis: {
+                title: 'Number of publications',
+                showline: true
+            },
+            autosize: false,
+            width: 500,
+            height: 500,
+            margin: {
+              l: 50,
+              r: 50,
+              b: 100,
+              t: 100,
+              pad: 4
+            },
+            
+            barmode: 'group',
+            bargap: 0.15,
+            bargroupgap: 0.1
+          };
 
-            const dataPieCancerType = [{
-              type: "pie",
-              hole: .4,
-              values: countsCancerTypeValues,
-              labels: countsCancerTypeKeys,
-              domain: {column: 0},
-              name: 'Cancer Type',
-              textinfo: "label+value",
-              textposition: "outside",
-              hoverinfo: 'label+percent',
-              automargin: true
-            }];
+          const data2 = [{
+            x: ['WDR74'],
+            y: [8],
+            width: [0.2],
+            type: 'bar'
+          }];
+          
+          //const data1 = [trace1, trace2];
+            
+            const layout2 = {
+              title: 'Publication support per gene',
+              xaxis: {
+                  tickangle: -45
+              },
+              yaxis: {
+                  title: 'Number of publications'
+              },
+              barmode: 'group',
+              bargap: 0.15,
+              bargroupgap: 0.1
+            };
 
-            const layoutPieCancerType = {
-              title: 'Canccer Type',
-              height: 300,
-              width: 300,
-              showlegend: false
+            const data3 = [{
+                x: ['TERT','WDR74','PLEKHS1','CCDC107','AP003733.1'],
+                y: [10,6,5,4,3],
+                width: [0.4,0.4,0.4,0.4,0.4],
+                type: 'bar'
+              }];
+              
+              //const data1 = [trace1, trace2];
+                
+            const layout3 = {
+                  title: 'Publication support per gene',
+                  xaxis: {
+                      tickangle: -45
+                  },
+                  yaxis: {
+                      title: 'Number of publications'
+                  },
+                  barmode: 'group',
+                  bargap: 0.15,
+                  bargroupgap: 0.1
+            };
+
+            const data4 = [{
+                x: ['TERT','WDR74','PLEKHS1','CCDC107','AP003733.1'],
+                y: [10,6,5,4,3],
+                width: [0.4,0.4,0.4,0.4,0.4],
+                type: 'bar'
+              }];
+              
+              //const data1 = [trace1, trace2];
+                
+            const layout4 = {
+                  title: 'Publication support per gene',
+                  xaxis: {
+                      tickangle: -45
+                  },
+                  yaxis: {
+                      title: 'Number of publications'
+                  },
+                  barmode: 'group',
+                  bargap: 0.15,
+                  bargroupgap: 0.1
             };
 
 
-            const dataPieElement = [{
+            //const elementTypePie = [16, 15, 12, 6, 5, 4, 50];
+            //const elementTypePieLabel = ['US', 'China', 'European Union', 'Russian Federation', 'Brazil', 'India', 'Rest of World' ];
+
+            const elementTypePie = c2;
+            const elementTypePieLabel = c1;
+
+            const dataPie = [{
                 type: "pie",
                 hole: .4,
-                values: countsElementValues,
-                labels: countsElementKeys,
+                values: elementTypePie,
+                labels: elementTypePieLabel,
                 domain: {column: 0},
                 name: 'Element Type',
                 textinfo: "label+value",
@@ -103,52 +189,16 @@ class CancerDriverListPlot extends React.Component {
                 automargin: true
               }];
 
-            const layoutPieElement = {
+            const layoutPie = {
                 title: 'Element Type',
-                height: 300,
-                width: 300,
+                height: 400,
+                width: 400,
                 showlegend: false
               };
 
-              const dataPieEvidenceType = [{
-                type: "pie",
-                hole: .4,
-                values: countsEvidenceTypeValues,
-                labels: countsEvidenceTypeKeys,
-                domain: {column: 0},
-                name: 'Evidence Type',
-                textinfo: "label+value",
-                textposition: "outside",
-                hoverinfo: 'label+percent',
-                automargin: true
-              }];
 
-              const layoutPieEvidenceType = {
-                title: 'Evidence Type',
-                height: 300,
-                width: 300,
-                showlegend: false
-              };
 
-              const dataPieEvidenceMethod = [{
-                type: "pie",
-                hole: .4,
-                values: countsEvidenceMethodValues,
-                labels: countsEvidenceMethodKeys,
-                domain: {column: 0},
-                name: 'Evidence Method',
-                textinfo: "label+value",
-                textposition: "outside",
-                hoverinfo: 'label+percent',
-                automargin: true
-              }];
 
-            const layoutPieEvidenceMethod = {
-                title: 'Evidence Method',
-                height: 300,
-                width: 300,
-                showlegend: false
-              };
 
 
         return (
@@ -156,26 +206,18 @@ class CancerDriverListPlot extends React.Component {
 
               <div className="d-flex flex-row">
                <Plot
-                   data={dataPieCancerType}
-                   layout={layoutPieCancerType} 
+                   data={data1}
+                   layout={layout1} 
                />
              
 
               
                <Plot
-                   data={dataPieElement}
-                   layout={layoutPieElement} 
+                   data={dataPie}
+                   layout={layoutPie} 
                />
 
-               <Plot
-                   data={dataPieEvidenceType}
-                   layout={layoutPieEvidenceType} 
-               />
 
-               <Plot
-                   data={dataPieEvidenceMethod}
-                   layout={layoutPieEvidenceMethod} 
-               />
 
               </div>
 

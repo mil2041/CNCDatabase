@@ -8,6 +8,7 @@ class LineChart extends Component {
         const trace1 = {
             x: ['PanCancer','SKCM', 'Liver', 'BRCA', 'BLCA'],
             y: [3, 0, 1, 1, 0],
+            width: [0.2,0.2,0.2,0.2,0.2],
             name: 'promoter',
             type: 'bar'
           };
@@ -15,8 +16,14 @@ class LineChart extends Component {
           const trace2 = {
             x: ['PanCancer','SKCM', 'Liver', 'BRCA', 'BLCA'],
             y: [3,1, 0, 0, 1],
+            width: [0.2,0.2,0.2,0.2,0.2],
             name: '5UTR',
-            type: 'bar'
+            type: 'bar',
+            hovertemplate: '<i>Price</i>: $%{y:.2f}' +
+                        '<br><b>X</b>: %{x}<br>' +
+                        '<b>%{text}</b>',
+            text: ["Text A", "Text B", "Text C", "Text D", "Text E"],
+            hoverinfo: 'skip'
           };  
     
     
@@ -32,6 +39,8 @@ class LineChart extends Component {
                 title: 'Number of unique methods'
             },
             barmode: 'stack',
+            hovermode: 'closest',
+            hoverlabel: { bgcolor: "#FFF" },
             bargap: 0.15,
             bargroupgap: 0.1
           };
