@@ -83,7 +83,7 @@ class CancerDriverListPlot extends React.Component {
             }];
 
             const layoutPieCancerType = {
-              title: 'Canccer Type',
+              title: 'Cancer Type',
               height: 300,
               width: 300,
               showlegend: false
@@ -106,7 +106,7 @@ class CancerDriverListPlot extends React.Component {
             const layoutPieElement = {
                 title: 'Element Type',
                 height: 300,
-                width: 300,
+                width: 400,
                 showlegend: false
               };
 
@@ -120,13 +120,21 @@ class CancerDriverListPlot extends React.Component {
                 textinfo: "label+value",
                 textposition: "outside",
                 hoverinfo: 'label+percent',
-                automargin: true
+                margin: {
+                  l: 50,
+                  r: 50,
+                  b: 50,
+                  t: 50,
+                  pad: 4
+                },
+                automargin: false
               }];
 
               const layoutPieEvidenceType = {
                 title: 'Evidence Type',
                 height: 300,
-                width: 300,
+                width: 400,
+                cliponaxis: false,
                 showlegend: false
               };
 
@@ -146,7 +154,7 @@ class CancerDriverListPlot extends React.Component {
             const layoutPieEvidenceMethod = {
                 title: 'Evidence Method',
                 height: 300,
-                width: 300,
+                width: 500,
                 showlegend: false
               };
 
@@ -154,7 +162,7 @@ class CancerDriverListPlot extends React.Component {
         return (
             <div className="container-fluid" style={{ marginTop: 20 }}>
 
-              <div className="d-flex flex-row">
+              <div className="d-flex justify-content-around flex-row">
                <Plot
                    data={dataPieCancerType}
                    layout={layoutPieCancerType} 
