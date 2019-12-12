@@ -16,7 +16,7 @@ class Citation extends Component {
 
 
                 <div className="row py-4 col-lg-10">
-                    <h1 className="text-left"><strong> Citation </strong></h1>
+                    <h1 className="text-left"> Citation </h1>
                     <hr/>
                       <p>   Liu et al, Database (2019) 
                           

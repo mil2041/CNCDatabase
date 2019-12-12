@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 //import 'react-tabulator/lib/styles.css';
 //import 'react-tabulator/lib/css/bootstrap/tabulator_bootstrap4.min.css';
 //import 'react-tabulator/lib/css/bulma/tabulator_bulma.min.css';
@@ -15,22 +15,11 @@ import { CSVLink } from 'react-csv';
 import ReactTooltip from 'react-tooltip';
 
 
-class CancerDriverListTable extends Component {
-      
-    
-
-
-
-
+class CancerDriverListTable extends React.Component {
+     
     componentDidMount() {
-        //const initialValues = {
-        //  geneSymbol: "TERT",
-        //  elementType: [],
-        //  cancerType: [],
-        //  evidenceType: []
-        //}
         // action
-        //this.props.fetchCancerDriverList(initialValues);
+        //this.props.fetchCancerDriverList();
     }
 
     renderDataBygeneSmbol2(dataBygeneSymbol) {
