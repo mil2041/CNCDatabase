@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Button } from 'reactstrap';
+//import { Button } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ModalExample2 from './LoginModal_v2';
+//import ModalExample2 from './LoginModal_v2';
 //# Home, Search, Download, Help, Contact
 import './css/header_setup.css';
 import NavLink from './NavLink';
@@ -21,7 +21,7 @@ class Header extends Component {
         super(props);
         this.state = {
           links: [
-            {path: "/", text: "Home", isActive: false},
+            {path: "/", text: "Home", isActive: true},
             {path: "/search", text: "Search", isActive: false},
             {path: "/dataset", text: "Download", isActive: false},
             {path: "/submission", text: "Submission", isActive: false},
@@ -68,9 +68,9 @@ class Header extends Component {
     return (
       // py-md-1  
       <nav className="navbar navbar-expand-lg navbar-custom">
-        <FontAwesomeIcon icon="laptop-code" color="white" size="2x"/>
-        <Link className="navbar-brand pl-2" to="/">
-          CNCDatabase
+        <FontAwesomeIcon icon="laptop-code" color="grey" size="2x"/>
+        <Link className="navbar-brand" to="/">
+          <strong>CNCDatabase</strong>
         </Link>
 
         <button

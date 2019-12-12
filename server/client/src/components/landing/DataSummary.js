@@ -11,7 +11,7 @@ class DataSummary extends Component {
     return (
       <div className="pt-3 pb-3">
          <div className="container col-lg-10">
-            <h4 className="text-left">Current data collections</h4>
+            <h3 className="text-left"><strong>Data summary</strong></h3>
             <br/>
             <div className="container d-flex justify-content-center px-5">
                

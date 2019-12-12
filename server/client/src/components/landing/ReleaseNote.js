@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //import { connect } from 'react-redux';
 //import { Link } from 'react-router-dom';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { TwitterTimelineEmbed } from 'react-twitter-embed';
+//import { TwitterTimelineEmbed } from 'react-twitter-embed';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 
 class ReleaseNote extends Component {
@@ -13,7 +13,7 @@ class ReleaseNote extends Component {
             <div className="row">
                <div className="col-lg-6 text-left">
                    
-                   <h1> News </h1>
+                   <h1><strong> News </strong></h1>
                    <hr/>
                    <span className="text-info">October 20, 2019 <br/> </span>
                    <ul> 

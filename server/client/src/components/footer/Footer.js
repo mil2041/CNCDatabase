@@ -15,7 +15,7 @@ class Footer extends Component {
 
             <div className="col-sm-3 col-md-3 item">
               <h5>Contact</h5>
-              <p>Khurana Lab</p>
+              <p><a href="https://khuranalab.med.cornell.edu/">Khurana Lab</a></p>
               <p>Meyer Cancer Center, Weill Cornell Medicine, New York, New York 10065, USA</p>
 
             </div>
@@ -35,7 +35,7 @@ class Footer extends Component {
 
 
           <p className="copyright">
-            © 2018 - 2019, Weill Cornell Medicine. All Rights Reserved
+            © 2018 - 2020, Weill Cornell Medicine. All Rights Reserved
           </p>
 
         </div>

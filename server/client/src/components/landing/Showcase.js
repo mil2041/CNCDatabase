@@ -21,7 +21,7 @@ class Showcase extends Component {
                       <button type="submit" className="px-2 btn btn-primary btn-lg">
                          Get Started 
                       </button>
-                  </Link>
+                   </Link>
                
 
                </div>
