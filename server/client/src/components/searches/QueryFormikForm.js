@@ -70,49 +70,52 @@ const QueryForm = props => {
 
     return (
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <GeneSymbolSelect
-            className="form-control"
-            value={values.geneSymbol}
-            onChange={setFieldValue}
-            onBlur={setFieldTouched}
-            error={errors.geneSymbol}
-            touched={touched.geneSymbol}
-          />
-        </div>
+         <div className="form-row">
+            <div className="form-group col-md-3">
+              <GeneSymbolSelect
+                className="form-control"
+                value={values.geneSymbol}
+                onChange={setFieldValue}
+                onBlur={setFieldTouched}
+                error={errors.geneSymbol}
+                touched={touched.geneSymbol}
+              />
+            </div>
 
-        <div className="form-group">
-          <ElementTypeSelect
-            className="form-control"
-            value={values.elementType}
-            onChange={setFieldValue}
-            onBlur={setFieldTouched}
-            error={errors.elementType}
-            touched={touched.elementType}
-          />
-        </div>
-        
-        <div className="form-group">
-          <CancerTypeSelect
-            className="form-control"
-            value={values.cancerType}
-            onChange={setFieldValue}
-            onBlur={setFieldTouched}
-            error={errors.cancerType}
-            touched={touched.cancerType}
-          />
-        </div>
+            <div className="form-group col-md-3">
+              <ElementTypeSelect
+                className="form-control"
+                value={values.elementType}
+                onChange={setFieldValue}
+                onBlur={setFieldTouched}
+                error={errors.elementType}
+                touched={touched.elementType}
+              />
+            </div>
+           
 
-        <div className="form-group">
-          <EvidenceTypeSelect
-            className="form-control"
-            value={values.evidenceType}
-            onChange={setFieldValue}
-            onBlur={setFieldTouched}
-            error={errors.evidenceType}
-            touched={touched.evidenceType}
-          />
-        </div>
+            <div className="form-group col-md-3">
+              <CancerTypeSelect
+                className="form-control"
+                value={values.cancerType}
+                onChange={setFieldValue}
+                onBlur={setFieldTouched}
+                error={errors.cancerType}
+                touched={touched.cancerType}
+              />
+            </div>
+
+            <div className="form-group col-md-3">
+              <EvidenceTypeSelect
+                className="form-control"
+                value={values.evidenceType}
+                onChange={setFieldValue}
+                onBlur={setFieldTouched}
+                error={errors.evidenceType}
+                touched={touched.evidenceType}
+              />
+            </div>
+        </div>    
 
         <button type="submit" disabled={isSubmitting} className="btn btn-primary mr-2">
           Submit

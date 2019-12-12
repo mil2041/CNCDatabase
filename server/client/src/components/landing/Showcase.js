@@ -13,7 +13,7 @@ class Showcase extends Component {
          <div className="container col-lg-10">
             <div className="row">
                <div className="col-lg-8 text-left">
-                   <h1> CNCDatabase: </h1>
+                   <h1><strong> CNCDatabase: </strong></h1>
                    <h2> Cornell Non-Coding cancer driver Database </h2>
                    <hr/>
 
