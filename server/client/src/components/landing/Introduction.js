@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 //import { UndrawChoose, UndrawChecklist, UndrawWorkChat } from 'react-undraw-illustrations';
-
+import introduction_figure from './img/functional_loop.png';
 
 class Intorduction extends Component {
   render() {
@@ -33,7 +33,14 @@ class Intorduction extends Component {
 
                </div>
 
+               <div className="container d-flex justify-content-center px-5">
+               
+                
 
+                 <img src={introduction_figure} alt="introduction" width="85%" height="85%"/>
+
+
+               </div>
 
 
                 

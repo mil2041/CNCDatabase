@@ -49,7 +49,7 @@ class CancerDriverListTable extends React.Component {
           const data = cell.getData();
           console.log("check",data);
           
-          return "<button type=\"button\" class=\"btn btn-outline-primary btn-sm\">" + cell.getValue() + "</button>";
+          return "<button type=\"button\" class=\"btn btn-primary btn-sm pt-0\">" + cell.getValue() + "</button>";
           //return "<Link to='https://mapquest.com/latlng/" + data.col + "'>" + cell.getValue() + "</Link>";
          }
 
@@ -172,6 +172,7 @@ class CancerDriverListTable extends React.Component {
               field: 'element',
               title: 'Element',
               //headerFilter: true,
+              //formatter: elementTypeFormatter,
               width: 180,
               align: 'center'
               
@@ -204,7 +205,7 @@ class CancerDriverListTable extends React.Component {
               field: 'evidencemethod',
               title: 'Evidence Method',
               //headerFilter: true,
-              width: 180,
+             //width: 250,
               tooltips: true,
               align: 'center',
 
@@ -252,7 +253,7 @@ class CancerDriverListTable extends React.Component {
                       columns={columns}
                       tooltips={true}
                       headerTooltip={true}
-                      layout= {"fitDataFill"}
+                      layout= {"fitColumns"}
                       autoColumns={true}
                       options={options}
                />

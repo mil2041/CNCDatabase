@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 //import { UndrawBrowserStats } from 'react-undraw-illustrations';
-import summary_figure from './img/figure2_v6.png';
+import SummaryPlot from './DataSummary/SummaryPlot';
 
 class DataSummary extends Component {
   render() {
@@ -17,7 +17,7 @@ class DataSummary extends Component {
                
                 
 
-                <img src={summary_figure} alt="summary" width="85%" height="85%"/>
+                <SummaryPlot/>
 
 
             </div>

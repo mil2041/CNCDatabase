@@ -55,7 +55,18 @@ class Dashboard extends Component {
                     </div>
                     </div>
                     <br /> 
-                    
+
+
+
+                    <div className="card mt-3">
+                     <h5 className="card-header"><strong>Summary</strong> </h5>
+                      <div className="card-body">
+                        <div className="col-lg-12">
+                          <CancerDriverListPlot />
+                        </div> 
+                      </div>
+                    </div>
+                    <br />
 
 
 
@@ -63,9 +74,11 @@ class Dashboard extends Component {
 
                     <div className="card mt-3">
                      <h5 className="card-header"><strong>Results</strong> </h5>
-                    <div className="card-body">
-                        <CancerDriverListTable />
-                    </div>
+                      <div className="card-body">
+                        <div className="col-lg-12">
+                          <CancerDriverListTable />
+                        </div> 
+                      </div>
                     </div>
                     <br />
            
