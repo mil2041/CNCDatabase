@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 import Showcase from './Showcase';
-import DataSummary from './DataSummary';
+import DataSummary from './DataSummary/DataSummary';
 import ReleaseNote from './ReleaseNote';
 import Features from './Features';
 import Introduction from './Introduction';

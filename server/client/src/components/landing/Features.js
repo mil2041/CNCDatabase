@@ -17,10 +17,17 @@ class Features extends Component {
 
                 <div className="row pt-4 pb-4 col-lg-10">
                     <h1 className="text-left"><strong> Features </strong></h1>
+<<<<<<< HEAD
                      <ul>
                         <li>
                            <p> Query non-coding cancer drivers evidences by gene name, element type, cancer type or evidence type.</p>
                         </li>
+=======
+                    <ul>
+                      <li>
+                         <p> Query non-coding cancer drivers evidences by gene name, element type, cancer type or evidence type.</p>
+                      </li>
+>>>>>>> 8124c8f1874ef729044fbcd9717ea1688ab50bdb
 
                         <li>
                            <p> Illustrate the query results in summary plots.</p>
