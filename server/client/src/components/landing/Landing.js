@@ -14,6 +14,7 @@ import Citation from './Citation';
 //import EmailSubscribe from './EmailSubscribe';
 //import Testimonial from './Testimonial';
 //import ShowcaseCallToAction from './ShowcaseCallToAction';
+import UseCases from './UseCases';
 
 class Landing extends Component {
   render() {
@@ -23,9 +24,11 @@ class Landing extends Component {
 
         <Showcase/>
         <Introduction/>
-        <DataSummary/>
-        <Features/>
+          <DataSummary/>
         
+          <UseCases/>
+
+        <Features/>
         <ReleaseNote/>
         <Citation/>
 

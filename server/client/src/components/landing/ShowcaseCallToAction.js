@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Collapsible from 'react-collapsible';
 //import { connect } from 'react-redux';
 //import { Link } from 'react-router-dom';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,21 +9,29 @@ import React, { Component } from 'react';
 class ShowcaseCallToAction extends Component {
   render() {
     return (
-      <div className="py-5 bg-light">
+      <div className="py-5">
          <div className="container col-lg-10">
             <div className="row">
-               
-               <div className="col-lg-10 text-center">
-                   <h5> Cornell Non-Coding cancer driver Database </h5>
-                   <hr/>
-                   <p>  Try query by gene name or by cancer type  .   
-                        
-                   </p>
-                   <button type="submit" className="btn btn-primary btn-lg">
-                        Get Started
-                   </button>
+              <div className="col-lg-6 text-left">
+                   
+                   <h3><strong> Examples </strong></h3>
+                    <Collapsible trigger="TERT promoter">
+                      <p>This is the collapsible content. It can be any element or React component you like.</p>
+                      <p>It can even be another Collapsible component. Check out the next section!</p>
+                    </Collapsible>
 
-               </div>
+                    <Collapsible trigger="ESR1 enhancer">
+                      <p>This is the collapsible content. It can be any element or React component you like.</p>
+                      <p>It can even be another Collapsible component. Check out the next section!</p>
+                    </Collapsible>
+
+                    <Collapsible trigger="non-coding RNA">
+                      <p>This is the collapsible content. It can be any element or React component you like.</p>
+                      <p>It can even be another Collapsible component. Check out the next section!</p>
+                    </Collapsible>
+
+              </div>      
+
             </div>
          </div>
       </div>
