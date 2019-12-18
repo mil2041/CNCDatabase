@@ -9,11 +9,15 @@ const Content = importMDX.sync('./dataset.md')
 class DataSetDownload extends Component {
   render() {
     return (
-      <div className="container col-lg-10 py-3">
-        <h1>Download</h1>
-        <hr/>
-        <Content
-        />
+      <div className="container-fluid py-5 pl-5">
+        <div className="row">
+           <div className="col-lg-10">
+              <h1><strong>Download</strong></h1>
+              <hr/>
+              <Content
+              />
+           </div> 
+        </div>    
       </div>
     );
   }

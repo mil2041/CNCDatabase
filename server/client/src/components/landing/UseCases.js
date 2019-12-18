@@ -10,10 +10,9 @@ import Panel from './UseCases/CollapsibleComponent/Panel';
 class UseCases extends Component {
   render() {
     return (
-      <div className="py-5">
-         <div className="container col-lg-10">
-            <div className="row">
-              <div className="col-lg-10 text-left">
+      <div className="container-fluid pl-5">
+         <div className="row">
+              <div className="col-lg-10">
                    
                    <h3><strong> Examples </strong></h3>
 
@@ -30,8 +29,8 @@ class UseCases extends Component {
 
               </div>      
 
-            </div>
          </div>
+         
       </div>
     );
   }

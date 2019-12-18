@@ -19,7 +19,7 @@ import UseCases from './UseCases';
 class Landing extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div>
 
 
         <Showcase/>

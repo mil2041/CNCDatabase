@@ -9,10 +9,10 @@ import { Link } from 'react-router-dom';
 class Showcase extends Component {
   render() {
     return (
-      <div className="py-5 bg-light">
-         <div className="container col-lg-10">
+      <div className="contain-fluid bg-light pl-5">
+         
             <div className="row">
-               <div className="col-lg-8 text-left">
+               <div className="col-lg-8 text-left py-5">
                    <h1><strong> CNCDatabase: </strong></h1>
                    <h2> Cornell Non-Coding cancer driver Database </h2>
                    <hr/>
@@ -29,7 +29,7 @@ class Showcase extends Component {
                
 
             </div>
-         </div>
+         
       </div>
     );
   }

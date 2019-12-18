@@ -92,7 +92,7 @@ const FileUploadForm = props => {
 
     return (
 
-      <div className="container py-3">
+      <div className="container-fluid py-3 pt-3 pl-5">
        
        <div className="row"> 
         <div className="col-lg-3">

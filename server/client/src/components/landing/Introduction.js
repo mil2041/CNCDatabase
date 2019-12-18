@@ -9,13 +9,12 @@ import introduction_figure from './img/functional_loop.png';
 class Intorduction extends Component {
   render() {
     return (
-        <div className="pt-3 pb-3">
-            <div className="container col-lg-10">
+            <div className="container-fluid">
                 
-                
+              <div className="row">  
 
 
-                <div className="row pt-3 pb-1 col-lg-10">
+                 <div className="col-lg-10 pt-3 pb-1 pl-5">
                     <h1 className="text-left"><strong> Introduction </strong></h1>
                     <p>   Most mutations from whole genome sequencing data occur in the non-coding region 
                           with unknown impact to the tumor development. Although the advances in the study 
@@ -31,23 +30,23 @@ class Intorduction extends Component {
                    
                    
 
-               </div>
+                 </div>
 
-               <div className="container d-flex justify-content-center px-5">
+                 <div className="container d-flex px-1">
                
                 
 
-                 <img src={introduction_figure} alt="introduction" width="85%" height="85%"/>
+                     <img src={introduction_figure} alt="introduction" width="85%" height="85%"/>
 
 
-               </div>
+                 </div>
 
 
-                
+              </div>  
 
 
             </div>
-        </div>
+        
     );
   }
 }

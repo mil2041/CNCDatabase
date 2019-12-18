@@ -9,20 +9,22 @@ import SummaryPlot from './DataSummary/SummaryPlot';
 class DataSummary extends Component {
   render() {
     return (
-      <div className="pt-3 pb-3">
-         <div className="container col-lg-10">
-            <h3 className="text-left"><strong>Data summary</strong></h3>
-            <br/>
-            <div className="container d-flex justify-content-center px-5">
-               
-                
+        <div className="container-fluid pt-3 pb-3 pl-5">
+          <div className="row">
+            <div className="col-lg-10">
+                <h3 className="text-left"><strong>Data summary</strong></h3>
+                <br/>
+                <div className="container d-flex justify-content-center px-5">
+                  
+                    
 
-                <SummaryPlot/>
+                    <SummaryPlot/>
 
 
+                </div>
             </div>
-         </div>
-      </div>
+          </div>
+        </div>  
     );
   }
 }

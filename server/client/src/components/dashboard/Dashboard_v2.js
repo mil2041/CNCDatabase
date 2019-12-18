@@ -37,18 +37,20 @@ import CancerDriverListPlot from '../plot/CancerDriverListPlot';
 class Dashboard extends Component {
   render() {
     return (
-      <div className="container col-12">
-        <br/> 
-        <h1><strong>Search cancer driver</strong></h1>
+      <div className="container-fluid pl-5 py-5">
+        <div className="row">
+          <div className="col-lg-12">
+             <h1><strong>Search cancer driver</strong></h1>
+             <hr/>
        
-        {/* <!-- Nav tabs --> */}
+                {/* <!-- Nav tabs --> */}
 
         
                     <br />
                     <div className="card">
                     <h5 className="card-header"><strong>Search cancer driver list</strong></h5>
                     <div className="card-body">
-                       <div className="col-lg-10">
+                       <div className="col-lg-12">
                         
                           <QueryForm />
                         </div>
@@ -82,8 +84,8 @@ class Dashboard extends Component {
                     </div>
                     <br />
            
-        
-        
+           </div>
+        </div>
       </div>
     );
   }

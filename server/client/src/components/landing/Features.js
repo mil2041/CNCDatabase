@@ -9,13 +9,13 @@ import React, { Component } from 'react';
 class Features extends Component {
   render() {
     return (
-        <div className="pt-3 pb-3 bg-light">
-            <div className="container col-lg-10">
+      
+        <div className="container-fluid bg-light pt-3 pb-3 pl-5">
                 
                 
 
-
-                <div className="row pt-4 pb-4 col-lg-12">
+             <div className="row">
+                <div className="col-lg-12 item pt-4 pb-4">
                     <h1 ><strong> Features </strong></h1>
                     
 
@@ -38,15 +38,15 @@ class Features extends Component {
                    
 
                </div>
-
+            </div>
 
 
 
                 
 
 
-            </div>
         </div>
+
     );
   }
 }

@@ -9,31 +9,23 @@ import React, { Component } from 'react';
 class Citation extends Component {
   render() {
     return (
-        <div className="pt-3 pb-3 bg-light">
-            <div className="container col-lg-10">
-                
-                
-
-
-                <div className="row py-4 col-lg-10">
+        <div className="container-fluid pt-3 pb-3 bg-light pl-5">
+          <div className="row">
+            
+                <div className="col-lg-2 py-4">
                     <h1 className="text-left"><strong> Citation </strong></h1>
-                    <hr/>
-                      <p>   Liu et al, Database (2019) 
+                </div>    
+                <div className="col-lg-10">    
+                      <span>   Liu et al, Database (2019) 
                           
-                      </p>
+                      </span>
                     
                    
-                   
-
-                </div>
-
-
-
+                 </div>  
 
                 
 
-
-            </div>
+          </div>
         </div>
     );
   }

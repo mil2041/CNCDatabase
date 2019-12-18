@@ -13,7 +13,7 @@ import Dashboard from './dashboard/Dashboard_v2';
 //import SearchNew from './searches/SearchNew';
 
 import DataSetDownload from './dataset/DataSetDownload';
-import Documentation from './documentation/Documentation_v2';
+import Documentation from './documentation/Documentation_v3';
 import About from './about/About';
 
 import Footer from './footer/Footer';

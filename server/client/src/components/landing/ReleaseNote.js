@@ -8,8 +8,8 @@ import React, { Component } from 'react';
 class ReleaseNote extends Component {
   render() {
     return (
-      <div className="pt-3 pb-3 ">
-         <div className="container col-lg-10">
+      
+      <div className="container-fluid pt-3 pb-3 pl-5">
             <div className="row">
                <div className="col-lg-6 text-left">
                    
@@ -36,8 +36,8 @@ class ReleaseNote extends Component {
                </div>
 
             </div>
-         </div>
       </div>
+      
     );
   }
 }
