@@ -30,12 +30,12 @@ class SummaryPlot extends Component {
     const data1 = [trace1, trace2];
       
     const layout = {
-        title: 'Evidence support per cancer type',
+        title: 'Predicted non-coding cancer drivers per cancer type',
         xaxis: {
             tickangle: -45
         },
         yaxis: {
-            title: 'Number of unique methods'
+            title: 'Number of genes'
         },
         barmode: 'stack',
         hovermode: 'closest',

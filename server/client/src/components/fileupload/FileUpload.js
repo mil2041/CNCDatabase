@@ -92,119 +92,123 @@ const FileUploadForm = props => {
 
     return (
 
-      <div className="container-fluid py-3 pt-3 pl-5">
+      <div className="container-fluid py-5 pl-5">
        
        <div className="row"> 
-        <div className="col-lg-3">
-        </div>
+        
 
-        <div className="col-lg-6">  
-
+        <div className="col-lg-9">  
 
 
-          <p className="h4 text-center">Submit non-coding cancer dirver list</p> 
+
+          <p className="h1"><strong>Submission</strong></p>
+          <hr/> 
 
             <div className="card">
+            <h5 className="card-header"><strong>Submit non-coding cancer dirver list</strong></h5> 
               <div className="card-body">
 
                   <form onSubmit={handleSubmit}>
-                    <div className="form-group">
-                      <label for="name">Name</label>
-                      <input
-                        id="name"
-                        className="form-control"
-                        placeholder="Enter submitter full name"
-                        type="text"
-                        value={values.name}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
+                    <div className="form-row">
+                      <div className="form-group col-md-6">
+                        <label for="name">Name</label>
+                        <input
+                          id="name"
+                          className="form-control"
+                          placeholder="Enter submitter full name"
+                          type="text"
+                          value={values.name}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
 
-                      {errors.name && touched.name && (
-                        <div style={{ color: "red", marginTop: ".5rem" }}>{errors.name}</div>
-                      )}
-                    </div>
+                        {errors.name && touched.name && (
+                          <div style={{ color: "red", marginTop: ".5rem" }}>{errors.name}</div>
+                        )}
+                      </div>
 
-                    <div className="form-group">
-                      <label for="email">Email</label>
-                      <input
-                        id="email"
-                        className="form-control"
-                        placeholder="Enter submitter email"
-                        type="email"
-                        value={values.email}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
+                      <div className="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input
+                          id="email"
+                          className="form-control"
+                          placeholder="Enter submitter email"
+                          type="email"
+                          value={values.email}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
 
-                      {errors.email && touched.email && (
-                        <div style={{ color: "red", marginTop: ".5rem" }}>{errors.email}</div>
-                      )}
-                    </div>
+                        {errors.email && touched.email && (
+                          <div style={{ color: "red", marginTop: ".5rem" }}>{errors.email}</div>
+                        )}
+                      </div>
 
-                    <div className="form-group">
-                      <label for="affiliation">Affiliation</label>
-                      <input
-                        id="affiliation"
-                        className="form-control"
-                        placeholder="Enter submitter affiliation"
-                        type="text"
-                        value={values.affiliation}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
+                      <div className="form-group col-md-6">
+                        <label for="affiliation">Affiliation</label>
+                        <input
+                          id="affiliation"
+                          className="form-control"
+                          placeholder="Enter submitter affiliation"
+                          type="text"
+                          value={values.affiliation}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
 
-                      {errors.affiliation && touched.affiliation && (
-                        <div style={{ color: "red", marginTop: ".5rem" }}>{errors.affiliation}</div>
-                      )}
-                    </div>
+                        {errors.affiliation && touched.affiliation && (
+                          <div style={{ color: "red", marginTop: ".5rem" }}>{errors.affiliation}</div>
+                        )}
+                      </div>
 
-                    <div className="form-group">
-                      <label for="referenceUrl">Reference url</label>
-                      <input
-                        id="referenceUrl"
-                        className="form-control"
-                        placeholder="Enter reference url"
-                        type="text"
-                        value={values.referenceUrl}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
+                      <div className="form-group col-md-6">
+                        <label for="referenceUrl">Reference url</label>
+                        <input
+                          id="referenceUrl"
+                          className="form-control"
+                          placeholder="Enter reference url"
+                          type="text"
+                          value={values.referenceUrl}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
 
-                      {errors.referenceUrl && touched.referenceUrl && (
-                        <div style={{ color: "red", marginTop: ".5rem" }}>{errors.referenceUrl}</div>
-                      )}
-                    </div>
+                        {errors.referenceUrl && touched.referenceUrl && (
+                          <div style={{ color: "red", marginTop: ".5rem" }}>{errors.referenceUrl}</div>
+                        )}
+                      </div>
 
-                    <div className="form-group">
-                      <label for="comments">Comments</label>
-                      <textarea
-                        id="comments"
-                        className="form-control"
-                        placeholder="Enter comments"
-                        type="text"
-                        rows="5"
-                        value={values.comments}
-                        onChange={handleChange}
-                        onBlur={handleBlur}
-                      />
+                      <div className="form-group col-md-12">
+                        <label for="comments">Comments</label>
+                        <textarea
+                          id="comments"
+                          className="form-control"
+                          placeholder="Enter comments"
+                          type="text"
+                          rows="5"
+                          value={values.comments}
+                          onChange={handleChange}
+                          onBlur={handleBlur}
+                        />
 
-                      {errors.comments && touched.comments && (
-                        <div style={{ color: "red", marginTop: ".5rem" }}>{errors.comments}</div>
-                      )}
-                    </div>
+                        {errors.comments && touched.comments && (
+                          <div style={{ color: "red", marginTop: ".5rem" }}>{errors.comments}</div>
+                        )}
+                      </div>
 
-                    <div className="form-group">
-                       <label for="file">Upload Your File </label>
-                       <input
-                          id="file" 
-                          type="file" 
-                          className="form-control" 
-                          onChange={
-                            (event) => {setFieldValue("file", event.currentTarget.files[0]);}
-                          }
-                       />
-                    </div>
+                      <div className="form-group col-md-12">
+                        <label for="file">Upload Your File </label>
+                        <input
+                            id="file" 
+                            type="file" 
+                            className="form-control" 
+                            onChange={
+                              (event) => {setFieldValue("file", event.currentTarget.files[0]);}
+                            }
+                        />
+                      </div>
+                    
+                    </div> 
 
                     <ToastContainer
                     /> 

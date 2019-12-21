@@ -50,10 +50,10 @@ class Dashboard extends Component {
                     <div className="card">
                     <h5 className="card-header"><strong>Search cancer driver list</strong></h5>
                     <div className="card-body">
-                       <div className="col-lg-12">
+                       
                         
                           <QueryForm />
-                        </div>
+                        
                     </div>
                     </div>
                     <br /> 
@@ -63,9 +63,9 @@ class Dashboard extends Component {
                     <div className="card mt-3">
                      <h5 className="card-header"><strong>Summary</strong> </h5>
                       <div className="card-body">
-                        <div className="col-lg-12">
+                        
                           <CancerDriverListPlot />
-                        </div> 
+                        
                       </div>
                     </div>
                     <br />
@@ -77,9 +77,9 @@ class Dashboard extends Component {
                     <div className="card mt-3">
                      <h5 className="card-header"><strong>Results</strong> </h5>
                       <div className="card-body">
-                        <div className="col-lg-12">
+                        
                           <CancerDriverListTable />
-                        </div> 
+                       
                       </div>
                     </div>
                     <br />

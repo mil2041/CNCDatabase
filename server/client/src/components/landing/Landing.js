@@ -7,6 +7,8 @@ import React, { Component } from 'react';
 import Showcase from './Showcase';
 import Introduction from './Introduction';
 import DataSummary from './DataSummary';
+import DataPipelineMethod from './DataPipelineMethod';
+import UseCases from './UseCases';
 import Features from './Features';
 import ReleaseNote from './ReleaseNote';
 import Citation from './Citation';
@@ -14,7 +16,7 @@ import Citation from './Citation';
 //import EmailSubscribe from './EmailSubscribe';
 //import Testimonial from './Testimonial';
 //import ShowcaseCallToAction from './ShowcaseCallToAction';
-import UseCases from './UseCases';
+
 
 class Landing extends Component {
   render() {
@@ -24,8 +26,9 @@ class Landing extends Component {
 
         <Showcase/>
         <Introduction/>
+          
+          <DataPipelineMethod/>
           <DataSummary/>
-        
           <UseCases/>
 
         <Features/>

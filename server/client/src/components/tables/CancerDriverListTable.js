@@ -227,37 +227,45 @@ class CancerDriverListTable extends React.Component {
           };
 
         return (
-            <div className="container-fluid" style={{ marginTop: 20 }}>
+            <div className="container-fluid">
 
               
 
-              <div className="my-2 d-flex flex-row justify-content-between"> 
-               
-               Returned {totalDataLength} entries
-               
-               <CSVLink
-                 data={data} 
-                 filename={"SearchResults.csv"}
-                 className="btn btn-outline-primary btn-sm"
-                 target="_blank"
-               >
-                 Download CSV 
+              <div className="d-flex justify-content-between"> 
+                  <div className="p-2">
+                    Returned {totalDataLength} entries
+                  </div>
+                  
+                  <div className="p-2">  
+                    <CSVLink
+                      data={data} 
+                      filename={"SearchResults.csv"}
+                      className="btn btn-outline-primary btn-sm"
+                      target="_blank"
+                    >
+                      Download CSV 
 
-               </CSVLink>
+                    </CSVLink>
+                  </div>  
+               
               </div>
 
-              <div className="d-flex flex-row">
-               <ReactTabulator
-                      data={data}
-                      initialSort={[{column:"element",dir:"asc"}]}
-                      columns={columns}
-                      tooltips={true}
-                      headerTooltip={true}
-                      layout= {"fitColumns"}
-                      autoColumns={true}
-                      options={options}
-               />
-              </div>
+              <div className="row">
+                <div className="col-lg-12">    
+                    <ReactTabulator
+                            data={data}
+                            initialSort={[{column:"element",dir:"asc"}]}
+                            columns={columns}
+                            tooltips={true}
+                            headerTooltip={true}
+                            layout= {"fitColumns"}
+                            autoColumns={true}
+                            options={options}
+                    />
+                </div>
+
+
+              </div>   
             </div>
 
         );
