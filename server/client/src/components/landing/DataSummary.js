@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 //import { UndrawBrowserStats } from 'react-undraw-illustrations';
 import SummaryPlot from './DataSummary/SummaryPlot';
+import SummaryPiePlot from './DataSummary/SummaryPiePlot';
 
 class DataSummary extends Component {
   render() {
@@ -20,7 +21,10 @@ class DataSummary extends Component {
 
                     <SummaryPlot/>
 
+                    <SummaryPiePlot/>
 
+
+                    
                 </div>
             </div>
           </div>

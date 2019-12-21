@@ -32,6 +32,9 @@ import CancerDriverListTable from '../tables/CancerDriverListTable';
 //import TestPlot from '../studies/TestPlot';
 //import ExamplePlot from '../plot/barPlot';
 import CancerDriverListPlot from '../plot/CancerDriverListPlot';
+
+import testPlot from '../plot/testPlot';
+
 //import QueryBarByGene from '../searches/Query_bar_by_gene';
 
 class Dashboard extends Component {
@@ -56,8 +59,15 @@ class Dashboard extends Component {
                         
                     </div>
                     </div>
-                    <br /> 
-
+                    
+                    <div className="card mt-3">
+                     <h5 className="card-header"><strong>D3 plot</strong> </h5>
+                      <div className="card-body">
+                        
+                          <testPlot />
+                        
+                      </div>
+                    </div>
 
 
                     <div className="card mt-3">
@@ -68,7 +78,7 @@ class Dashboard extends Component {
                         
                       </div>
                     </div>
-                    <br />
+                    
 
 
 
