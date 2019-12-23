@@ -20,8 +20,9 @@ const getData = () => ({
   timeline: getTimelineData(),
   scatter: getScatterData(),
 })
-const testPlot = () => {
-  const [data, setData] = useState(getData())
+
+const TestPlot = () => {
+  const [data, setData] = React.useState(getData())
 
   return (
     <div className="App">
@@ -43,6 +44,6 @@ const testPlot = () => {
   )
 }
 
-export default testPlot
+export default TestPlot
 
 
