@@ -4,7 +4,7 @@ import { getTimelineData, getScatterData } from "./utils/dummyData"
 
 //import Timeline from "./Timeline"
 import ScatterPlot from "./ScatterPlot"
-import PiePlot from "./PiePlot_v5"
+import PiePlot from "./PiePlot_v6"
 //import Histogram from "./Histogram"
 // import Timeline from "./completed/Timeline"
 // import ScatterPlot from "./completed/ScatterPlot"
