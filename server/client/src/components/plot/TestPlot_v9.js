@@ -6,7 +6,7 @@ import { fetchCancerDriverList } from "../../actions";
 
 //import Timeline from "./Timeline"
 //import ScatterPlot from "./ScatterPlot"
-import PiePlot from "./PiePlot_v8"
+import PiePlot from "./PiePlot_v9"
 //import Histogram from "./Histogram"
 // import Timeline from "./completed/Timeline"
 // import ScatterPlot from "./completed/ScatterPlot"
@@ -69,7 +69,7 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
     
       <div className="row">
         <div className="col-lg-3">
-            <h1>pie chart </h1> 
+            <p>Cancer type</p>
 
             <PiePlot
                 data={data}
@@ -80,11 +80,11 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
                 arcAccessor={cancerTypeAccessor}
                 title="Element Type"
             />
-
+            
         </div>
 
         <div className="col-lg-3">
-            <h1>pie chart </h1> 
+            <p>Element type</p> 
 
             <PiePlot
                 data={data}
@@ -99,7 +99,7 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
         </div>
 
         <div className="col-lg-3">
-            <h1>pie chart </h1> 
+            <p>Evidence type</p> 
 
             <PiePlot
                 data={data}
@@ -110,11 +110,12 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
                 arcAccessor={evidenceTypeAccessor}
                 title="Element Type"
             />
+            
 
         </div>
 
         <div className="col-lg-3">
-            <h1>pie chart </h1> 
+            <p>Evidence method</p>
 
             <PiePlot
                 data={data}
@@ -125,6 +126,7 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
                 arcAccessor={evidenceMethodAccessor}
                 title="Element Type"
             />
+            
 
         </div>
 

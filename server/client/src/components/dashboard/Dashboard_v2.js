@@ -33,7 +33,7 @@ import CancerDriverListTable from '../tables/CancerDriverListTable';
 //import ExamplePlot from '../plot/barPlot';
 import CancerDriverListPlot from '../plot/CancerDriverListPlot';
 
-import TestPlot from '../plot/TestPlot_v6';
+import TestPlot from '../plot/TestPlot_v9';
 
 //import QueryBarByGene from '../searches/Query_bar_by_gene';
 

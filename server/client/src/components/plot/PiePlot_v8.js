@@ -16,8 +16,9 @@ const Pie = props => {
   const dimensionCount = d3.nest()
      .key(props.arcAccessor)
      .rollup( v => v.length )
-     .entries(props.data);
-     
+     .entries(props.data)
+     .sort(function(a, b){ return d3.descending(a.value, b.value); });
+
   console.log("dimensionCount",dimensionCount);
 
 
@@ -26,6 +27,7 @@ const Pie = props => {
   const createPie = d3
     .pie()
     .value(d => d.value);
+    //.sort(function(a, b){ return d3.descending(a.value, b.value); })
     //.sort(null);
 
   const createArc = d3
@@ -78,31 +80,59 @@ const Pie = props => {
       //const pie = createPie(props.data);
       const pie = createPie(dimensionCount);
 
-      const group = d3.select(ref.current)
+      const svg = d3.select(ref.current)
                     .attr("width",props.width)
                     .attr("height",props.height)
                     .append("g")
                     .attr("transform","translate(" + props.width / 2 + "," + props.height / 2 + ")");
 
-                    group.append('g').attr('class', 'slices');
-                    group.append('g').attr('class', 'innerLabelName');
-                    group.append('g').attr('class', 'outerLabelName');
-                    group.append('g').attr('class', 'lines');
-                    
-                    
-              
-                    const path = group.select('.slices')
-                      .datum(props.data).selectAll('path')
-                      .data(pie)
-                      .enter().append('path')
-                      .attr("d", createArc)
-                      .attr("data-index", function(d, i){ return i;})
-                      .attr("fill", (d, i) => colors(i))
-                      .attr("stroke", "white")
-                      .style("stroke-width", "1px")
+      //svg.append('g').attr('class', 'slices');
+
+      const groupWithData = svg
+         .selectAll("g.slices")
+         .data(pie) 
+
+                    //group.append('g').attr('class', 'slices');
+                    //group.append('g').attr('class', 'innerLabelName');
+                    //group.append('g').attr('class', 'outerLabelName');
+                    //group.append('g').attr('class', 'lines');
+      
+      //const groupWithData = group.selectAll("g.slices").data(pie);
+      
+      groupWithData.exit().remove();
+
+
+      console.log("group with data",groupWithData);              
+      
+      const groupWithUpdate = groupWithData
+         .enter()
+         .append("g")
+         .attr("class","slices");
+
+      console.log("group with update",groupWithUpdate);  
+
+      //const path = group.select('.slices')
+      //  .datum(props.data).selectAll('path')
+      //  .data(pie)
+
+      const path = groupWithUpdate
+        .append("path")
+        .merge(groupWithData.select(".slices path")); 
+ 
+      const debug = groupWithData.select(".slices path")   
+
+      console.log("path after merge",debug);  
+
+      path
+        .attr("class","slices")  
+        .attr("d", createArc)
+        .attr("data-index", function(d, i){ return i;})
+        .attr("fill", (d, i) => colors(i))
+        .attr("stroke", "white")
+        .style("stroke-width", "1px")
         
 
-      const text = group.select('.innerLabelName')
+      const text = svg.select('.innerLabelName')
         .selectAll('text')
         .data(pie)
         .enter()
@@ -118,7 +148,7 @@ const Pie = props => {
         .text(d => format(d.value));
 
       // create outer-text label
-      const outerTextLabel = group.select(".outerLabelName")
+      const outerTextLabel = svg.select(".outerLabelName")
         .selectAll("text")
         .data(pie)
         .enter()
@@ -139,7 +169,7 @@ const Pie = props => {
               if( percent<5) {
                   console.log("text label percent",percent)
                   console.log("text label index",i)
-                  pos[1] -= (i+0.5)*10
+                  pos[1] -= (i-3)*12
               }
 
               console.log("text label pos:", pos);
@@ -153,7 +183,7 @@ const Pie = props => {
         });
      
       // create outer-text line
-      const outerTextLine = group.select(".lines")
+      const outerTextLine = svg.select(".lines")
       .selectAll("polyline")
       .data(pie)
       .enter()
@@ -164,12 +194,22 @@ const Pie = props => {
         .attr("stroke", "black")
         .style("fill", "none")
         .attr("stroke-width", 1)
-        .attr('points', function(d) {
+        .attr('points', function(d,i) {
               const posA = createOuterArc.centroid(d) // line insertion in the slice
               const posB = createOuter2Arc.centroid(d) // line break: we use the other arc generator that has been built only for that
               const posC = createOuter2Arc.centroid(d); // Label position = almost the same as posB
               const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2 // we need the angle to see if the X position will be at the extreme right or extreme left
               posC[0] = props.outerRadius * 0.9 * (midangle < Math.PI ? 1 : -1); // multiply by 1 or -1 to put it on the right or on the left
+              
+              const percent = (d.endAngle - d.startAngle)/(2*Math.PI)*100
+              if( percent<5) {
+                  //console.log("text label percent",percent)
+                  //console.log("text label index",i)
+                  posC[1] -= (i-3)*12
+              }
+              
+              posB[1] = posC[1]
+              
               return [posA, posB, posC]
         })
 
