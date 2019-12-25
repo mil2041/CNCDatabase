@@ -22,10 +22,20 @@ const Pie = props => {
     () => {  
 
   const dimensionCount = d3.nest()
+      .key(props.arcAccessor)
+      .rollup( v => v.length )
+      .entries(props.data)
+      .sort(function(a, b){ return d3.descending(a.value, b.value); });
+
+  const dimensionCount2 = d3.nest()
      .key(props.arcAccessor)
-     .rollup( v => v.length )
+     .rollup( function(v){
+                return d3.nest().key(d => d.gene).rollup(k => k.length).entries(v).length
+            })
      .entries(props.data)
      .sort(function(a, b){ return d3.descending(a.value, b.value); });
+
+  console.log("dimensionCount2",dimensionCount2);
 
   let i = 0, ln = dimensionCount.length;
   for (i;i<ln;i++){
@@ -81,7 +91,7 @@ const Pie = props => {
   // color scale 
   //const colors = d3.scaleOrdinal(d3.schemeCategory10);
   const colors = d3.scaleOrdinal()
-                   .domain(dimensionCount.map(d => d.value))
+                   //.domain(dimensionCount.map(d => d.value))
                    .range(d3.schemeCategory10);
 
   const format = d3.format("d");
@@ -91,7 +101,7 @@ const Pie = props => {
 
 
       //const pie = createPie(props.data);
-      const pie = createPie(dimensionCount);
+      const pie = createPie(dimensionCount2);
 
       const group = d3.select(ref.current)
                     //.attr("width",props.width)

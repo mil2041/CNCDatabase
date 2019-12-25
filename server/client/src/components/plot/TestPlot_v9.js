@@ -24,6 +24,8 @@ const elementTypeAccessor = d => d.element
 const evidenceTypeAccessor = d => d.evidencetype
 const evidenceMethodAccessor = d => d.evidencemethod
 
+const geneAccessor = d => d.gene
+
 //const getData = () => ({
 //  timeline: getTimelineData(),
 //  scatter: getScatterData(),
@@ -66,7 +68,15 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
   console.log("plot data",data)
 
   return (
-    
+
+    <div>
+      <div className="row py-2 px-2">
+         <p>Display by:</p>  
+         <button type="button" className="btn btn-primary mr-2">genes</button>
+         <button type="button" className="btn btn-primary">entries</button>
+      </div>
+
+
       <div className="row">
         <div className="col-lg-3">
             <p>Cancer type</p>
@@ -132,7 +142,7 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
 
       </div>
-
+    </div>
     
   )
 }
