@@ -13,9 +13,9 @@ class UseCases extends Component {
       <div className="container-fluid pl-5 pb-5">
          <div className="row">
               <div className="col-lg-10">
-                   
-                   <h3><strong> Non-coding cancer driver examples </strong></h3>
-
+                  <div className="pb-3"> 
+                    <h3><strong> Non-coding cancer driver examples </strong></h3>
+                  </div>
                    
                    <Panel title="TERT promoter">
                      <hr/>

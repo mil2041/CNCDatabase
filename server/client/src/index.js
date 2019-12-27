@@ -14,6 +14,7 @@ import 'react-tabulator/lib/css/tabulator_simple.min.css'; // simple theme
 
 //import 'antd/dist/antd.css'
 import './index.css'
+import './custom_theme.css'
 
 import React from 'react';
 import ReactDOM from 'react-dom';

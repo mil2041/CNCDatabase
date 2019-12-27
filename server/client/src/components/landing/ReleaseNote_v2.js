@@ -14,10 +14,12 @@ class ReleaseNote extends Component {
                <div className="col-lg-6 text-left">
                    
                    <h1><strong> News </strong></h1>
-                   <hr className="style1"/>
+                   <hr/>
                    <span className="text-info">October 20, 2019 <br/> </span>
-                   <ul> 
-                     <li>Update search interface </li>      
+                   <ul className="timeline"> 
+                     <li><span className="text-info">October 20, 2019</span>
+                         <p>Update search interface</p>
+                     </li>       
                    </ul>
                    <span className="text-info">March 10, 2019 <br/> </span>
                    <ul> 

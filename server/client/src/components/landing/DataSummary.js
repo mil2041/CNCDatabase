@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 //import { UndrawBrowserStats } from 'react-undraw-illustrations';
 import SummaryPlot from './DataSummary/SummaryPlot';
-import SummaryPiePlot from './DataSummary/SummaryPiePlot';
+//import SummaryPiePlot from './DataSummary/SummaryPiePlot';
 
 class DataSummary extends Component {
   render() {
@@ -13,7 +13,7 @@ class DataSummary extends Component {
         <div className="container-fluid pt-3 pb-3 pl-5">
           <div className="row">
             <div className="col-lg-10">
-                <h3 className="text-left"><strong>Data summary</strong></h3>
+                <h3><strong>Data summary</strong></h3>
                 <br/>
                 <div className="container d-flex justify-content-center px-5">
                   
@@ -21,7 +21,7 @@ class DataSummary extends Component {
 
                     <SummaryPlot/>
 
-                    <SummaryPiePlot/>
+                    
 
 
                     

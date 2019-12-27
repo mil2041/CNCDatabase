@@ -102,7 +102,7 @@ const FileUploadForm = props => {
 
 
           <p className="h1"><strong>Submission</strong></p>
-          <hr/> 
+          <hr className="style1"/> 
 
             <div className="card">
             <h5 className="card-header"><strong>Submit non-coding cancer dirver list</strong></h5> 

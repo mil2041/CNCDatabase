@@ -25,7 +25,7 @@ class Documentation extends Component {
                 
                <div className="col-lg-10">  
                     <h1><strong>Documentation</strong></h1>
-                    <hr/>
+                    <hr className="style1"/>
                     <h4><strong>Table of contents</strong></h4>
                     <ul>
                         <li>What is CNCDatabase?</li>

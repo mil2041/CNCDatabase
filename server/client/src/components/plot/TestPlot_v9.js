@@ -69,13 +69,14 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
   return (
 
-    <div>
+    <div className="container-fluid">
+      
       <div className="row py-2 px-2">
          <p>Display by:</p>  
          <button type="button" className="btn btn-primary mr-2">genes</button>
          <button type="button" className="btn btn-primary">entries</button>
+         <div className="bd-callout bd-callout-info">test</div>
       </div>
-
 
       <div className="row">
         <div className="col-lg-3">
@@ -83,7 +84,7 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
             <PiePlot
                 data={data}
-                width={500}
+                width={350}
                 height={400}
                 innerRadius={50}
                 outerRadius={80}
@@ -92,13 +93,13 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
             />
             
         </div>
-
+        
         <div className="col-lg-3">
             <p>Element type</p> 
 
             <PiePlot
                 data={data}
-                width={500}
+                width={450}
                 height={400}
                 innerRadius={50}
                 outerRadius={80}
@@ -140,8 +141,9 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
         </div>
 
-
       </div>
+
+      
     </div>
     
   )

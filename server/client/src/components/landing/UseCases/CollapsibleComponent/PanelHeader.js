@@ -6,13 +6,14 @@ import './react_collapsible.css';
 const PanelHeader = props => {
     return (
         <button
-            className="panel__header"
+            className={props.isExpanded ? "panel__header active" : "panel__header"}
             onClick={props.handleToggle}
             onKeyDown={props.handleKeyDown}
             aria-expanded={props.isExpanded}
         >
-            {props.children}   
+               
             {props.isExpanded ? <MinusIcon/> : <PlusIcon/>}
+            {props.children}
         </button>
     )
 }

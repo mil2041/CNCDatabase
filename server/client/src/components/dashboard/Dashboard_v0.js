@@ -46,7 +46,11 @@ class Dashboard extends Component {
              <h1><strong>Search cancer driver</strong></h1>
              <hr className="style1"/>
        
-             <div className="card">
+                {/* <!-- Nav tabs --> */}
+
+        
+                    <br />
+                    <div className="card">
                     <h5 className="card-header"><strong>Search cancer driver list</strong></h5>
                     <div className="card-body">
                        
@@ -54,41 +58,42 @@ class Dashboard extends Component {
                           <QueryForm />
                         
                     </div>
-             </div>
-           
-             <div className="card mt-3">
+                    </div>
+                    
+                    <div className="card mt-3">
                      <h5 className="card-header"><strong>D3 plot</strong> </h5>
-                     <div className="card-body">
+                      <div className="card-body">
                         
                           <TestPlot />
                         
-                     </div>
-             </div>
-  
-             <div className="card mt-3">
+                      </div>
+                    </div>
+
+
+                    <div className="card mt-3">
                      <h5 className="card-header"><strong>Summary</strong> </h5>
                       <div className="card-body">
                         
                           <CancerDriverListPlot />
                         
                       </div>
-             </div>
+                    </div>
                     
 
 
 
 
 
-             <div className="card mt-3">
+                    <div className="card mt-3">
                      <h5 className="card-header"><strong>Results</strong> </h5>
                       <div className="card-body">
                         
                           <CancerDriverListTable />
                        
                       </div>
-             </div>
-
-
+                    </div>
+                    <br />
+           
            </div>
         </div>
       </div>
