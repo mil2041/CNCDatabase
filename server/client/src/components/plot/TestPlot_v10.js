@@ -9,7 +9,8 @@ import OptionsGroup from "./OptionsGroup/OptionsGroup";
 
 //import Timeline from "./Timeline"
 //import ScatterPlot from "./ScatterPlot"
-import PiePlot from "./PiePlot_v9"
+import PiePlot from "./PiePlot_v10"
+import { PlotContextProvider } from "./Context";
 //import Histogram from "./Histogram"
 // import Timeline from "./completed/Timeline"
 // import ScatterPlot from "./completed/ScatterPlot"
@@ -73,78 +74,78 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
   return (
 
     <div className="container-fluid">
-      
-      <div className="row pt-2 pb-3 px-2">
-         <OptionsGroup/>
-         
-      </div>
-
-      <div className="row">
-        <div className="col-lg-3">
-            <p><strong>Cancer type</strong></p>
-
-            <PiePlot
-                data={data}
-                width={350}
-                height={400}
-                innerRadius={50}
-                outerRadius={80}
-                arcAccessor={cancerTypeAccessor}
-                title="Element Type"
-            />
+      <PlotContextProvider>
+        <div className="row pt-2 pb-3 px-2">
+            <OptionsGroup/>
             
         </div>
-        
-        <div className="col-lg-3">
-            <p><strong>Element type</strong></p> 
 
-            <PiePlot
-                data={data}
-                width={450}
-                height={400}
-                innerRadius={50}
-                outerRadius={80}
-                arcAccessor={elementTypeAccessor}
-                title="Element Type"
-            />
+        <div className="row">
+            <div className="col-lg-3">
+                <p><strong>Cancer type</strong></p>
 
-        </div>
-
-        <div className="col-lg-3">
-            <p><strong>Evidence type</strong></p> 
-
-            <PiePlot
-                data={data}
-                width={500}
-                height={400}
-                innerRadius={50}
-                outerRadius={80}
-                arcAccessor={evidenceTypeAccessor}
-                title="Element Type"
-            />
+                <PiePlot
+                    data={data}
+                    width={350}
+                    height={400}
+                    innerRadius={50}
+                    outerRadius={80}
+                    arcAccessor={cancerTypeAccessor}
+                    title="Element Type"
+                />
+                
+            </div>
             
+            <div className="col-lg-3">
+                <p><strong>Element type</strong></p> 
+
+                <PiePlot
+                    data={data}
+                    width={450}
+                    height={400}
+                    innerRadius={50}
+                    outerRadius={80}
+                    arcAccessor={elementTypeAccessor}
+                    title="Element Type"
+                />
+
+            </div>
+
+            <div className="col-lg-3">
+                <p><strong>Evidence type</strong></p> 
+
+                <PiePlot
+                    data={data}
+                    width={500}
+                    height={400}
+                    innerRadius={50}
+                    outerRadius={80}
+                    arcAccessor={evidenceTypeAccessor}
+                    title="Element Type"
+                />
+                
+
+            </div>
+
+            <div className="col-lg-3">
+                <p><strong>Evidence method</strong></p>
+
+                <PiePlot
+                    data={data}
+                    width={500}
+                    height={400}
+                    innerRadius={50}
+                    outerRadius={80}
+                    arcAccessor={evidenceMethodAccessor}
+                    title="Element Type"
+                />
+                
+
+            </div>
 
         </div>
 
-        <div className="col-lg-3">
-            <p><strong>Evidence method</strong></p>
-
-            <PiePlot
-                data={data}
-                width={500}
-                height={400}
-                innerRadius={50}
-                outerRadius={80}
-                arcAccessor={evidenceMethodAccessor}
-                title="Element Type"
-            />
-            
-
-        </div>
-
-      </div>
-
-      
+      </PlotContextProvider>
     </div>
     
   )

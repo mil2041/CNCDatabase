@@ -5,10 +5,23 @@
 
 hr.style1 {
     border: none;
-    height: 10px;
+    height: 8px;
     width: 70px;
     margin-left: 0px;
-    background: orange;
+    /*background: #CF4561;*/
+    background: #B31A1A;
+}
+
+.iconButton {
+    background-color: Transparent;
+    padding: 1px 6px;
+    /*background-color: red;*/
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    /*border-radius: 50px;*/
 }
 
 
