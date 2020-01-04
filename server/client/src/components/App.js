@@ -9,7 +9,7 @@ import Header from './header/Header_v2';
 import Landing from './landing/Landing';
 import Studies from './studies/Studies';
 //import Dashboard from './dashboard/Dashboard';
-import Dashboard from './dashboard/Dashboard_v2';
+import Dashboard from './dashboard/Dashboard_v3';
 //import SearchNew from './searches/SearchNew';
 
 import DataSetDownload from './dataset/DataSetDownload';
