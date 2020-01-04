@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useTable, useFilters, useSortBy, usePagination, useGlobalFilter } from "react-table";
+import { useTable, useSortBy, usePagination, useGlobalFilter } from "react-table";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Table({ columns, data }) {
 
@@ -48,12 +49,16 @@ export default function Table({ columns, data }) {
   // Render the UI for your table
   return (
     <div>
-      <span>Search: </span>  
-      <input
-        value={filterInput}
-        onChange={handleFilterChange}
-        placeholder={"Global search..."}
-      />
+       <div className="search">
+        <span className="fa-icon"><FontAwesomeIcon icon="search" color="grey" size="1x"/></span>  
+        <input
+            type="text"
+            className="react-table-input"
+            value={filterInput}
+            onChange={handleFilterChange}
+            placeholder={"Search"}
+        />
+       </div> 
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map(headerGroup => (
@@ -123,6 +128,7 @@ export default function Table({ columns, data }) {
           | Go to page:{' '}
           <input
             type="number"
+            className="react-table-input"
             defaultValue={pageIndex + 1}
             onChange={e => {
               const page = e.target.value ? Number(e.target.value) - 1 : 0

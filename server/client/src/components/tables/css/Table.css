@@ -73,16 +73,37 @@ table th.sort-desc::before {
     text-transform: uppercase;
 }
 
-/*
-input {
-    padding: 10px;
-    margin-bottom: 20px;
-    font-size: 18px;
+
+.search {
+    position: relative;
+}
+
+.search .react-table-input[type=text] {
+    text-indent: 32px;
+    padding: 6px;
+    margin-bottom: 8px;
+    font-size: 1rem;
     border-radius: 5px;
     border: 1px solid #ddd;
     box-shadow: none;
-}*/
+}
+
+.search .fa-icon {
+    position: absolute;
+    top: 8px;
+    left: 12px;
+    
+}
+
+.react-table-input[type=number] {
+    padding: 4px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: none;
+}
 
 .react-table-pagination {
-    padding: 5px 10px;
+    padding: 8px;
 }
