@@ -22,7 +22,7 @@ import QueryForm from '../searches/QueryFormikForm';
 
 //import CancerDriverByGeneTable from '../tables/CancerDriverByGeneTable';
 
-import CancerDriverListTable from '../tables/CancerDriverListTable';
+//import CancerDriverListTable from '../tables/CancerDriverListTable';
 
 import ReactTableContainer from '../tables/ReactTableContainer_v2';
 
@@ -72,15 +72,6 @@ class Dashboard extends Component {
                       <div className="card-body">
                         
                           <ReactTableContainer />
-                       
-                      </div>
-             </div>
-
-             <div className="card mt-3">
-                     <h5 className="card-header"><strong>Results</strong> </h5>
-                      <div className="card-body">
-                        
-                          <CancerDriverListTable />
                        
                       </div>
              </div>

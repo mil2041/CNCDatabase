@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { useTable, useSortBy, usePagination, useGlobalFilter } from "react-table";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CSVLink } from 'react-csv';
-import { resetWarningCache } from "prop-types";
+
+//import { resetWarningCache } from "prop-types";
 
 const IndeterminateCheckbox = React.forwardRef(
     ({ indeterminate, ...rest }, ref) => {
@@ -18,9 +19,7 @@ const IndeterminateCheckbox = React.forwardRef(
 )
 
 
-const TableController = ({data}) => {
-
-    const tableLength = data.length;
+const DownloadCSVButton = ({data}) => {
 
     const headers = [
         { label: 'PMID', key: 'pmid'},
@@ -36,25 +35,18 @@ const TableController = ({data}) => {
 
 
     return(
-       <div className="d-flex justify-content-between"> 
-                  <div className="p-2">
-                    Returned {tableLength} entries
-                  </div>
-                  
-                  <div className="p-2">  
-                    <CSVLink
-                      uFEFF={false}
-                      data={data}
-                      headers={headers} 
-                      filename={"SearchResults.csv"}
-                      className="btn btn-outline-primary btn-sm"
-                      target="_blank"
-                    >
-                      Download CSV 
+       <div>      
+          <CSVLink
+            uFEFF={false}
+            data={data}
+            headers={headers} 
+            filename={"SearchResults.csv"}
+            className="btn btn-outline-primary btn-sm"
+            target="_blank"
+          >
+            Download CSV 
 
-                    </CSVLink>
-                  </div>  
-               
+          </CSVLink>        
        </div>
    );
 }
@@ -66,6 +58,8 @@ export default function Table({ columns, data }) {
 
   const [filterInput, setFilterInput] = useState("");
   // Use the state and functions returned from useTable to build your UI
+
+  const [toggleColumn, setToggleColumn] = useState(false);
 
   const {
     getTableProps,
@@ -108,44 +102,68 @@ export default function Table({ columns, data }) {
     setFilterInput(value);
   };
 
-  console.log("flatColumns",flatColumns)
+  const toggleColumnHandler = useCallback( () => {
+    setToggleColumn( prevToggleColumn => !prevToggleColumn );
+  },[]);
+
+  //console.log("flatColumns",flatColumns)
+
+  const tableLength = data.length;
+  const showingNumberFirst = pageSize * pageIndex + 1 
+  const showingNumberLast =  (pageSize * (pageIndex + 1)) <= tableLength ? (pageSize * (pageIndex + 1)) : tableLength
+
 
   // Render the UI for your table
   return (
     <div>
 
-       <TableController 
-            data={data}
-       /> 
-       <div className="search">
-         <span className="fa-icon"><FontAwesomeIcon icon="search" color="grey" size="1x"/></span>  
-         <input
-            type="text"
-            className="react-table-input"
-            value={filterInput}
-            onChange={handleFilterChange}
-            placeholder={"Search"}
-         />
-       </div> 
+       <div className="d-flex py-2">
+          <div className="mr-auto p-2">
+              <strong>Returned {tableLength} entries</strong>
+          </div>
+          
+          <div className="search pr-1">
+            <span className="fa-icon"><FontAwesomeIcon icon="search" color="#4E98FF" size="1x"/></span>  
+            <input
+                type="text"
+                className="react-table-input"
+                value={filterInput}
+                onChange={handleFilterChange}
+                placeholder={"Search"}
+            />
+          </div> 
 
-       <div className="d-flex flex-wrap">
-         <div className="mr-3 my-3">
-           <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> Toggle All
-         </div>
+          <div className="pr-1">
+                <button className="btn btn-outline-primary btn-sm" onClick={toggleColumnHandler}>
+                    <span className="mr-2">Columns</span>
+                    <FontAwesomeIcon icon="caret-down" color="black" size="1x"/>
+                </button>  
+          </div>
+          
+          <div className="pr-1">
+              <DownloadCSVButton data={data}/>
+          </div>
+       </div>   
 
-         {flatColumns.map(column => (
-           <div key={column.id} className="mr-3 my-3">
-             <label>
-               <input type="checkbox" {...column.getToggleHiddenProps()} />{' '}
-              
-               {column.id}
-             </label>
-           </div>
-          ))}
+       { toggleColumn &&
+          <div className="d-flex flex-wrap">
+            <div className="mr-3 my-3">
+              <IndeterminateCheckbox {...getToggleHideAllColumnsProps()} /> Toggle All
+            </div>
 
-        
-      </div>
+            {flatColumns.map(column => (
+              <div key={column.id} className="mr-3 my-3">
+                <label>
+                  <input type="checkbox" {...column.getToggleHiddenProps()} />{' '}
+                  
+                  {column.id}
+                </label>
+              </div>
+              ))}
 
+            
+          </div>
+       }
 
       <table {...getTableProps()}>
         <thead>
@@ -190,22 +208,17 @@ export default function Table({ columns, data }) {
         Pagination can be built however you'd like. 
         This is just a very basic UI implementation:
       */}
-      <div className="react-table-pagination">
-        <span>
-          Showing { pageSize * pageIndex + 1 } to {pageSize * (pageIndex + 1)} of 58 entries
+      <div className="react-table-pagination py-3">
+        <span className="mr-2">
+           Showing {showingNumberFirst} to {showingNumberLast} of {tableLength} entries
         </span> 
 
-        <button onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
+        <button className="btn btn-light btn-sm" onClick={() => gotoPage(0)} disabled={!canPreviousPage}>
           {'<<'}
         </button>{' '}
-        <button onClick={() => previousPage()} disabled={!canPreviousPage}>
+
+        <button className="btn btn-light btn-sm" onClick={() => previousPage()} disabled={!canPreviousPage}>
           {'<'}
-        </button>{' '}
-        <button onClick={() => nextPage()} disabled={!canNextPage}>
-          {'>'}
-        </button>{' '}
-        <button onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
-          {'>>'}
         </button>{' '}
 
         <span>
@@ -215,7 +228,17 @@ export default function Table({ columns, data }) {
           </strong>{' '}
         </span>
 
-        <span>
+
+        <button className="btn btn-light btn-sm" onClick={() => nextPage()} disabled={!canNextPage}>
+          {'>'}
+        </button>{' '}
+        <button className="btn btn-light btn-sm" onClick={() => gotoPage(pageCount - 1)} disabled={!canNextPage}>
+          {'>>'}
+        </button>{' '}
+
+        
+
+        <span className="mr-2">
           | Go to page:{' '}
           <input
             type="number"
