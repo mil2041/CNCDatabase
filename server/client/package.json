@@ -40,7 +40,7 @@
     "react-bootstrap-table2-toolkit": "^1.1.1",
     "react-bootstrap-tabs": "^1.0.2",
     "react-collapsible": "^2.6.2",
-    "react-csv": "^1.1.1",
+    "react-csv": "^1.1.2",
     "react-dom": "^16.9.0",
     "react-google-slides": "^1.0.2",
     "react-hook-form": "^3.21.11",

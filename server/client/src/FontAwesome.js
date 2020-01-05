@@ -8,7 +8,9 @@ import { faCoffee, faLaptopCode,
          faFileUpload, faCheckCircle, 
          faArrowCircleRight, faArrowCircleDown, 
          faChevronRight, faChevronDown, 
-         faInfoCircle } from '@fortawesome/free-solid-svg-icons';
+         faInfoCircle, 
+         faCaretDown,
+         faCaretUp} from '@fortawesome/free-solid-svg-icons';
 
 library.add(
   faGoogle,
@@ -23,6 +25,8 @@ library.add(
   faArrowCircleDown,
   faChevronRight,
   faChevronDown,
-  faInfoCircle
+  faInfoCircle,
+  faCaretUp,
+  faCaretDown
   // more icons go here
 );
