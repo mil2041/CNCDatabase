@@ -82,3 +82,7 @@ ul.timeline > li:before {
    https://bootsnipp.com/snippets/xrKXW
 
 */
+
+svg {
+    overflow: visible;
+}

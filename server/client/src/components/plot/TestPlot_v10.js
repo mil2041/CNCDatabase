@@ -81,8 +81,8 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
         </div>
 
         <div className="row">
-            <div className="col-lg-3">
-                <p><strong>Cancer type</strong></p>
+            <div className="col-lg-2 p-0">
+                <p className="text-left"><strong>Cancer type</strong></p>
 
                 <PiePlot
                     data={data}
@@ -96,8 +96,8 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
                 
             </div>
             
-            <div className="col-lg-3">
-                <p><strong>Element type</strong></p> 
+            <div className="col-lg-3 p-0">
+                <p className="text-left"><strong>Element type</strong></p> 
 
                 <PiePlot
                     data={data}
@@ -111,8 +111,8 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
             </div>
 
-            <div className="col-lg-3">
-                <p><strong>Evidence type</strong></p> 
+            <div className="col-lg-3 p-0">
+                <p className="text-left"><strong>Evidence type</strong></p> 
 
                 <PiePlot
                     data={data}
@@ -127,8 +127,8 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
             </div>
 
-            <div className="col-lg-3">
-                <p><strong>Evidence method</strong></p>
+            <div className="col-lg-3 p-0">
+                <p className="text-left"><strong>Evidence method</strong></p>
 
                 <PiePlot
                     data={data}
