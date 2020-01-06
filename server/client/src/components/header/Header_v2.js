@@ -68,7 +68,11 @@ class Header extends Component {
     return (
       // py-md-1  
       <nav className="navbar navbar-expand-lg navbar-custom">
-        <FontAwesomeIcon icon="laptop-code" color="grey" size="2x"/>
+        
+        <Link to="/" onClick={() => {this.handleClick(0)}}>
+           <FontAwesomeIcon icon="laptop-code" color="grey" size="2x"/>
+        </Link>
+
         <Link className="navbar-brand" to="/" onClick={() => {this.handleClick(0)}}>
            <strong>CNCDatabase</strong>
         </Link>
@@ -85,6 +89,7 @@ class Header extends Component {
         >
           <span className="navbar-toggler-icon" />
         </button>
+
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
              {this.state.links.map((link, i) => 

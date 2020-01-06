@@ -9,7 +9,7 @@ import OptionsGroup from "./OptionsGroup/OptionsGroup";
 
 //import Timeline from "./Timeline"
 //import ScatterPlot from "./ScatterPlot"
-import PiePlot from "./PiePlot_v10"
+import PiePlot from "./PiePlot_v11"
 import { PlotContextProvider } from "./Context";
 //import Histogram from "./Histogram"
 // import Timeline from "./completed/Timeline"
@@ -86,10 +86,10 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
                 <PiePlot
                     data={data}
-                    width={350}
-                    height={400}
-                    innerRadius={50}
-                    outerRadius={80}
+                    width={300}
+                    height={550}
+                    innerRadius={30}
+                    outerRadius={60}
                     arcAccessor={cancerTypeAccessor}
                     title="Element Type"
                 />
@@ -101,10 +101,10 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
                 <PiePlot
                     data={data}
-                    width={450}
-                    height={400}
-                    innerRadius={50}
-                    outerRadius={80}
+                    width={300}
+                    height={550}
+                    innerRadius={30}
+                    outerRadius={60}
                     arcAccessor={elementTypeAccessor}
                     title="Element Type"
                 />
@@ -116,10 +116,10 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
                 <PiePlot
                     data={data}
-                    width={500}
-                    height={400}
-                    innerRadius={50}
-                    outerRadius={80}
+                    width={300}
+                    height={550}
+                    innerRadius={30}
+                    outerRadius={60}
                     arcAccessor={evidenceTypeAccessor}
                     title="Element Type"
                 />
@@ -132,10 +132,10 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
                 <PiePlot
                     data={data}
-                    width={500}
-                    height={400}
-                    innerRadius={50}
-                    outerRadius={80}
+                    width={300}
+                    height={550}
+                    innerRadius={30}
+                    outerRadius={60}
                     arcAccessor={evidenceMethodAccessor}
                     title="Element Type"
                 />

@@ -78,6 +78,8 @@ const Pie = props => {
     .outerRadius(props.outerRadius * 0.8)
     .cornerRadius(3)
     .padAngle(0.015)
+    .startAngle(function(d) { return d.startAngle + Math.PI*(1); })
+    .endAngle(function(d) { return d.endAngle + Math.PI*(1); });
     
 
   const createOuterArc = d3
@@ -86,7 +88,8 @@ const Pie = props => {
     .outerRadius(props.outerRadius * 1.1)
     .cornerRadius(3)
     .padAngle(0.015)
-    
+    .startAngle(function(d) { return d.startAngle + Math.PI*(1); })
+    .endAngle(function(d) { return d.endAngle + Math.PI*(1); });
 
 
   const createOuter2Arc = d3
@@ -95,7 +98,8 @@ const Pie = props => {
     .outerRadius(props.outerRadius * 1.3)
     .cornerRadius(3)
     .padAngle(0.015)
-    
+    .startAngle(function(d) { return d.startAngle + Math.PI*(1); })
+    .endAngle(function(d) { return d.endAngle + Math.PI*(1); });
 
 
   const createArcOver = d3
@@ -104,7 +108,8 @@ const Pie = props => {
     .outerRadius(props.outerRadius * 0.8 + 10) 
     .cornerRadius(3)
     .padAngle(0.015)
-    
+    .startAngle(function(d) { return d.startAngle + Math.PI*(1); })
+    .endAngle(function(d) { return d.endAngle + Math.PI*(1); });
 
 
   // color scale 
@@ -214,25 +219,25 @@ const Pie = props => {
         .attr("data-index", function(d, i){ return i;})
         .attr("text-anchor", function(d){
               const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
-              return (midangle < Math.PI ? 'start' : 'end')
+              return (midangle < Math.PI ? 'end' : 'start')
         })
         .attr("transform", function(d,i) {
               const pos = createOuter2Arc.centroid(d);
               const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2
-              pos[0] = props.outerRadius * 0.95 * (midangle < Math.PI ? 1 : -1);
+              pos[0] = props.outerRadius * 1 * (midangle < Math.PI ? -1 : 1);
 
               const percent = (d.endAngle - d.startAngle)/(2*Math.PI)*100
               if( percent<5) {
                   console.log("text label percent",percent)
                   console.log("text label index",i)
-                  pos[1] -= (i-3)*12
+                  pos[1] += (i-1)*12
               }
 
               console.log("text label pos:", pos);
 
               return 'translate(' + pos + ')';
         })
-        .style("font-size", "0.75rem")
+        .style("font-size", "0.7rem")
         .text(function(d,i){
             //console.log("text log", d) 
             return d.data.key + ' ('+ format(d.value) + ')';
@@ -253,13 +258,13 @@ const Pie = props => {
               const posB = createOuter2Arc.centroid(d) // line break: we use the other arc generator that has been built only for that
               const posC = createOuter2Arc.centroid(d); // Label position = almost the same as posB
               const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2 // we need the angle to see if the X position will be at the extreme right or extreme left
-              posC[0] = props.outerRadius * 0.9 * (midangle < Math.PI ? 1 : -1); // multiply by 1 or -1 to put it on the right or on the left
+              posC[0] = props.outerRadius * 0.9 * (midangle < Math.PI ? -1 : 1); // multiply by 1 or -1 to put it on the right or on the left
               
               const percent = (d.endAngle - d.startAngle)/(2*Math.PI)*100
               if( percent<5) {
                   //console.log("text label percent",percent)
                   //console.log("text label index",i)
-                  posC[1] -= (i-3)*12
+                  posC[1] += (i-1)*12
               }
               
               posB[1] = posC[1]
@@ -320,6 +325,8 @@ const Pie = props => {
         }
 
 
+        
+
 
       
     },
@@ -328,10 +335,14 @@ const Pie = props => {
 
   return (
     /*<svg width = {props.width} height = {props.height}>*/
-    <svg width = {props.height} height = {props.height}>
+    <svg 
+        width = {props.width} 
+        height = {props.height}
+        
+    >
       <g
          ref={ref}
-         transform={`translate(${props.width*(0.45)},${props.height*(0.5)})`}
+         transform={`translate(${props.width*(0.5)},${props.height*(0.15)})`}
       />
     </svg>
   );
