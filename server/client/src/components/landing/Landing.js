@@ -7,11 +7,11 @@ import React, { Component } from 'react';
 import Showcase from './Showcase';
 import Introduction from './Introduction';
 import DataSummary from './DataSummary';
-import DataPipelineMethod from './DataPipelineMethod';
+//import DataPipelineMethod from './DataPipelineMethod';
 import UseCases from './UseCases';
 import Features from './Features';
-import ReleaseNote from './ReleaseNote';
-import Citation from './Citation';
+//import ReleaseNote from './ReleaseNote';
+//import Citation from './Citation';
 
 //import EmailSubscribe from './EmailSubscribe';
 //import Testimonial from './Testimonial';
@@ -27,13 +27,13 @@ class Landing extends Component {
         <Showcase/>
         <Introduction/>
           
-          <DataPipelineMethod/>
+          {/*<DataPipelineMethod/>*/}
           <DataSummary/>
           <UseCases/>
 
         <Features/>
-        <ReleaseNote/>
-        <Citation/>
+        {/*<ReleaseNote/>*/}
+        {/*<Citation/>*/}
 
         {/*<Testimonial/> */}
         

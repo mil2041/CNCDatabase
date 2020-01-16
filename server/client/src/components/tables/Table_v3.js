@@ -88,7 +88,19 @@ export default function Table({ columns, data }) {
   } = useTable(
     {
       columns,
-      data
+      data,
+      initialState: {
+         sortBy: [
+           {
+             id: "cancertype",
+             desc: false,
+           },
+           {
+             id: "gene",
+             desc: false,
+           }
+         ]
+      }
     },
     //useFilters,
     useGlobalFilter,
@@ -267,7 +279,17 @@ export default function Table({ columns, data }) {
         </select> <span>entries</span>
       </div>
 
-
+      <div>
+       <span><strong>Table column legend</strong></span><br/>
+       <span><strong>PMID: </strong> Pubmed id</span><br/>
+       <span><strong>Cancer Type: </strong> Type of cancer</span><br/>
+       <span><strong>Gene Name: </strong> Gene name</span><br/>
+       <span><strong>Element: </strong> Type of annotated element</span><br/>
+       <span><strong>Cohort Samples: </strong> Cohort size</span><br/>
+       <span><strong>Mutated Samples: </strong> Mutated sample size</span><br/>
+       <span><strong>Evidence Type: </strong> Type of non-coding cancer driver evidence</span><br/>
+       <span><strong>Evidence Method: </strong> Non-coding cancer driver evidence method</span><br/>
+      </div>  
 
 
     </div>

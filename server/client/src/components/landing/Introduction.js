@@ -19,7 +19,8 @@ class Intorduction extends Component {
                     
                     <hr className="style1"/>
 
-                    <p>   Most mutations from whole genome sequencing data occur in the non-coding region 
+                    <p>   This database provides driver list in gene promoter, enhancer, ncRNA and CTCF-cohesin insulator published in over 20 studies. 
+                          Most mutations from whole genome sequencing data occur in the non-coding region 
                           with unknown impact to the tumor development. Although the advances in the study 
                           of regulatory regions have been uncovering an unprecedented number of putative 
                           non-coding cancer drivers throughout genomes, and the trend lead to fast accumulation 

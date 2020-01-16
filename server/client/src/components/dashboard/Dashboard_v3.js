@@ -35,7 +35,7 @@ import ReactTableContainer from '../tables/ReactTableContainer_v2';
 //import ExamplePlot from '../plot/barPlot';
 //import CancerDriverListPlot from '../plot/CancerDriverListPlot';
 
-import CancerDriverListPlot from '../plot/TestPlot_v10';
+import CancerDriverListPlot from '../plot/TestPlot_v12';
 
 //import QueryBarByGene from '../searches/Query_bar_by_gene';
 

@@ -12,7 +12,7 @@ import Studies from './studies/Studies';
 import Dashboard from './dashboard/Dashboard_v3';
 //import SearchNew from './searches/SearchNew';
 
-import DataSetDownload from './dataset/DataSetDownload';
+import DataSetDownload from './dataset/DataSetDownload_v2';
 import Documentation from './documentation/Documentation_v3';
 import About from './about/About';
 

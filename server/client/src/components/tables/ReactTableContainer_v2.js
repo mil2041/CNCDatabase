@@ -40,13 +40,13 @@ const ReactTableContainer = ({dataCancerDriverList, fetchCancerDriverList}) => {
             //Cell: ({ cell: { value } }) => <Genres values={value} />
           },
           {
+            Header: "Cohort Samples",
+            accessor: "cohortsize"
+          },
+          {
             Header: "Mutated Samples",
             accessor: "mutatedsamplesize",
 
-          },
-          {
-            Header: "Cohort Samples",
-            accessor: "cohortsize"
           },
           {
             Header: "Evidence Type",

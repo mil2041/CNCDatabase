@@ -15,7 +15,7 @@ class DataPipelineMethod extends Component {
          <div className="row">
               <div className="col-lg-10">
                    
-                   <h3><strong> Data procecssing pieline </strong></h3>
+                   <h3><strong> Data procecssing pipeline </strong></h3>
 
                    
                    <div className="container d-flex px-1">

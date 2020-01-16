@@ -174,10 +174,9 @@ const QueryForm = props => {
   ];
   
   const evidenceTypeOptions = [
-    { value: 'experimental validation', label: 'experimental validation' },
     { value: 'computational prediction', label: 'computational prediction' },
     { value: 'gene expression association', label: 'RNA-seq gene expression association' },
-    
+    { value: 'experimental validation', label: 'other experimental validation' },
   ];
 
 

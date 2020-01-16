@@ -14,7 +14,7 @@ class Showcase extends Component {
          <div className="row">
                <div className="col-lg-10 py-5">
                    <h1><strong> CNCDatabase: </strong></h1>
-                   <h2> Cornell Non-Coding cancer driver Database </h2>
+                   <h2> <strong>C</strong>ornell <strong>N</strong>on-Coding <strong>C</strong>ancer Driver <strong>D</strong>atabase</h2>
                    <hr/>
 
                    <Link to="/search">

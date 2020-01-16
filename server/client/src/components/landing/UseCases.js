@@ -29,7 +29,7 @@ class UseCases extends Component {
                      <p>At quae sint temporibus recusandae velit <a href="#0">non officia</a>. A optio suscipit non aliquam aut exercitationem ipsam. Autem rerum aperiam eos. Dolore necessitatibus harum nisi reprehenderit ea quia molestiae sint et. Cupiditate nostrum quia iure hic nulla vel. Quisquam ducimus nulla explicabo labore cum.</p>
                    </Panel>
 
-                   <Panel title="U1 snRNA">
+                   <Panel title="LncRNA NEAT1">
                      <hr/>
                      <p>Optio asperiores sit et dolores est in qui. Et dolores aut. Sunt non sint optio vero esse reiciendis velit aliquam. Exercitationem minus id corporis. Facere qui nisi asperiores laboriosam ea nihil. Fugiat facilis suscipit voluptatem recusandae sit quia quisquam molestiae.</p>
                      <p>At quae sint temporibus recusandae velit <a href="#0">non officia</a>. A optio suscipit non aliquam aut exercitationem ipsam. Autem rerum aperiam eos. Dolore necessitatibus harum nisi reprehenderit ea quia molestiae sint et. Cupiditate nostrum quia iure hic nulla vel. Quisquam ducimus nulla explicabo labore cum.</p>

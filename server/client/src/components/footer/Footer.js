@@ -10,9 +10,9 @@ class Footer extends Component {
         <div className="container-fluid py-3 pl-5">
           <div className="row">
             <div className="col-md-4 item">
-              <h5><strong>Cornell Non-Coding cancer driver Database</strong></h5>
+              <h5><strong>Cornell Non-Coding Cancer Driver Database</strong></h5>
               
-              <img src={WCM_Logo} alt="wcm_logo" width="40%" height="40%"/>
+              <img src={WCM_Logo} alt="wcm_logo" width="40%" height="35%"/>
               
             </div>
 
