@@ -28,8 +28,8 @@ class Landing extends Component {
         <Introduction/>
           
           {/*<DataPipelineMethod/>*/}
-          <DataSummary/>
-          <UseCases/>
+          {/*<DataSummary/>*/}
+          {/*<UseCases/>*/}
 
         <Features/>
         {/*<ReleaseNote/>*/}

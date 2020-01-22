@@ -3,7 +3,7 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { fetchCancerDriverList } from "../../actions";
 
-import Table from "./Table_v3";
+import Table from "./Table_v5";
 import "./css/Table.css";
 
 

@@ -20,7 +20,7 @@ import Footer from './footer/Footer';
 
 import Login from './Login';
 //const DataUpdateFromUser = () => <h2>DataUpdateFromUser</h2>;
-import FileUpload from './fileupload/FileUpload';
+import FileUpload from './fileupload/FileUpload_v2';
 
 class App extends Component {
 
