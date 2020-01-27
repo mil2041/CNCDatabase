@@ -93,6 +93,10 @@ app.get('/api/cancer_driver_list', (request, response, next) => {
     params.push(request.query.evidenceType);
   }
 
+  if( typeof request.query.pmid !== "undefined"){
+    sql += ' and pmid = ANY (?)';
+    params.push(request.query.pmid);
+  }
 
   // replace ? to oridnal parameter by toOrdinal from pg-parameterzie
   // https://github.com/bergur/pg-parameterize 

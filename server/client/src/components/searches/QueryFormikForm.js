@@ -28,7 +28,8 @@ const formikEnhancer = withFormik({
       geneSymbol: [],
       elementType: [],
       cancerType: [],
-      evidenceType: []
+      evidenceType: [],
+      pmid: []
     }),
 
     handleSubmit: (values, { props, setSubmitting }) => {
@@ -37,7 +38,8 @@ const formikEnhancer = withFormik({
         geneSymbol: values.geneSymbol.map(t => t.value),
         elementType: values.elementType.map(t => t.value),
         cancerType: values.cancerType.map(t => t.value),
-        evidenceType: values.evidenceType.map(t => t.value)
+        evidenceType: values.evidenceType.map(t => t.value),
+        pmid: values.pmid.map(t => t.value),
       };
       setTimeout(() => {
         //alert(JSON.stringify(payload, null, 2));
@@ -115,7 +117,20 @@ const QueryForm = props => {
                 touched={touched.evidenceType}
               />
             </div>
-        </div>    
+        </div>
+
+        <div className="form-row">
+            <div className="form-group col-md-3">
+              <PublicationSelect
+                className="form-control"
+                value={values.pmid}
+                onChange={setFieldValue}
+                onBlur={setFieldTouched}
+                error={errors.pmid}
+                touched={touched.pmid}
+              />
+            </div>
+        </div>     
 
         <button type="submit" disabled={isSubmitting} className="btn btn-primary mr-2">
           Submit
@@ -240,6 +255,39 @@ const QueryForm = props => {
 
   ];
 
+  const publicationOptions = [
+    { value: '23348506', label: 'Huang et al., Science, 2013 (PMID: 23348506)' },
+    { value: '24092746', label: 'Khurana et al., Science, 2013 (PMID: 24092746)' },
+    { value: '25383969', label: 'Fredriksson et al., Nature Genetics, 2014 (PMID: 25383969)' },
+    { value: '25261935', label: 'Weinhold et al., Nature Genetics, 2014 (PMID: 25261935)' },
+    { value: '26304545', label: 'Lochovsky et al., Nucleic Acids Research, 2015 (PMID: 26304545)' },
+    { value: '26053494', label: 'Melton et al., Nature Genetics, 2015 (PMID: 26053494)' },
+    { value: '26200345', label: 'Puente et al., Nature, 2015 (PMID: 26200345)' },
+    { value: '26691984', label: 'Araya et al., Nature Genetics, 2016 (PMID: 26691984)' },
+    { value: '27571262', label: 'Bailey et al., Nature Genetics, 2016 (PMID: 27571262)' },
+    { value: '27064257', label: 'Fujimoto et al., Nature Genetics, 2016 (PMID: 27064257)' },
+    { value: '27311963', label: 'Mularonl et al., Genome Biology, 2016 (PMID: 27311963)' },
+    { value: '27135926', label: 'Nik-Zainal et al., Nature, 2016 (PMID: 27135926)' },
+    { value: '28467829', label: 'Hayward et al., Nature, 2017 (PMID: 28467829)' },
+    { value: '28362259', label: 'Juul et al., eLIFE, 2017 (PMID: 28362259)' },
+    { value: '28128360', label: 'Lanzos et al., Scientific Reports, 2017 (PMID: 28128360)' },
+    { value: '28658208', label: 'Rheinbay et al., Nature, 2017 (PMID: 28658208)' },
+    { value: '29489754', label: 'Grobner et al., Nature, 2018 (PMID: 29489754)' },
+    { value: '29662167', label: 'Wedge et al., Nature Genetics, 2018 (PMID: 29662167)' },
+    { value: '30718927', label: 'Frankell et al., Nature Genetics, 2019 (PMID: 30718927)' },
+    { value: '31078526', label: 'Liu et al., Cell Systems, 2019 (PMID: 31078526)' },
+    { value: '31597163', label: 'Shuai et al., Nature, 2019 (PMID: 31597163)' },
+    { value: '31597162', label: 'Suzuki et al., Nature, 2019 (PMID: 31597162)' },
+    { value: 'PCAWG', label: 'Rheinbay et al., Nature, 2020 (PMID: PCAWG)' },
+    { value: '31974375', label: 'Zhou et al., Nature Communications, 2020 (PMID: 31974375)' },
+    { value: '31954095', label: 'Zhu et al., Molecular Cell, 2020 (PMID: 3195409)' },
+  ];
+
+
+
+
+
+
   class GeneSymbolSelect extends React.Component {
 
     handleChange = value => {
@@ -254,7 +302,7 @@ const QueryForm = props => {
   
     render() {
       return (
-        <div style={{ margin: "1rem 0" }}>
+        <div style={{ margin: "0.25rem 0" }}>
           <label for="geneSymbol">Gene name </label>
           <Select
             id="geneSymbol"
@@ -290,7 +338,7 @@ const QueryForm = props => {
   
     render() {
       return (
-        <div style={{ margin: "1rem 0" }}>
+        <div style={{ margin: "0.25rem 0" }}>
           <label for="elementType">Element type </label>
           <Select
             id="elementType"
@@ -324,7 +372,7 @@ class CancerTypeSelect extends React.Component {
   
     render() {
       return (
-        <div style={{ margin: "1rem 0" }}>
+        <div style={{ margin: "0.25rem 0" }}>
           <label for="cancerType">Cancer type </label>
           <Select
             id="cancerType"
@@ -358,7 +406,7 @@ class EvidenceTypeSelect extends React.Component {
 
   render() {
     return (
-      <div style={{ margin: "1rem 0" }}>
+      <div style={{ margin: "0.25rem 0" }}>
         <label for="evidenceType">Evidence type </label>
         <Select
           id="evidenceType"
@@ -378,7 +426,39 @@ class EvidenceTypeSelect extends React.Component {
   }
 }
 
+class PublicationSelect extends React.Component {
 
+  handleChange = value => {
+    // this is going to call setFieldValue and manually update values.topcis
+    this.props.onChange("pmid", value);
+  };
+
+  handleBlur = () => {
+    // this is going to call setFieldTouched and manually update touched.topcis
+    this.props.onBlur("pmid", true);
+  };
+
+  render() {
+    return (
+      <div style={{ margin: "0.25rem 0" }}>
+        <label for="pmid">Publication PMID</label>
+        <Select
+          id="pmid"
+          options={publicationOptions}
+          isMulti
+          onChange={this.handleChange}
+          onBlur={this.handleBlur}
+          value={this.props.value}
+        />
+        {!!this.props.error && this.props.touched && (
+          <div style={{ color: "red", marginTop: ".5rem" }}>
+            {this.props.error}
+          </div>
+        )}
+      </div>
+    );
+  }
+}
 
 const QueryEnhancedForm = formikEnhancer(QueryForm);
 

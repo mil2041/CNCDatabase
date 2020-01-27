@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-import { FETCH_BYGENESYMBOL, FETCH_USER, 
+import { FETCH_BYGENESYMBOL, 
          FETCH_ALL_STUDIES, FETCH_GENE_SUMMARY, 
          FETCH_WEATHER, FETCH_CANCER_DRIVER_LIST, CREATE_SUBMISSION } from './types';
 
@@ -48,14 +48,14 @@ export const fetchBygeneSymbol = geneSymbol => async dispatch => {
     });
 };
 
-export const fetchUser = () => async dispatch => {
-     const res = await axios.get('/api/current_user');
-     
-     dispatch({
-             type: FETCH_USER,
-             payload: res.data
-          });
-};  
+//export const fetchUser = () => async dispatch => {
+//     const res = await axios.get('/api/current_user');
+//     
+//     dispatch({
+//             type: FETCH_USER,
+//             payload: res.data
+//          });
+//};  
 
 
 export const fetchAllStudies = () => async dispatch => {
@@ -65,7 +65,7 @@ export const fetchAllStudies = () => async dispatch => {
           type: FETCH_ALL_STUDIES,
           payload: res.data.rows
        });
-};  
+}; 
 
 export const fetchGeneSummary = geneSymbol => async dispatch => {
   const response = await axios.get('/api/gene_summary', {
@@ -88,8 +88,8 @@ export const fetchCancerDriverList = formValues => async dispatch => {
       geneSymbol: formValues.geneSymbol,
       elementType: formValues.elementType,
       cancerType: formValues.cancerType,
-      evidenceType: formValues.evidenceType
-
+      evidenceType: formValues.evidenceType,
+      pmid: formValues.pmid
     }
   });
   

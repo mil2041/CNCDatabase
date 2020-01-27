@@ -44,10 +44,10 @@ class Documentation extends Component {
                     <hr/>
                     <p>Please subscribe our mailing list.</p>
 
-                    <div>
+                    {/*<div>
                         <h4><strong>Tutorial 1: example queries</strong></h4>
                         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTHblNfskQLj6NzNSE-9BT0XckLc_T7NqEC31OpBjvnRkxW_sE68FHnFgicnGDd7BYm7rq7zdAkGrwu/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-                    </div>
+                    </div>*/}
                </div>
 
                <div className="col-lg-2">

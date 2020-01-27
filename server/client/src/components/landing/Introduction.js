@@ -19,16 +19,17 @@ class Intorduction extends Component {
                     
                     <hr className="style1"/>
 
-                    <p>   This database provides driver list in gene promoter, enhancer, ncRNA and CTCF-cohesin insulator published in over 20 studies. 
-                          Most mutations from whole genome sequencing data occur in the non-coding region 
-                          with unknown impact to the tumor development. Although the advances in the study 
-                          of regulatory regions have been uncovering an unprecedented number of putative 
-                          non-coding cancer drivers throughout genomes, and the trend lead to fast accumulation 
-                          of data supporting these evidences. We applied text mining and expert knowledge to the 
-                          PubMed articles and then developed CNCDatabase, 
-                          Cornell Non-Coding Cancer driver Database. 
-                          CNCDatabase provides a helpful resource for researchers to explore the 
-                          pathological role of non-coding alterations and their associations with gene expression in human cancers.
+                    <p>   This database provides the list of published non-coding cancer drivers
+                       in gene promoters, enhancers, ncRNAs and CTCF-cohesin insulators published
+                        in over 25 studies. Most mutations from whole genome sequencing data occur
+                         in the non-coding regions with unknown impact to the tumor development.
+                          The advances in the study of regulatory regions have been uncovering a
+                           large number of putative non-coding cancer drivers. 
+                           We applied text mining and manual curation to the PubMed articles and
+                            then developed CNCDatabase, Cornell Non-Coding Cancer driver Database.
+                             CNCDatabase provides a helpful resource for researchers to explore the
+                              pathological role of non-coding alterations and their associations with
+                               gene expression in human cancers.
                     </p>
                     
                    

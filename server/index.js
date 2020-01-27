@@ -75,6 +75,9 @@ app.post('/api/submissions',function(req, res){
 
 });
 
+
+
+
 // user login section
 
 //app.use(
@@ -92,8 +95,8 @@ app.use(bodyParser.json());
 
 routes(app);
 
-require('./routes/authRoutes')(app);
-require('./routes/studyQuery')(app);
+//require('./routes/authRoutes')(app);
+//require('./routes/studyQuery')(app);
 //require('./routes/submissionRoutes')(app);
 
 
@@ -121,12 +124,14 @@ app.get('/', (req, res) => {
 });
 */
 
-
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './index.html'));
+});
 
 
 //
 
-//if (process.env.NODE_ENV === 'production'){
+if (process.env.NODE_ENV === 'production'){
     
     // Express will serve up production assets
     // like main.js and main.css
@@ -139,7 +144,7 @@ app.get('/', (req, res) => {
          res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
     }); 
 
-//}
+}
 
 
 
