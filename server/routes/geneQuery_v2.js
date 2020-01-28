@@ -57,7 +57,7 @@ app.get('/api/cancer_driver_list', (request, response, next) => {
 
   const params = [];
   //let sql = 'SELECT pmid, cancertype, gene, element, mutatedsamplesize, cohortsize, evidencetype, evidencemethod FROM "noncoding_cancer_driver" WHERE "gene" = $1 AND "cancertype" = $2';
-  let sql = 'SELECT pmid, cancertype, gene, element, mutatedsamplesize, cohortsize, evidencetype, evidencemethod FROM "noncoding_cancer_driver_Jan_22_2020" where 1 = 1';
+  let sql = 'SELECT pmid, cancertype, gene, cosmic, element, mutatedsamplesize, cohortsize, evidencetype, evidencemethod FROM "noncoding_cancer_driver_Jan_26_2020" where 1 = 1';
 
   //if( request.query.geneSymbol !== ""){
   //     sql += ' and gene = ?';

@@ -35,6 +35,10 @@ const ReactTableContainer = ({dataCancerDriverList, fetchCancerDriverList}) => {
             accessor: "gene"
           },
           {
+            Header: "COSMIC(Cancer Gene)",
+            accessor: "cosmic"
+          },
+          {
             Header: "Element",
             accessor: "element",
             //Cell: ({ cell: { value } }) => <Genres values={value} />
