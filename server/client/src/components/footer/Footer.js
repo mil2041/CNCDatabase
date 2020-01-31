@@ -16,7 +16,7 @@ class Footer extends Component {
               
             </div>
 
-            <div className="col-md-2 item">
+            {/*<div className="col-md-2 item">
               <h5><strong>Navigation</strong></h5>
               <p>Home</p>
               <p>Search</p>
@@ -24,11 +24,19 @@ class Footer extends Component {
               <p>Submission</p>
               <p>Documentation</p>
               
-            </div>
+             </div>*/}
 
             <div className="col-md-4 item align-bottom">
               <h5><strong>Contact</strong></h5>
-              <p><a href="https://khuranalab.med.cornell.edu/">Khurana Lab</a></p>
+              <p>
+                
+                <a href="mailto:alm2069@med.cornell.edu?cc=ekk2003@med.cornell.edu&subject=cncdatabase suggestions">
+                  <button className="btn btn-secondary">
+                     Email Khurana Lab
+                  </button>
+                </a>
+              
+              </p>
               <p>Meyer Cancer Center, Weill Cornell Medicine, New York, New York 10065, USA</p>
               <p>Caryl and Israel Englander Institute for Precision Medicine, New York Presbyterian Hospital-Weill Cornell Medicine, New York, New York 10065, USA</p>
 

@@ -48,7 +48,7 @@ class App extends Component {
               <Route exact path="/documentation" component={Documentation} />
               <Route exact path="/about" component={About} />
               <Route exact path="/submission" component={FileUpload} />
-              <Route path="*" component={NotFound} />
+              <Route component={NotFound} />
             </Switch>  
           </div>
         </BrowserRouter>

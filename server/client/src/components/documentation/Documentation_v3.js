@@ -26,23 +26,24 @@ class Documentation extends Component {
                <div className="col-lg-10">  
                     <h1><strong>Documentation</strong></h1>
                     <hr className="style1"/>
-                    <h4><strong>Table of contents</strong></h4>
+                    {/*<h4><strong>Table of contents</strong></h4>
                     <ul>
                         <li>What is CNCDatabase?</li>
                         <li>How do I cite the CNCDatabase?</li>
                         <li>How do I get update on new non-coding cancer driver list?</li>
-                    </ul>
+                    </ul>*/}
                     <h4><strong>What is CNCDatabase?</strong></h4>
                     <hr/>
-                    <p>Although there are many existing database organized the list of cancer drivers at protein coding region in the genome, there is no central database dedicated to collection the information of cancer drivers at non-coding region in the genome. CNCDatabase aims to collect non-coding cancer driver lists from publications and to complement the understanding beyond protein coding region in the genome.</p>
-
+                    <p>Although there are many existing databases that provide the list of cancer
+                       drivers at protein coding regions in the genome, there is no central database
+                        dedicated to collection of information of cancer drivers at non-coding regions.
+                         CNCDatabase aims to collect non-coding cancer driver lists from publications
+                          and to complement the understanding of cancer beyond protein coding regions.</p>
+                    <br/>
                     <h4><strong>How do I cite the CNCDatabase?</strong></h4>
                     <hr/>
-                    <p>Please cite Liu et al, CNCDatabase: Cornall non-coding database. Database (2019)</p>
+                    <p>Please cite Liu et al, CNCDatabase: Cornell Non-coding Cancer driver database (2020)</p>
 
-                    <h4><strong>How do I get update on new non-coding cancer driver list</strong></h4>
-                    <hr/>
-                    <p>Please subscribe our mailing list.</p>
 
                     {/*<div>
                         <h4><strong>Tutorial 1: example queries</strong></h4>

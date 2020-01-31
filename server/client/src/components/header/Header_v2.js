@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 //import { Button } from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+//import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import ModalExample2 from './LoginModal_v2';
 //# Home, Search, Download, Help, Contact
 import './css/header_setup.css';
 import NavLink from './NavLink';
-
+import logo from './img/cncdatabase_logo_v2.png';
 
 
 
@@ -67,10 +67,10 @@ class Header extends Component {
 
     return (
       // py-md-1  
-      <nav className="navbar navbar-expand-lg navbar-custom">
+      <nav className=" d-flex flex-row navbar navbar-expand-lg navbar-custom">
         
         <Link to="/" onClick={() => {this.handleClick(0)}}>
-           <FontAwesomeIcon icon="laptop-code" color="grey" size="2x"/>
+           <img src={logo} alt="cncdatabase" width="40" height="30"/>
         </Link>
 
         <Link className="navbar-brand" to="/" onClick={() => {this.handleClick(0)}}>

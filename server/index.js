@@ -1,5 +1,6 @@
 const express = require('express');
-const mongoose = require('mongoose');
+
+//const mongoose = require('mongoose');
 //const cookieSession = require('cookie-session');
 //const passport = require('passport');
 //const keys = require('./config/keys');
@@ -102,7 +103,7 @@ routes(app);
 
 
 //app.use((err, req, res, next) => {
-//  res.status(422).send({ error: err.message });
+//  res.status(404).send({ error: err.message });
 //});
 
 
@@ -125,8 +126,18 @@ app.get('/', (req, res) => {
 */
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './index.html'));
+  res.status(404).send({ message: '404 error' });
+  //console.log("bug")
+  //res.status(404)
+  //res.sendFile(path.join(__dirname, './index.html'));
 });
+
+//app.use((req, res, next) => {
+//   res.status(404).send("404 Not Found");
+//  var err = new Error('404 Not Found');
+//  err.status = 404;
+//  next(err);
+//});
 
 
 //
