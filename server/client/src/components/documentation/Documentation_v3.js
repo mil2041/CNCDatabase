@@ -45,7 +45,14 @@ class Documentation extends Component {
                     <hr/>
                     <p>Please cite Liu et al, CNCDatabase: Cornell Non-coding Cancer driver database (2020)</p>
 
-
+                    <br/>
+                    <h4><strong>Acknowledgements</strong></h4>
+                    <hr/>
+                    <p>
+                      We thank Douglas Duckworth from Weill Cornell Supercomputing Unit for helps in the
+                       website deployment. We also thank Ann Palladino, Sandra Cohen, Tawny Cuykendall,
+                        Erica Duo Xu, Andre Forbes at the Khurana lab for valuable suggestions.     
+                    </p>
                     {/*<div>
                         <h4><strong>Tutorial 1: example queries</strong></h4>
                         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTHblNfskQLj6NzNSE-9BT0XckLc_T7NqEC31OpBjvnRkxW_sE68FHnFgicnGDd7BYm7rq7zdAkGrwu/embed?start=false&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>

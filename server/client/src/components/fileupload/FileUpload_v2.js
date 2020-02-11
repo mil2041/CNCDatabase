@@ -3,7 +3,7 @@ import React from "react";
 import { withFormik } from "formik";
 import * as Yup from "yup";
 //import Select from "react-select";
-import Papa from "papaparse";
+//import Papa from "papaparse";
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -16,8 +16,8 @@ import 'react-toastify/dist/ReactToastify.css';
 //import geneNameData from './data/functional_element_with_snv_by_cancer_merged_May_15_2019_unique_geneName.csv';
 //import geneNameData from './data/test.csv';
 
-import emailjs from 'emailjs-com';
-
+import emailjs from "emailjs-com";
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 const formikEnhancer = withFormik({
@@ -112,6 +112,11 @@ const FileUploadForm = props => {
       setFieldTouched,
       isSubmitting
     } = props;
+
+
+    function onChange(value) {
+      console.log("Captcha value:", value);
+    }
 
 
     return (
@@ -236,6 +241,13 @@ const FileUploadForm = props => {
 
                     <ToastContainer
                     /> 
+
+                    <ReCAPTCHA
+                       className="pb-3"
+                       sitekey="6Lf2_9cUAAAAAEbCpWuWp13cC5vJpwNM59PB9Qwp"
+                       onChage={onChange}
+                    />
+
 
                     <button type="submit" disabled={isSubmitting} className="btn btn-primary mr-2">
                       Submit
