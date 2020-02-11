@@ -30,15 +30,25 @@ class Footer extends Component {
               <h5><strong>Contact</strong></h5>
               <p>
                 
-                <a href="mailto:alm2069@med.cornell.edu?cc=ekk2003@med.cornell.edu&subject=cncdatabase suggestions">
-                  <button className="btn btn-secondary">
-                     Email Khurana Lab
-                  </button>
-                </a>
-              
-              </p>
+                <div className="row">
+                  <a href="mailto:alm2069@med.cornell.edu;emliu.research@gmail.com?cc=ekk2003@med.cornell.edu&subject=cncdatabase suggestions">
+                    <button className="btn btn-secondary ml-3">
+                      Email suggestions
+                    </button>
+                  </a>
+                  
+                  <a href="https://khuranalab.med.cornell.edu/">
+                    <button className="btn btn-secondary ml-3">
+                      Khurana Lab
+                    </button>
+                  </a>
+                </div>
+
+
+              </p>  
+
               <p>Meyer Cancer Center, Weill Cornell Medicine, New York, New York 10065, USA</p>
-              <p>Caryl and Israel Englander Institute for Precision Medicine, New York Presbyterian Hospital-Weill Cornell Medicine, New York, New York 10065, USA</p>
+              
 
             </div>
 

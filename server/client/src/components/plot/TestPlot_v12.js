@@ -81,12 +81,12 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
         </div>
 
         <div className="row">
-            <div className="col-lg-2 p-0">
+            <div className="col-lg-6 p-0">
                 <p className="text-left"><strong>Cancer type</strong></p>
 
                 <PiePlot
                     data={data}
-                    width={300}
+                    width={500}
                     height={550}
                     innerRadius={30}
                     outerRadius={60}
@@ -96,12 +96,12 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
                 
             </div>
             
-            <div className="col-lg-3 p-0">
+            <div className="col-lg-6 p-0">
                 <p className="text-left"><strong>Element type</strong></p> 
 
                 <PiePlot
                     data={data}
-                    width={300}
+                    width={500}
                     height={550}
                     innerRadius={30}
                     outerRadius={60}
@@ -110,13 +110,16 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
                 />
 
             </div>
+        </div>
 
-            <div className="col-lg-3 p-0">
+        <div className="row">
+
+            <div className="col-lg-6 p-0">
                 <p className="text-left"><strong>Evidence type</strong></p> 
 
                 <PiePlot
                     data={data}
-                    width={300}
+                    width={500}
                     height={550}
                     innerRadius={30}
                     outerRadius={60}
@@ -127,12 +130,12 @@ const TestPlot = ({dataCancerDriverList, fetchCancerDriverList}) => {
 
             </div>
 
-            <div className="col-lg-3 p-0">
+            <div className="col-lg-6 p-0">
                 <p className="text-left"><strong>Evidence method</strong></p>
 
                 <PiePlot
                     data={data}
-                    width={300}
+                    width={500}
                     height={550}
                     innerRadius={30}
                     outerRadius={60}

@@ -128,7 +128,7 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
   res.status(404).send({ message: '404 error' });
   //console.log("bug")
-  //res.status(404)
+  //res.status(404).render('index');
   //res.sendFile(path.join(__dirname, './index.html'));
 });
 

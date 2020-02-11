@@ -35,10 +35,11 @@ class Documentation extends Component {
                     <h4><strong>What is CNCDatabase?</strong></h4>
                     <hr/>
                     <p>Although there are many existing databases that provide the list of cancer
-                       drivers at protein coding regions in the genome, there is no central database
-                        dedicated to collection of information of cancer drivers at non-coding regions.
-                         CNCDatabase aims to collect non-coding cancer driver lists from publications
-                          and to complement the understanding of cancer beyond protein coding regions.</p>
+                       drivers at protein coding regions in the genome, there is no central
+                        database dedicated to collection of information of cancer drivers
+                         at non-coding regions. CNCDatabase aims to collect non-coding cancer
+                          driver lists from publications and to complement the understanding
+                           of cancer beyond protein coding regions.</p>
                     <br/>
                     <h4><strong>How do I cite the CNCDatabase?</strong></h4>
                     <hr/>

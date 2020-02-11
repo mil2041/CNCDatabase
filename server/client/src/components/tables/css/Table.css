@@ -60,6 +60,7 @@ table th.sort-desc::before {
     display: flex;
     flex-direction: column;
     padding: 20px;
+    font-size: 0.85rem;
 }
 
 .badge {

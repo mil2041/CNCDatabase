@@ -1,5 +1,4 @@
-import React, { useMemo, useState, useEffect } from "react";
-import axios from "axios";
+import React, { useMemo } from "react";
 import { connect } from "react-redux";
 import { fetchCancerDriverList } from "../../actions";
 
@@ -44,7 +43,7 @@ const ReactTableContainer = ({dataCancerDriverList, fetchCancerDriverList}) => {
             //Cell: ({ cell: { value } }) => <Genres values={value} />
           },
           {
-            Header: "Cohort Samples",
+            Header: "Cohort Size",
             accessor: "cohortsize"
           },
           {

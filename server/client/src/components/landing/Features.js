@@ -21,7 +21,10 @@ class Features extends Component {
 
                      <ul>
                         <li>
-                           <p> Query non-coding cancer drivers by gene name, cancer types, element types or evidence types that include computational prediction method, gene expression associations from RNA-seq and other experimental methods.</p>
+                           <p> Query non-coding cancer drivers by gene name, cancer types
+                              , element types or evidence types that include computational
+                               prediction method, gene expression associations from
+                                RNA-seq and other experimental methods.</p>
                         </li>
 
                         <li>
@@ -33,7 +36,8 @@ class Features extends Component {
                         </li>
 
                         <li>
-                           <p> Users can submit curated non-coding cancer driver list to be included in the new database release. </p>
+                           <p> Users can submit curated non-coding cancer driver list to be included
+                               in the new database release.</p>
                         </li>
 
                      </ul>

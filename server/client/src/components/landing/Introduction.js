@@ -19,17 +19,22 @@ class Intorduction extends Component {
                     
                     <hr className="style1"/>
 
-                    <p>   This database provides the list of published non-coding cancer drivers
-                       in gene promoters, enhancers, ncRNAs and CTCF-cohesin insulators published
-                        in over 25 studies. Most mutations from whole genome sequencing data occur
-                         in the non-coding regions with unknown impact to the tumor development.
-                          The advances in the study of regulatory regions have been uncovering a
-                           large number of putative non-coding cancer drivers. 
-                           We applied text mining and manual curation to the PubMed articles and
-                            then developed CNCDatabase, Cornell Non-Coding Cancer driver Database.
-                             CNCDatabase provides a helpful resource for researchers to explore the
-                              pathological role of non-coding alterations and their associations with
-                               gene expression in human cancers.
+                    <p>   This database provides the list of non-coding
+                        cancer drivers in gene promoters, enhancers, ncRNAs
+                         and CTCF-cohesin insulators published in over 25 studies.
+                          Most mutations from whole genome sequencing data occur
+                           in the non-coding regions with unknown impact to the
+                            tumor development. The advances in the study of
+                             regulatory regions have been uncovering a large
+                              number of putative non-coding cancer drivers.
+                               We applied text mining and manual curation to
+                                the PubMed articles and then developed
+                                 CNCDatabase, Cornell Non-Coding Cancer driver
+                                  Database. CNCDatabase provides a helpful
+                                   resource for researchers to explore the
+                                    pathological role of non-coding alterations
+                                     and their associations with gene expression
+                                      in human cancers.
                     </p>
                     
                    
@@ -37,7 +42,7 @@ class Intorduction extends Component {
 
                  </div>
 
-                 <div className="container d-flex px-1 py-1">
+                 <div className="container d-flex px-1 pt-1 pb-5">
                
                 
                     <center>

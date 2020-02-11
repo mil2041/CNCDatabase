@@ -356,13 +356,13 @@ const Pie = props => {
 
         let new_y_boundary = max_text_y_coord>0 ? max_text_y_coord : 0; 
 
-        let new_svg_height = new_y_boundary + props.height*0.15 + 50
+        let new_svg_height = new_y_boundary + props.height*0.15 + 30
 
         //console.log("check box coord",labelBBoxes)        
 
 
         svg
-         .attr("width","300")
+         .attr("width","500")
          .attr("height",new_svg_height) 
 
         

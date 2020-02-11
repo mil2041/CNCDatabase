@@ -129,9 +129,9 @@ const FileUploadForm = props => {
           <hr className="style1"/> 
 
             <div className="card">
-            <h5 className="card-header"><strong>Submit non-coding cancer dirver list</strong></h5> 
+            <h5 className="card-header"><strong>Submit non-coding cancer driver list</strong></h5> 
               <div className="card-body">
-                  <p className="py-3">Submit your curated non-coding cancer dirver list to be included in the next data release.</p>
+                  <p className="py-3">Submit your curated non-coding cancer driver list to be included in the next data release.</p>
                   <form onSubmit={handleSubmit}>
                     <div className="form-row">
                       <div className="form-group col-md-6">
