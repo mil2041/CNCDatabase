@@ -114,7 +114,7 @@ const FileUploadForm = props => {
     } = props;
 
 
-    function onChange(value) {
+    const onChange = value => {
       console.log("Captcha value:", value);
     }
 
