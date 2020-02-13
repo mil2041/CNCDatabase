@@ -24,7 +24,7 @@ import QueryForm from '../searches/QueryFormikForm';
 
 //import CancerDriverListTable from '../tables/CancerDriverListTable';
 
-import ReactTableContainer from '../tables/ReactTableContainer_v2';
+import ReactTableContainer from '../tables/ReactTableContainer_v3';
 
 //import CancerDriverListTable from '../tables/CancerDriverListTableMUI';
 

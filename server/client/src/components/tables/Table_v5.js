@@ -26,8 +26,8 @@ const DownloadCSVButton = ({data}) => {
         { label: 'Cancer Type', key: 'cancertype'},
         { label: 'Gene Name', key: 'gene'},
         { label: 'Element', key: 'element'},
+        { label: 'Cohort Size', key: 'cohortsize'},
         { label: 'Mutated Samples', key: 'mutatedsamplesize'},
-        { label: 'Cohort Samples', key: 'cohortsize'},
         { label: 'Evidence Type', key: 'evidencetype'},
         { label: 'Evidence Method', key: 'evidencemethod'},
       ];

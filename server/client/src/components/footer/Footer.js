@@ -37,7 +37,7 @@ class Footer extends Component {
                     </button>
                   </a>
                   
-                  <a href="https://khuranalab.med.cornell.edu/">
+                  <a target="_blank" href="https://khuranalab.med.cornell.edu/">
                     <button className="btn btn-secondary ml-3">
                       Khurana Lab
                     </button>
