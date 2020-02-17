@@ -54,17 +54,17 @@ const Pie = props => {
   }
 
 
-  console.log("dimensionCount2",dimensionCount2);
+  //console.log("dimensionCount2",dimensionCount2);
 
   i = 0; ln = dimensionCount.length;
   for (i;i<ln;i++){
       dimensionCount[i].uniqueId = uuidv4();
   }
 
-  console.log("dimensionCount",dimensionCount);
+  //console.log("dimensionCount",dimensionCount);
 
   const filteredData = ( groupOptions === "entries" ) ? dimensionCount : dimensionCount2;
-  console.log("plot group options", groupOptions);
+  //console.log("plot group options", groupOptions);
 
   // create a new pie
   const createPie = d3
@@ -140,7 +140,7 @@ const Pie = props => {
                     //.attr("transform","translate(" + props.width * (0.5) + "," + props.height * (0.15) + ")");
 
 
-      console.log("group info",ref.current)
+      //console.log("group info",ref.current)
             //group.append("g")
             //   .attr("class","slices");
             //group.append("g")
@@ -236,12 +236,12 @@ const Pie = props => {
 
               const percent = (d.endAngle - d.startAngle)/(2*Math.PI)*100
               if( percent<5) {
-                  console.log("text label percent",percent)
-                  console.log("text label index",i)
+                  //console.log("text label percent",percent)
+                  //console.log("text label index",i)
                   pos[1] += (i-1)*12
               }
 
-              console.log("text label pos:", pos);
+              //console.log("text label pos:", pos);
 
               return 'translate(' + pos + ')';
         })
@@ -309,8 +309,8 @@ const Pie = props => {
                         .duration(100)
                         .style("opacity",0.7)
                         .attr("d",createArcOver);
-                        console.log("move class",currentEl.attr("class"));
-                        console.log("move segment",segment);    
+                        //console.log("move class",currentEl.attr("class"));
+                        //console.log("move segment",segment);    
              });
   
              selection.on('mouseout', function(d) {
@@ -336,7 +336,7 @@ const Pie = props => {
         const labelBBoxes = d3.selectAll('text.outerLabelText')
                                   
 
-        console.log("text node",labelBBoxes)
+        //console.log("text node",labelBBoxes)
 
         let text_y_coord = []; 
 
@@ -347,12 +347,12 @@ const Pie = props => {
            let x_coord = translate[0];
            let y_coord = translate[1];
            text_y_coord.push(y_coord);
-           console.log("bbox coord",y_coord);
+           //console.log("bbox coord",y_coord);
         });
 
         let max_text_y_coord = Math.max(...text_y_coord);
 
-        console.log("array",max_text_y_coord);
+        //console.log("array",max_text_y_coord);
 
         let new_y_boundary = max_text_y_coord>0 ? max_text_y_coord : 0; 
 

@@ -278,7 +278,7 @@ const QueryForm = props => {
     { value: '31078526', label: 'Liu et al., Cell Systems, 2019 (PMID: 31078526)' },
     { value: '31597163', label: 'Shuai et al., Nature, 2019 (PMID: 31597163)' },
     { value: '31597162', label: 'Suzuki et al., Nature, 2019 (PMID: 31597162)' },
-    { value: 'PCAWG', label: 'Rheinbay et al., Nature, 2020 (PMID: PCAWG)' },
+    { value: '32025015', label: 'Rheinbay et al., Nature, 2020 (PMID: 32025015)' },
     { value: '31974375', label: 'Zhou et al., Nature Communications, 2020 (PMID: 31974375)' },
     { value: '31954095', label: 'Zhu et al., Molecular Cell, 2020 (PMID: 3195409)' },
   ];

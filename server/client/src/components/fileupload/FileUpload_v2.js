@@ -1,7 +1,7 @@
 import React from "react";
 //import { render } from "react-dom";
 import { withFormik } from "formik";
-import * as Yup from "yup";
+import * as yup from "yup";
 //import Select from "react-select";
 //import Papa from "papaparse";
 
@@ -16,12 +16,49 @@ import 'react-toastify/dist/ReactToastify.css';
 //import geneNameData from './data/functional_element_with_snv_by_cancer_merged_May_15_2019_unique_geneName.csv';
 //import geneNameData from './data/test.csv';
 
+
 import emailjs from "emailjs-com";
-import ReCAPTCHA from "react-google-recaptcha";
+import ReCAPTCHA from "reaptcha";
+
+const FILE_SIZE = 10000 * 1024;
+const SUPPORTED_FORMATS = [
+   "text/csv"
+];
 
 
 const formikEnhancer = withFormik({
 
+    
+    validationSchema: yup.object().shape({
+      name: yup.string()
+         .required("Name is required."), 
+
+      email: yup.string()
+         .email("Invalid email address format.")
+         .required("Email is required."),
+
+      affiliation: yup.string()
+         .required("Affiliation is required."), 
+
+      file: yup.mixed()
+         .required("A file is required.")
+         .test(
+          "fileSize",
+          "File size cannot be larger than 10MB. ",
+          value => {
+            //console.log("yup test",value);
+            return value && value.size <= FILE_SIZE; 
+          })
+         .test(
+            "fileFormat",
+            "Please upload .csv format text file",
+            value => value && SUPPORTED_FORMATS.includes(value.type)
+          ),
+         
+          
+      recaptcha: yup.string()
+         .required("reCAPTCHA is required.")    
+    }),
 
     mapPropsToValues: props => ({
       name: [],
@@ -29,10 +66,12 @@ const formikEnhancer = withFormik({
       affiliation: [],
       referenceUrl: [],
       comments: [],
-      file: []
+      file: "",
+      recaptcha: ""
     }),
 
     handleSubmit: (values, { props, setSubmitting }) => {
+
       const payload = {
         ...values,
         fileName: values.file.name,
@@ -73,11 +112,11 @@ const formikEnhancer = withFormik({
 
       emailjs.send("gmail","template_LnZJVI6L",templateParams,"user_Ff5atFvFpn9DsQwoNFehl")
         .then((response) => {
-           console.log("email sent success",response.status,response.text);
+           //console.log("email sent success",response.status,response.text);
            toast.success('email send to administrator success')
 
         }, (error) => {
-           console.log("email sent with error",error.text);
+           //console.log("email sent with error",error.text);
            toast.error('email send with error')
         });
 
@@ -86,7 +125,7 @@ const formikEnhancer = withFormik({
 
       setTimeout(() => {
         //alert(JSON.stringify(payload, null, 2));
-        console.log("query payload", payload);
+        //console.log("query payload", payload);
         //props.fetchGeneSummary(payload.geneSymbol);
         props.createSubmission(formData);
 
@@ -114,11 +153,6 @@ const FileUploadForm = props => {
     } = props;
 
 
-    const onChange = value => {
-      console.log("Captcha value:", value);
-    }
-
-
     return (
 
       <div className="container-fluid py-5 pl-5">
@@ -136,11 +170,22 @@ const FileUploadForm = props => {
             <div className="card">
             <h5 className="card-header"><strong>Submit non-coding cancer driver list</strong></h5> 
               <div className="card-body">
-                  <p className="py-3">Submit your curated non-coding cancer driver list to be included in the next data release.</p>
+                  <p className="pt-3">Submit your curated non-coding cancer driver list to be included in the next data release.</p>
+                  <div className="card">
+                     <div className="card-body">
+                       Submitted "non-coding cancer driver list" will require to be a csv text file separared by "," containing these seven columns.  
+                       <br/>
+                       <strong>PMID, Cancer Type, Gene Name, Element, Cohort Size, Mutated Samples, Evidence Type, Evidence Method</strong>
+                     </div> 
+                  </div>  
                   <form onSubmit={handleSubmit}>
-                    <div className="form-row">
+                    <div className="form-row pt-3">
                       <div className="form-group col-md-6">
-                        <label for="name"><strong>Name</strong></label>
+                        <label for="name">
+                          <strong>Name</strong>
+                          <span className="text-danger"> * </span>
+                          <span className="text-secondary"><i> (required) </i></span>
+                        </label>
                         <input
                           id="name"
                           className="form-control"
@@ -157,7 +202,12 @@ const FileUploadForm = props => {
                       </div>
 
                       <div className="form-group col-md-6">
-                        <label for="email"><strong>Email</strong></label>
+                        <label for="email">
+                          <strong>Email</strong>
+                          <span className="text-danger"> * </span>
+                          <span className="text-secondary"><i> (required) </i></span>
+                          
+                        </label>
                         <input
                           id="email"
                           className="form-control"
@@ -174,7 +224,11 @@ const FileUploadForm = props => {
                       </div>
 
                       <div className="form-group col-md-6">
-                        <label for="affiliation"><strong>Affiliation</strong></label>
+                        <label for="affiliation">
+                          <strong>Affiliation</strong>
+                          <span className="text-danger"> * </span>
+                          <span className="text-secondary"><i> (required) </i></span>
+                        </label>
                         <input
                           id="affiliation"
                           className="form-control"
@@ -191,7 +245,10 @@ const FileUploadForm = props => {
                       </div>
 
                       <div className="form-group col-md-6">
-                        <label for="referenceUrl"><strong>Reference URL</strong></label>
+                        <label for="referenceUrl">
+                          <strong>Reference URL</strong>
+                          <span className="text-secondary"><i> (optional) </i></span>
+                        </label>
                         <input
                           id="referenceUrl"
                           className="form-control"
@@ -208,7 +265,10 @@ const FileUploadForm = props => {
                       </div>
 
                       <div className="form-group col-md-12">
-                        <label for="comments"><strong>Comments</strong></label>
+                        <label for="comments">
+                          <strong>Comments</strong>
+                          <span className="text-secondary"><i> (optional) </i></span>
+                        </label>
                         <textarea
                           id="comments"
                           className="form-control"
@@ -226,7 +286,11 @@ const FileUploadForm = props => {
                       </div>
 
                       <div className="form-group col-md-12">
-                        <label for="file"><strong>Upload Your File</strong></label>
+                        <label for="file">
+                          <strong>Upload Your File</strong>
+                          <span className="text-danger"> * </span>
+                          <span className="text-secondary"><i> (required) </i></span>
+                        </label>
                         <input
                             id="file" 
                             type="file" 
@@ -234,7 +298,13 @@ const FileUploadForm = props => {
                             onChange={
                               (event) => {setFieldValue("file", event.currentTarget.files[0]);}
                             }
+                            onBlur={handleBlur}
                         />
+
+                        {errors.file && touched.file && (
+                          <div style={{ color: "red", marginTop: ".5rem" }}>{errors.file}</div>
+                        )}
+
                       </div>
                     
                     </div> 
@@ -243,25 +313,30 @@ const FileUploadForm = props => {
                     /> 
 
                     <ReCAPTCHA
-                       className="pb-3"
                        sitekey="6Lf2_9cUAAAAAEbCpWuWp13cC5vJpwNM59PB9Qwp"
-                       onChage={onChange}
+                       //onVerify={handleChange}
+                       reset={handleChange}
+                       onVerify={(response) => { setFieldValue("recaptcha", response); console.log("recaptcha", response)}}
                     />
 
+                    {errors.recaptcha && touched.recaptcha && (
+                          <div style={{ color: "red", marginTop: ".5rem" }}>{errors.recaptcha}</div>
+                    )}
 
-                    <button type="submit" disabled={isSubmitting} className="btn btn-primary mr-2">
-                      Submit
-                    </button>
-              
-                    <button
-                      type="reset"
-                      className="btn btn-secondary"
-                      onClick={handleReset}
-                      disabled={!dirty || isSubmitting}
-                    >
-                      Reset
-                    </button>
-
+                    <div className="py-3">
+                        <button type="submit" disabled={isSubmitting} className="btn btn-primary mr-2">
+                          Submit
+                        </button>
+                  
+                        <button
+                          type="reset"
+                          className="btn btn-secondary"
+                          onClick={handleReset}
+                          disabled={!dirty || isSubmitting}
+                        >
+                          Reset
+                        </button>
+                    </div>
 
                   </form>
               </div>

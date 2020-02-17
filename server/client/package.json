@@ -59,6 +59,7 @@
     "react-tooltip": "^3.11.1",
     "react-twitter-embed": "^2.0.7",
     "reactstrap": "^7.0.2",
+    "reaptcha": "^1.7.2",
     "redux": "^4.0.5",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.2.0",
