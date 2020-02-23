@@ -206,6 +206,7 @@ const QueryForm = props => {
 
   const cancerTypeOptions = [
     { value: 'PanCancer', label: 'PanCancer' },
+    { value: 'Pancan-no-skin-melanoma-lymph', label: 'Pancan-no-skin-melanoma-lymph'},
     { value: 'Adenocarcinoma', label: 'Adenocarcinoma' },
     { value: 'Breast', label: 'Breast' },
     { value: 'Carcinoma', label: 'Adenocarcinoma' },
@@ -223,7 +224,6 @@ const QueryForm = props => {
     { value: 'BRCA', label: 'BRCA, Breast Invasive Carcinoma' },
     { value: 'CLL', label: 'CLL, Chronic Lymphoctytic Leukemia' },
     { value: 'COAD', label: 'COAD, Colon Adenocarcinoma' },
-    { value: 'COADREAD', label: 'COADREAD, Colorectal Cancer' },
     { value: 'DLBC', label: 'DLBC, Lymphoid Neoplasm Diffuse Large B-cell Lymphoma' },
     { value: 'ESCA', label: 'ESCA, Esophageal Carcinoma' },
     { value: 'ETMR', label: 'ETMR, Embryonal Tumor with Multilayered Rosettes' },
@@ -266,7 +266,7 @@ const QueryForm = props => {
     { value: '26691984', label: 'Araya et al., Nature Genetics, 2016 (PMID: 26691984)' },
     { value: '27571262', label: 'Bailey et al., Nature Genetics, 2016 (PMID: 27571262)' },
     { value: '27064257', label: 'Fujimoto et al., Nature Genetics, 2016 (PMID: 27064257)' },
-    { value: '27311963', label: 'Mularonl et al., Genome Biology, 2016 (PMID: 27311963)' },
+    { value: '27311963', label: 'Mularoni et al., Genome Biology, 2016 (PMID: 27311963)' },
     { value: '27135926', label: 'Nik-Zainal et al., Nature, 2016 (PMID: 27135926)' },
     { value: '28467829', label: 'Hayward et al., Nature, 2017 (PMID: 28467829)' },
     { value: '28362259', label: 'Juul et al., eLIFE, 2017 (PMID: 28362259)' },
