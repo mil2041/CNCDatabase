@@ -186,15 +186,17 @@ const QueryForm = props => {
     { value: '5UTR', label: '5\'UTR' },
     { value: '3UTR', label: '3\'UTR' },
     { value: 'enhancer', label: 'enhancer' },
+    { value: 'splice site', label: 'splice site' },
     { value: 'lncRNA', label: 'lncRNA' },
     { value: 'lncRNA promoter', label: 'lncRNA promoter' },
     { value: 'CTCF-cohesin insulator', label: 'CTCF-cohesin insulator' },
-    { value: 'splice site', label: 'splice site' },
+    { value: 'FMRE', label: 'frequently mutated regulatory element' },
+    { value: 'CRE', label: 'cis regulatory element' },
+    { value: 'miRNA', label: 'miRNA' },
+    { value: 'snRNA', label: 'snRNA' },
     { value: 'small RNA', label: 'small RNA' },
     { value: 'rRNA', label: 'rRNA' },
-    { value: 'misc_RNA', label: 'misc_RNA' },
-    { value: 'snRNA', label: 'snRNA' },
-    { value: 'miRNA', label: 'miRNA' },
+    { value: 'misc_RNA', label: 'misc_RNA' }
   ];
   
   const evidenceTypeOptions = [
