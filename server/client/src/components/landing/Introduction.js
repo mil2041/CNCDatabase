@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //import { InputGroup, InputGroupAddon, InputGroupText, Input, Button } from 'reactstrap';
 //import { UndrawChoose, UndrawChecklist, UndrawWorkChat } from 'react-undraw-illustrations';
-import introduction_figure from './img/introduction_v6.png';
+import introduction_figure from './img/introduction_v7.png';
 
 class Intorduction extends Component {
   render() {

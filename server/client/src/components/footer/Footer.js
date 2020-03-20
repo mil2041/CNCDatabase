@@ -31,15 +31,15 @@ class Footer extends Component {
               <p>
                 
                 <div className="row">
-                  <a href="mailto:alm2069@med.cornell.edu;emliu.research@gmail.com?cc=ekk2003@med.cornell.edu&subject=cncdatabase suggestions">
+                  <a href="mailto:alm2069@med.cornell.edu;emliu.research@gmail.com?subject=cncdatabase related issues">
                     <button className="btn btn-secondary ml-3">
-                      Email suggestions
+                      Email us
                     </button>
                   </a>
                   
                   <a target="_blank" href="https://khuranalab.med.cornell.edu/">
                     <button className="btn btn-secondary ml-3">
-                      Khurana Lab
+                      Khurana lab
                     </button>
                   </a>
                 </div>
