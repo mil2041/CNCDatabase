@@ -43,7 +43,10 @@ class Documentation extends Component {
                     <br/>
                     <h4><strong>How do I cite the CNCDatabase?</strong></h4>
                     <hr/>
-                    <p>Please cite Liu et al, CNCDatabase: Cornell Non-coding Cancer driver database (2020)</p>
+                    <p>Please cite</p> 
+                    <p><strong>Liu,E.M., Martinez-Fundichely,A., Bollapragada,R., Spiewack,M. and Khurana,E.</strong> 
+                      <a href="https://www.biorxiv.org/content/10.1101/2020.04.29.069047v1.abstract" target="_blank"> CNCDatabase: a database of non-coding cancer drivers </a> 
+                         bioRxiv (2020); doi:10.1101/2020.04.29.069047</p>
 
                     <br/>
                     <h4><strong>Acknowledgements</strong></h4>
