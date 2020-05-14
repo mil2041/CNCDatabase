@@ -5,7 +5,7 @@ import fetchBygeneSymbolReducer from './fetchBygeneSymbolReducer';
 import fetchStudies from './fetchStudies';
 import fetchGeneSummary from './fetchGeneSummaryReducer';
 //import fetchCancerDriverList from './fetchCancerDriverListReducer';
-import fetchCancerDriverList from './fetchCancerDriverListReducer_v02';
+import fetchCancerDriverList from './fetchCancerDriverListReducer';
 //import fetchWeather from './weatherReducer';
 
 export default combineReducers({

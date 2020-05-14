@@ -3,13 +3,15 @@ import { toast } from 'react-toastify';
 
 import { FETCH_BYGENESYMBOL, 
          FETCH_ALL_STUDIES, FETCH_GENE_SUMMARY, 
-         FETCH_WEATHER, FETCH_CANCER_DRIVER_LIST, CREATE_SUBMISSION } from './types';
+         FETCH_WEATHER, FETCH_CANCER_DRIVER_LIST, 
+         CREATE_SUBMISSION,
+         INIT_CANCER_DRIVER_LIST } from './types';
 
-const API_KEY = '2ad2c95c897fdc10fc483bd4107eec90';
-const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?APPID=${API_KEY}`;
+//const API_KEY = '2ad2c95c897fdc10fc483bd4107eec90';
+//const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?APPID=${API_KEY}`;
 
 
-
+/*
 export const fetchWeather = city => async dispatch => {
    const url = `${ROOT_URL}&q=${city},us`;
    const response = await axios.get(url);
@@ -20,7 +22,7 @@ export const fetchWeather = city => async dispatch => {
               payload: response  
    }); 
 
-};
+};*/
 
 
 
@@ -100,6 +102,27 @@ export const fetchCancerDriverList = formValues => async dispatch => {
           payload: response.data.rows
        });
 };  
+
+export const initializeCancerDriverList = () => async dispatch => {
+  
+  const response = await axios.get('/api/cancer_driver_list', {
+    params: {
+      geneSymbol: [],
+      elementType: [],
+      cancerType: [],
+      evidenceType: [],
+      pmid: []
+    }
+  });
+  
+  console.log('Received initializeCancerDriverList action', response);
+
+  dispatch({
+          type: INIT_CANCER_DRIVER_LIST,
+          payload: response.data.rows
+       });
+};  
+
 
 
 export const createSubmission = formData => async dispatch => {

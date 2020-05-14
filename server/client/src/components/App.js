@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import '../FontAwesome'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 //import { connect } from 'react-redux';
@@ -23,15 +23,21 @@ import Footer from './footer/Footer';
 //import Login from './Login';
 //const DataUpdateFromUser = () => <h2>DataUpdateFromUser</h2>;
 import FileUpload from './fileupload/FileUpload_v2';
+import { useDispatch } from 'react-redux'
+import { initializeCancerDriverList } from '../actions';
 
-class App extends Component {
-
+//class App extends Component {
+const App = () => {
   //componentDidMount() {
   //    this.props.fetchUser();
   //} 
+  const dispatch = useDispatch() 
 
+  useEffect(()=>{
+    dispatch(initializeCancerDriverList())
+  },[dispatch])
 
-  render() {
+  //render() {
     return (
       //<div className="container">
       <div>
@@ -56,7 +62,7 @@ class App extends Component {
         <Footer />
       </div>
     );
-  }
+  //}
 }
 
 export default App;

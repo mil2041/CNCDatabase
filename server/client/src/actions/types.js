@@ -5,3 +5,4 @@ export const FETCH_GENE_SUMMARY = 'fetchGeneSummary';
 export const FETCH_WEATHER = 'fetchWeather';
 export const FETCH_CANCER_DRIVER_LIST = 'fetchCancerDriverList';
 export const CREATE_SUBMISSION = 'createSubmission';
+export const INIT_CANCER_DRIVER_LIST = 'inistializeCancerDriverList';
