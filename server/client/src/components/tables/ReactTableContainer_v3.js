@@ -10,6 +10,9 @@ const ReactTableContainer = ({dataCancerDriverList}) => {
 
   const data = dataCancerDriverList;
 
+  console.log("table data",data)
+
+
   const columns = useMemo(
     () => [
       
@@ -27,7 +30,11 @@ const ReactTableContainer = ({dataCancerDriverList}) => {
           {
             Header: "Cancer Type",
             accessor: "cancertype",
-            Cell: ({ cell: { value } }) => {
+            Cell: ({ row: { original } }) => {
+
+              const value = original.cancertype
+              const fullName = original.cancer_full_name
+
               return (
                 <div>
                     <a data-tip={`${value}`} data-for='cancertype'> {value} </a>
@@ -43,7 +50,7 @@ const ReactTableContainer = ({dataCancerDriverList}) => {
                                 <p><strong>Cancer Type</strong></p>
                                 <hr/>
                                 <ul>
-                                  <li>Short name: {value}</li>
+                                  <li>{fullName}</li>
                                 </ul>
                             </div>
                     )}
@@ -56,7 +63,7 @@ const ReactTableContainer = ({dataCancerDriverList}) => {
         
           {
             Header: "Gene Name",
-            accessor: "gene"
+            accessor: "gene",
           },
           {
             Header: "COSMIC(Cancer Gene)",
