@@ -35,9 +35,11 @@ const ReactTableContainer = ({dataCancerDriverList}) => {
               const value = original.cancertype
               const fullName = original.cancer_full_name
 
+              console.log("cell value", original) 
+
               return (
                 <div>
-                    <a data-tip={`${value}`} data-for='cancertype'> {value} </a>
+                    <a data-tip={`${fullName}`} data-for='cancertype'> {value} </a>
                     
                     <ReactTooltip 
                     id='cancertype' 
@@ -45,7 +47,7 @@ const ReactTableContainer = ({dataCancerDriverList}) => {
                     type="light" 
                     effect="solid"
                     border={true}
-                    getContent={(value) => (
+                    getContent={(fullName) => (
                             <div>
                                 <p><strong>Cancer Type</strong></p>
                                 <hr/>
@@ -106,7 +108,7 @@ const ReactTableContainer = ({dataCancerDriverList}) => {
   //  })();
   //}, []);
 
-  console.log("react table data:",data)
+  //console.log("react table data:",data)
 
   return (
     <div className="react-table-main">
